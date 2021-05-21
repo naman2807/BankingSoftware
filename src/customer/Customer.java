@@ -1,5 +1,7 @@
 package customer;
 
+import java.util.Objects;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -64,5 +66,18 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return age == customer.age && Objects.equals(name, customer.name) && Objects.equals(address, customer.address) && Objects.equals(parentName, customer.parentName) && Objects.equals(phoneNumber, customer.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, address, parentName, phoneNumber);
     }
 }
