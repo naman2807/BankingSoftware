@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Created By: Naman Agarwal
@@ -24,7 +25,7 @@ public class Customer {
     private final SimpleStringProperty address = new SimpleStringProperty("");
     private final SimpleStringProperty parentName = new SimpleStringProperty("");
     private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
-    private final SimpleLongProperty accountNumber = new SimpleLongProperty();
+    private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private ObservableList<String> transaction;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
@@ -136,8 +137,8 @@ public class Customer {
                 '}';
     }
 
-    private SimpleLongProperty generateAccountNumber(){
-
+    private String generateAccountNumber(){
+        return getPhoneNumber() + new Random(9);
     }
 
 }
