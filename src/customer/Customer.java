@@ -14,4 +14,13 @@ public class Customer {
     private String address;
     private String parentName;
     private String phoneNumber;
+
+    public Customer(String name, int age, String address, String parentName, String phoneNumber) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.parentName = parentName;
+        this.phoneNumber = phoneNumber;
+    }
+
 }
