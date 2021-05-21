@@ -136,5 +136,8 @@ public class Customer {
                 '}';
     }
 
+    private SimpleLongProperty generateAccountNumber(){
+
+    }
 
 }
