@@ -6,6 +6,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Objects;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -58,5 +60,18 @@ public class Branch {
 
     public void setCustomers(ObservableList<Customer> customers) {
         this.customers = customers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Branch branch = (Branch) o;
+        return Objects.equals(name, branch.name) && Objects.equals(branchCode, branch.branchCode) && Objects.equals(customers, branch.customers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, branchCode, customers);
     }
 }
