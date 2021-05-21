@@ -106,6 +106,10 @@ public class Customer {
         this.transaction = transaction;
     }
 
+    public void addTransaction(Double amount){
+        this.transaction.add(amount);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
