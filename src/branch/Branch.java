@@ -74,4 +74,13 @@ public class Branch {
     public int hashCode() {
         return Objects.hash(name, branchCode, customers);
     }
+
+    @Override
+    public String toString() {
+        return "Branch{" +
+                "name=" + name +
+                ", branchCode=" + branchCode +
+                ", customers=" + customers +
+                '}';
+    }
 }
