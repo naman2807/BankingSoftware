@@ -25,7 +25,6 @@ public class Branch {
         this.branchCode.set(branchCode);
     }
 
-
-
-
+    public Branch() {
+    }
 }
