@@ -16,6 +16,16 @@ import javafx.collections.ObservableList;
 
 public class Branch {
     private SimpleStringProperty name = new SimpleStringProperty("");
-    private ObservableList<Customer> customers = FXCollections.observableArrayList();
-    private SimpleLongProperty branchCode = new SimpleLongProperty();
+    private SimpleStringProperty branchCode = new SimpleStringProperty();
+    private ObservableList<Customer> customers;
+
+    public Branch(String name, String branchCode) {
+        this.name.set(name);
+        this.customers = FXCollections.observableArrayList();
+        this.branchCode.set(branchCode);
+    }
+
+
+
+
 }
