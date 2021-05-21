@@ -15,8 +15,8 @@ import javafx.collections.ObservableList;
  */
 
 public class Branch {
-    private SimpleStringProperty name = new SimpleStringProperty("");
-    private SimpleStringProperty branchCode = new SimpleStringProperty();
+    private final SimpleStringProperty name = new SimpleStringProperty("");
+    private final SimpleStringProperty branchCode = new SimpleStringProperty();
     private ObservableList<Customer> customers;
 
     public Branch(String name, String branchCode) {
@@ -26,5 +26,37 @@ public class Branch {
     }
 
     public Branch() {
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public SimpleStringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getBranchCode() {
+        return branchCode.get();
+    }
+
+    public SimpleStringProperty branchCodeProperty() {
+        return branchCode;
+    }
+
+    public void setBranchCode(String branchCode) {
+        this.branchCode.set(branchCode);
+    }
+
+    public ObservableList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ObservableList<Customer> customers) {
+        this.customers = customers;
     }
 }
