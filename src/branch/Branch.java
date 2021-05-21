@@ -1,5 +1,11 @@
 package branch;
 
+import customer.Customer;
+import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -9,4 +15,7 @@ package branch;
  */
 
 public class Branch {
+    private SimpleStringProperty name = new SimpleStringProperty("");
+    private ObservableList<Customer> customers = FXCollections.observableArrayList();
+    private SimpleLongProperty branchCode = new SimpleLongProperty();
 }
