@@ -1,6 +1,7 @@
 package customer;
 
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +24,7 @@ public class Customer {
     private final SimpleStringProperty address = new SimpleStringProperty("");
     private final SimpleStringProperty parentName = new SimpleStringProperty("");
     private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
+    private final SimpleLongProperty accountNumber = new SimpleLongProperty();
     private ObservableList<String> transaction;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
