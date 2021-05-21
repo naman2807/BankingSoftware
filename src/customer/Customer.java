@@ -1,5 +1,6 @@
 package customer;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,7 @@ public class Customer {
     private String address;
     private String parentName;
     private String phoneNumber;
+    private ArrayList<Double> transaction;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
         this.name = name;
