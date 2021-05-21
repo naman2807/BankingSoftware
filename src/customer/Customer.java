@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -22,8 +23,7 @@ public class Customer {
     private final SimpleStringProperty address = new SimpleStringProperty("");
     private final SimpleStringProperty parentName = new SimpleStringProperty("");
     private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
-    private ObservableList<Double> transaction;
-
+    private ObservableList<String> transaction;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
         this.name.set(name);
@@ -98,15 +98,15 @@ public class Customer {
         this.phoneNumber.set(phoneNumber);
     }
 
-    public ObservableList<Double> getTransaction() {
+    public ObservableList<String> getTransaction() {
         return transaction;
     }
 
-    public void setTransaction(ObservableList<Double> transaction) {
+    public void setTransaction(ObservableList<String> transaction) {
         this.transaction = transaction;
     }
 
-    public void addTransaction(Double amount){
+    public void addTransaction(String amount){
         this.transaction.add(amount);
     }
 
