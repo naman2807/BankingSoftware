@@ -19,6 +19,7 @@ public class Customer {
     private String phoneNumber;
     private ArrayList<Double> transaction;
 
+
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
         this.name = name;
         this.age = age;
@@ -30,6 +31,14 @@ public class Customer {
 
     public Customer() {
         this.transaction = new ArrayList<>();
+    }
+
+    public ArrayList<Double> getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(ArrayList<Double> transaction) {
+        this.transaction = transaction;
     }
 
     public String getName() {
@@ -95,4 +104,6 @@ public class Customer {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+
 }
