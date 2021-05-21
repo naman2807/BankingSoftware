@@ -35,10 +35,12 @@ public class Customer {
         this.parentName.set(parentName);
         this.phoneNumber.set(phoneNumber);
         this.transaction = FXCollections.observableArrayList();
+        this.accountNumber.set(generateAccountNumber());
     }
 
     public Customer() {
         this.transaction = FXCollections.observableArrayList();
+        this.accountNumber.set(generateAccountNumber());
     }
 
     public String getName() {
