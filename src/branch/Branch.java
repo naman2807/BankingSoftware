@@ -22,13 +22,16 @@ public class Branch {
     private final SimpleStringProperty branchCode = new SimpleStringProperty();
     private ObservableList<Customer> customers;
 
-    public Branch(String name, String branchCode) {
+    public Branch(String name) {
         this.name.set(name);
         this.customers = FXCollections.observableArrayList();
-        this.branchCode.set(branchCode);
+        this.branchCode.set(generateBranchCode());
     }
 
     public Branch() {
+        this.name.set("");
+        this.customers = FXCollections.observableArrayList();
+        this.branchCode.set(generateBranchCode());
     }
 
     public String getName() {
@@ -87,5 +90,9 @@ public class Branch {
 
     private String generateBranchCode(){
         return String.valueOf(new Random(100000));
+    }
+
+    public void addCustomerToBranch(Customer customer){
+        customers.add(customer);
     }
 }
