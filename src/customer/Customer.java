@@ -55,6 +55,18 @@ public class Customer {
         this.name.set(name);
     }
 
+    public String getAccountNumber() {
+        return accountNumber.get();
+    }
+
+    public SimpleStringProperty accountNumberProperty() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber.set(accountNumber);
+    }
+
     public int getAge() {
         return age.get();
     }
