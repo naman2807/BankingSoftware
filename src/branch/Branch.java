@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Created By: Naman Agarwal
@@ -82,5 +83,9 @@ public class Branch {
                 ", branchCode=" + branchCode +
                 ", customers=" + customers +
                 '}';
+    }
+
+    private String generateBranchCode(){
+        return String.valueOf(new Random(100000));
     }
 }
