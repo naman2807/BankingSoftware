@@ -25,9 +25,11 @@ public class Customer {
         this.address = address;
         this.parentName = parentName;
         this.phoneNumber = phoneNumber;
+        this.transaction = new ArrayList<>();
     }
 
     public Customer() {
+        this.transaction = new ArrayList<>();
     }
 
     public String getName() {
