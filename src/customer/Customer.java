@@ -1,5 +1,10 @@
 package customer;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,73 +17,93 @@ import java.util.Objects;
  */
 
 public class Customer {
-    private String name;
-    private int age;
-    private String address;
-    private String parentName;
-    private String phoneNumber;
-    private ArrayList<Double> transaction;
+    private final SimpleStringProperty name = new SimpleStringProperty("");
+    private final SimpleIntegerProperty age = new SimpleIntegerProperty();
+    private final SimpleStringProperty address = new SimpleStringProperty("");
+    private final SimpleStringProperty parentName = new SimpleStringProperty("");
+    private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
+    private ObservableList<Double> transaction;
 
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
-        this.name = name;
-        this.age = age;
-        this.address = address;
-        this.parentName = parentName;
-        this.phoneNumber = phoneNumber;
-        this.transaction = new ArrayList<>();
+        this.name.set(name);
+        this.age.set(age);
+        this.address.set(address);
+        this.parentName.set(parentName);
+        this.phoneNumber.set(phoneNumber);
+        this.transaction = FXCollections.observableArrayList();
     }
 
     public Customer() {
-        this.transaction = new ArrayList<>();
-    }
-
-    public ArrayList<Double> getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(ArrayList<Double> transaction) {
-        this.transaction = transaction;
+        this.transaction = FXCollections.observableArrayList();
     }
 
     public String getName() {
+        return name.get();
+    }
+
+    public SimpleStringProperty nameProperty() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
     public int getAge() {
+        return age.get();
+    }
+
+    public SimpleIntegerProperty ageProperty() {
         return age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        this.age.set(age);
     }
 
     public String getAddress() {
+        return address.get();
+    }
+
+    public SimpleStringProperty addressProperty() {
         return address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address.set(address);
     }
 
     public String getParentName() {
+        return parentName.get();
+    }
+
+    public SimpleStringProperty parentNameProperty() {
         return parentName;
     }
 
     public void setParentName(String parentName) {
-        this.parentName = parentName;
+        this.parentName.set(parentName);
     }
 
     public String getPhoneNumber() {
+        return phoneNumber.get();
+    }
+
+    public SimpleStringProperty phoneNumberProperty() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber.set(phoneNumber);
+    }
+
+    public ObservableList<Double> getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(ObservableList<Double> transaction) {
+        this.transaction = transaction;
     }
 
     @Override
