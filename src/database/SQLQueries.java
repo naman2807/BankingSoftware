@@ -26,4 +26,5 @@ public class SQLQueries {
     private static final String CUSTOMER_ADDRESS = "address";
     private static final String CUSTOMER_PARENT_NAME = "parentname";
     private static final String CUSTOMER_PHONE_NUMBER = "phone_number";
+    private static final String CUSTOMER_ACCOUNT_NUMBER = "account_number";
 }
