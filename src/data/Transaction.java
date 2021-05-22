@@ -18,6 +18,7 @@ public final class Transaction {
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
     private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
+    private final SimpleStringProperty transactionDate = new SimpleStringProperty("");
 
     public String getAccountNumber() {
         return accountNumber.get();
@@ -27,10 +28,19 @@ public final class Transaction {
         return accountNumber;
     }
 
-    public Transaction(String accountNumber, double amount, String transactionTime) {
+    public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate) {
         this.accountNumber.set(accountNumber);
         this.amount.set(amount);
         this.transactionTime.set(transactionTime);
+        this.transactionDate.set(transactionDate);
+    }
+
+    public String getTransactionDate() {
+        return transactionDate.get();
+    }
+
+    public SimpleStringProperty transactionDateProperty() {
+        return transactionDate;
     }
 
     public double getAmount() {

@@ -19,4 +19,8 @@ public class DataBaseConnection {
     public static Connection getConnection(){
         return connection;
     }
+
+    public static void connectToDataBase(){
+
+    }
 }
