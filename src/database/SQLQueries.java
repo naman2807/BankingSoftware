@@ -18,4 +18,5 @@ public class SQLQueries {
     private static final String BRANCH_CODE = "branch_code";
     private static final String BRANCH_NAME = "branch_name";
     private static final String ACCOUNT_NUMBER = "account_number";
+    private static final String AMOUNT = "amount";
 }
