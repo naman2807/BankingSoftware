@@ -12,11 +12,11 @@ import java.sql.Connection;
  */
 
 public class DataBaseConnection {
-    private Connection connection;
+    private static Connection connection;
 
     private DataBaseConnection(){}
 
     public static Connection getConnection(){
-
+        return connection;
     }
 }
