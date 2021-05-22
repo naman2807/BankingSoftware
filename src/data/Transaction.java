@@ -15,10 +15,20 @@ import java.util.Objects;
  */
 
 public final class Transaction {
+    private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
     private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
 
-    public Transaction(double amount, String transactionTime) {
+    public String getAccountNumber() {
+        return accountNumber.get();
+    }
+
+    public SimpleStringProperty accountNumberProperty() {
+        return accountNumber;
+    }
+
+    public Transaction(String accountNumber, double amount, String transactionTime) {
+        this.accountNumber.set(accountNumber);
         this.amount.set(amount);
         this.transactionTime.set(transactionTime);
     }
@@ -40,23 +50,24 @@ public final class Transaction {
     }
 
     @Override
+    public String toString() {
+        return "Transaction{" +
+                "accountNumber=" + accountNumber +
+                ", amount=" + amount +
+                ", transactionTime=" + transactionTime +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return Objects.equals(amount, that.amount) && Objects.equals(transactionTime, that.transactionTime);
+        return Objects.equals(accountNumber, that.accountNumber) && Objects.equals(amount, that.amount) && Objects.equals(transactionTime, that.transactionTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(amount, transactionTime);
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "amount=" + amount +
-                ", transactionTime=" + transactionTime +
-                '}';
+        return Objects.hash(accountNumber, amount, transactionTime);
     }
 }
