@@ -23,4 +23,5 @@ public class SQLQueries {
     private static final String TRANSACTION_TIME = "transaction_time";
     private static final String CUSTOMER_NAME = "name";
     private static final String CUSTOMER_AGE = "age";
+    private static final String CUSTOMER_ADDRESS = "address";
 }
