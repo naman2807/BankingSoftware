@@ -23,7 +23,7 @@ public class Customer {
     private final SimpleStringProperty parentName = new SimpleStringProperty("");
     private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
-    private ObservableList<String> transaction;
+    private ObservableList<Transaction> transactionData;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
         this.name.set(name);
@@ -31,12 +31,12 @@ public class Customer {
         this.address.set(address);
         this.parentName.set(parentName);
         this.phoneNumber.set(phoneNumber);
-        this.transaction = FXCollections.observableArrayList();
+        this.transactionData = FXCollections.observableArrayList();
         this.accountNumber.set(generateAccountNumber());
     }
 
     public Customer() {
-        this.transaction = FXCollections.observableArrayList();
+        this.transactionData = FXCollections.observableArrayList();
         this.accountNumber.set(generateAccountNumber());
     }
 
@@ -112,16 +112,16 @@ public class Customer {
         this.phoneNumber.set(phoneNumber);
     }
 
-    public ObservableList<String> getTransaction() {
-        return transaction;
+    public ObservableList<Transaction> getTransaction() {
+        return transactionData;
     }
 
-    public void setTransaction(ObservableList<String> transaction) {
-        this.transaction = transaction;
+    public void setTransaction(ObservableList<Transaction> transaction) {
+        this.transactionData = transaction;
     }
 
-    public void addTransaction(String amount){
-        this.transaction.add(amount);
+    public void addTransaction(Transaction transaction){
+        this.transactionData.add(transaction);
     }
 
     @Override
