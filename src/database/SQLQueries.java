@@ -21,4 +21,5 @@ public class SQLQueries {
     private static final String AMOUNT = "amount";
     private static final String TRANSACTION_DATE = "transaction_date";
     private static final String TRANSACTION_TIME = "transaction_time";
+    private static final String CUSTOMER_NAME = "customer_name";
 }
