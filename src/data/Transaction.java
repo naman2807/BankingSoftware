@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * Created By: Naman Agarwal
@@ -14,8 +15,8 @@ import java.time.LocalDateTime;
  */
 
 public class Transaction {
-    private SimpleDoubleProperty amount = new SimpleDoubleProperty();
-    private SimpleStringProperty transactionTime = new SimpleStringProperty("");
+    private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
+    private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
 
     public Transaction(double amount, String transactionTime) {
         this.amount.set(amount);
@@ -36,5 +37,18 @@ public class Transaction {
 
     public SimpleStringProperty transactionTimeProperty() {
         return transactionTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return Objects.equals(amount, that.amount) && Objects.equals(transactionTime, that.transactionTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, transactionTime);
     }
 }
