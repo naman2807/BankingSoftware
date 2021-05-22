@@ -1,5 +1,6 @@
 package database;
 
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 
 /**
@@ -12,4 +13,5 @@ import java.sql.Connection;
 
 public class DataBaseConnection {
     private Connection connection;
+    private DataBaseConnection instance = new DataBaseConnection();
 }
