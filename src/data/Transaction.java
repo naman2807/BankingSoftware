@@ -9,4 +9,5 @@ package data;
  */
 
 public class Transaction {
+    private double amount;
 }
