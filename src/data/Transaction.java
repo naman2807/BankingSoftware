@@ -14,7 +14,7 @@ import java.util.Objects;
  * Date: 22-05-2021
  */
 
-public class Transaction {
+public final class Transaction {
     private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
     private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
 
