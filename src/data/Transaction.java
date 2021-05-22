@@ -16,4 +16,9 @@ import java.time.LocalDateTime;
 public class Transaction {
     private SimpleDoubleProperty amount = new SimpleDoubleProperty();
     private SimpleStringProperty transactionTime = new SimpleStringProperty("");
+
+    public Transaction(double amount, String transactionTime) {
+        this.amount.set(amount);
+        this.transactionTime.set(transactionTime);
+    }
 }
