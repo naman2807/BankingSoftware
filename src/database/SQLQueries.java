@@ -11,4 +11,5 @@ package database;
 public class SQLQueries {
     private static final String BANK_TABLE = "bank_table";
     private static final String BRANCH_TABLE = "branch_table";
+    private static final String CUSTOMER_TABLE = "customer_table";
 }
