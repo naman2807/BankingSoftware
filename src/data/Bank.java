@@ -69,4 +69,13 @@ public class Bank {
     public int hashCode() {
         return Objects.hash(name, branches, bankCode);
     }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "name=" + name +
+                ", branches=" + branches +
+                ", bankCode=" + bankCode +
+                '}';
+    }
 }
