@@ -51,4 +51,12 @@ public class Transaction {
     public int hashCode() {
         return Objects.hash(amount, transactionTime);
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "amount=" + amount +
+                ", transactionTime=" + transactionTime +
+                '}';
+    }
 }
