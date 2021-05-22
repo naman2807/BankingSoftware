@@ -40,4 +40,8 @@ public class SQLQueries {
     public static String addBranchQuery(){
         return "INSERT INTO " + BRANCH_TABLE + " VALUES(?, ?)";
     }
+
+    public static String addCustomerQuery(){
+        return "INSERT INTO " + CUSTOMER_TABLE + " VALUES(?, ?, ?, ?, ?, ?)";
+    }
 }
