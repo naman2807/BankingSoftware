@@ -20,6 +20,7 @@ public class SQLQueries {
     private static final String ACCOUNT_NUMBER = "account_number";
     private static final String AMOUNT = "amount";
     private static final String TRANSACTION_DATE = "transaction_date";
+    private static final String TRANSACTIONS_ID = "transactionID";
     private static final String TRANSACTION_TIME = "transaction_time";
     private static final String CUSTOMER_NAME = "name";
     private static final String CUSTOMER_AGE = "age";
@@ -30,5 +31,9 @@ public class SQLQueries {
 
     public static String addBankQuery(){
         return "INSERT INTO " + BANK_TABLE + " (" + BANK_NAME + ") VALUES(?)";
+    }
+
+    public static String addTransactionQuery(){
+        return "INSERT INTO " + TRANSACTIONS_TABLE + " VALUES(?, ?, ?, ?, ?)";
     }
 }

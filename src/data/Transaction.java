@@ -15,6 +15,7 @@ import java.util.Objects;
  */
 
 public final class Transaction {
+    private final SimpleStringProperty transactionID = new SimpleStringProperty("");
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
     private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
@@ -26,6 +27,14 @@ public final class Transaction {
 
     public SimpleStringProperty accountNumberProperty() {
         return accountNumber;
+    }
+
+    public Transaction(String transactionID, String accountNumber, double amount, String transactionTime, String transactionDate) {
+        this.accountNumber.set(accountNumber);
+        this.amount.set(amount);
+        this.transactionTime.set(transactionTime);
+        this.transactionDate.set(transactionDate);
+        this.transactionID.set(transactionID);
     }
 
     public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate) {
