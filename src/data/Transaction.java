@@ -21,4 +21,20 @@ public class Transaction {
         this.amount.set(amount);
         this.transactionTime.set(transactionTime);
     }
+
+    public double getAmount() {
+        return amount.get();
+    }
+
+    public SimpleDoubleProperty amountProperty() {
+        return amount;
+    }
+
+    public String getTransactionTime() {
+        return transactionTime.get();
+    }
+
+    public SimpleStringProperty transactionTimeProperty() {
+        return transactionTime;
+    }
 }
