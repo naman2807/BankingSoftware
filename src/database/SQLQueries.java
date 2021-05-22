@@ -36,4 +36,8 @@ public class SQLQueries {
     public static String addTransactionQuery(){
         return "INSERT INTO " + TRANSACTIONS_TABLE + " VALUES(?, ?, ?, ?, ?)";
     }
+
+    public static String addBranchQuery(){
+        return "INSERT INTO " + BRANCH_TABLE + " VALUES(?, ?)";
+    }
 }
