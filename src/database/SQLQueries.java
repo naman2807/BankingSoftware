@@ -13,4 +13,5 @@ public class SQLQueries {
     private static final String BRANCH_TABLE = "branch_table";
     private static final String CUSTOMER_TABLE = "customer_table";
     private static final String TRANSACTIONS_TABLE = "transaction_table";
+    private static final String BANK_CODE = "bank_code";
 }
