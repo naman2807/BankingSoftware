@@ -1,6 +1,5 @@
 package database;
 
-import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -26,7 +25,7 @@ public final class DataBaseConnection {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("DataBase Connected");
         } catch (SQLException throwables) {
-            System.err.println("Cannot connect to database");;
+            System.err.println("Cannot connect to database");
             throwables.printStackTrace();
         }
 
