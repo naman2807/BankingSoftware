@@ -1,20 +1,17 @@
-package customer;
+package data;
 
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
 
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
- * Package Name: customer
+ * Package Name: data
  * Project Name: BankingApplication
  * Date: 21-05-2021
  */

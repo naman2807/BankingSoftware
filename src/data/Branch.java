@@ -1,7 +1,5 @@
-package branch;
+package data;
 
-import customer.Customer;
-import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +10,7 @@ import java.util.Random;
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
- * Package Name: branch
+ * Package Name: data
  * Project Name: BankingApplication
  * Date: 21-05-2021
  */
