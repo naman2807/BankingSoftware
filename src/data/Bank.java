@@ -1,5 +1,6 @@
 package data;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,12 +18,21 @@ import java.util.Objects;
 public class Bank {
     private SimpleStringProperty name = new SimpleStringProperty("");
     private ObservableList<Branch> branches;
-    private SimpleStringProperty bankCode = new SimpleStringProperty("");
+    private SimpleStringProperty bankCode = new SimpleStringProperty();
+
+    public Bank(String name, String bankCode, ObservableList<Branch> branches) {
+        this.name.set(name);
+        this.branches = FXCollections.observableArrayList(branches);
+        this.bankCode.set(bankCode);
+    }
 
     public Bank(String name) {
         this.name.set(name);
-        this.branches = FXCollections.observableArrayList();
-        this.bankCode = bankCode;
+    }
+
+    public Bank(String name, String bankCode){
+        this.name.set(name);
+        this.bankCode.set(bankCode);
     }
 
     public String getName() {
