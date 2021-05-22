@@ -1,5 +1,7 @@
 package database;
 
+import java.sql.Connection;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -9,4 +11,5 @@ package database;
  */
 
 public class DataBaseConnection {
+    private Connection connection;
 }
