@@ -4,6 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Objects;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -53,5 +55,18 @@ public class Bank {
 
     public void setBankCode(String bankCode) {
         this.bankCode.set(bankCode);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bank bank = (Bank) o;
+        return Objects.equals(name, bank.name) && Objects.equals(branches, bank.branches) && Objects.equals(bankCode, bank.bankCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, branches, bankCode);
     }
 }
