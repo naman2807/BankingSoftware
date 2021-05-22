@@ -13,17 +13,13 @@ import java.sql.SQLException;
  * Date: 22-05-2021
  */
 
-public class DataBaseConnection {
+public final class DataBaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/banking_software";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     private static Connection connection;
 
     private DataBaseConnection(){}
-
-    public static Connection getConnection(){
-        return connection;
-    }
 
     public static void connectToDataBase(){
         try {
@@ -35,4 +31,9 @@ public class DataBaseConnection {
         }
 
     }
+
+    public static Connection getConnection(){
+        return connection;
+    }
+
 }
