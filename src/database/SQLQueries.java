@@ -27,4 +27,8 @@ public class SQLQueries {
     private static final String CUSTOMER_PARENT_NAME = "parentname";
     private static final String CUSTOMER_PHONE_NUMBER = "phone_number";
     private static final String CUSTOMER_ACCOUNT_NUMBER = "account_number";
+
+    public static String addBankQuery(){
+        return "INSERT INTO " + BANK_TABLE + " (" + BANK_NAME + ") VALUES(?)";
+    }
 }
