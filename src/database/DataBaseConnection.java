@@ -14,4 +14,6 @@ import java.sql.Connection;
 public class DataBaseConnection {
     private Connection connection;
     private DataBaseConnection instance = new DataBaseConnection();
+
+    private DataBaseConnection(){}
 }
