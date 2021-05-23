@@ -30,7 +30,7 @@ public class MyPreloader extends Preloader {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage)  {
         this.stage = stage;
         this.stage.setScene(scene);
         this.stage.initStyle(StageStyle.UNDECORATED);
@@ -58,7 +58,7 @@ public class MyPreloader extends Preloader {
             case BEFORE_START:
                 //Called after MyApplication#init() and MyApplication#start() method.
                 System.out.println("Before Start");
-                this.stage.close();
+                this.stage.hide();
                 break;
         }
     }

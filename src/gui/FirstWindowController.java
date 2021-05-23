@@ -1,5 +1,7 @@
 package gui;
 
+import javafx.fxml.FXML;
+
 import java.awt.*;
 
 /**
@@ -11,5 +13,7 @@ import java.awt.*;
  */
 
 public class FirstWindowController {
+    @FXML
+    private Label progress;
     public static Label label;
 }

@@ -1,5 +1,6 @@
 package gui;
 
+
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
 import javafx.application.Preloader;
@@ -10,7 +11,6 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-import static javafx.application.Application.launch;
 
 /**
  * Created By: Naman Agarwal
@@ -21,7 +21,7 @@ import static javafx.application.Application.launch;
  */
 
 public class FirstWindow extends Application {
-    private static final int COUNT_LIMIT = 500000;
+    private static final int COUNT_LIMIT = 100;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
@@ -34,12 +34,13 @@ public class FirstWindow extends Application {
     public void init(){
         for (int i =0; i<COUNT_LIMIT; i+=10){
             double progress = (100*i) / COUNT_LIMIT;
-            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
+//            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
+            notifyPreloader(new Preloader.ProgressNotification(progress));
         }
     }
 
     public static void main(String[] args) {
-        LauncherImpl.launchApplication(FirstWindow.class, MyPreloader.class, args);
+        launch(MyPreloader.class, args);
     }
 
 }
