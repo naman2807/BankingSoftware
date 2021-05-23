@@ -1,5 +1,7 @@
 package gui;
 
+import javafx.application.Preloader;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -8,5 +10,5 @@ package gui;
  * Date: 23-05-2021
  */
 
-public class MyPreloader {
+public class MyPreloader extends Preloader {
 }
