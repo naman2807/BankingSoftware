@@ -19,6 +19,7 @@ import static javafx.application.Application.launch;
  */
 
 public class FirstWindow extends Application {
+    private static final int COUNT_LIMIT = 500000;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
