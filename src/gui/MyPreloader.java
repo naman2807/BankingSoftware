@@ -1,8 +1,12 @@
 package gui;
 
 import javafx.application.Preloader;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 /**
  * Created By: Naman Agarwal
@@ -20,7 +24,7 @@ public class MyPreloader extends Preloader {
 
     @Override
     public void init() throws Exception {
-
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("splash.fxml")));
     }
 
     @Override
