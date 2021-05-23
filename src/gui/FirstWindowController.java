@@ -16,4 +16,10 @@ public class FirstWindowController {
     @FXML
     private Label progress;
     public static Label label;
+
+    public void initialize(){
+        label = progress;
+    }
+
+
 }
