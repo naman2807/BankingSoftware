@@ -1,6 +1,7 @@
 package database;
 
 import data.Customer;
+import javafx.scene.control.Alert;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,5 +29,9 @@ public class DataSource {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    private static void createAlert(Alert.AlertType type, String title, String headerText, String context){
+
     }
 }
