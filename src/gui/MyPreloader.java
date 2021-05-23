@@ -19,4 +19,9 @@ public class MyPreloader extends Preloader {
     public void start(Stage stage) throws Exception {
 
     }
+
+    @Override
+    public void handleApplicationNotification(PreloaderNotification preloaderNotification) {
+
+    }
 }
