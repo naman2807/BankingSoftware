@@ -25,6 +25,7 @@ public class MyPreloader extends Preloader {
     @Override
     public void init() throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("splash.fxml")));
+        scene = new Scene(root);
     }
 
     @Override
