@@ -21,7 +21,7 @@ import static javafx.application.Application.launch;
 public class FirstWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sample.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
         primaryStage.setTitle("Hello JavaFX");
         primaryStage.setScene(new Scene(root, 700, 300));
         primaryStage.show();
