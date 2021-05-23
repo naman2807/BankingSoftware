@@ -19,6 +19,11 @@ public class MyPreloader extends Preloader {
     public MyPreloader(){}
 
     @Override
+    public void init() throws Exception {
+
+    }
+
+    @Override
     public void start(Stage stage) throws Exception {
 
     }
