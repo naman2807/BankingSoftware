@@ -30,6 +30,10 @@ public class DataSource {
                 createAlert(Alert.AlertType.CONFIRMATION,"SUCCESS!!","Added Successfully",
                         "The customer with " + customer.getAccountNumber() + " has been added " +
                                 "successfully to database.\n Thank You!");
+            }else {
+                createAlert(Alert.AlertType.WARNING, "FAILED!!", "Error occurred",
+                        "The customer, " + customer.getName() + " can't be added to database. " +
+                                "Kindly check the details and try adding again. \nThank You!");
             }
 
         } catch (SQLException throwables) {
