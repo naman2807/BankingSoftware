@@ -1,5 +1,7 @@
 package gui;
 
+import java.awt.*;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -9,4 +11,5 @@ package gui;
  */
 
 public class FirstWindowController {
+    public static Label label;
 }

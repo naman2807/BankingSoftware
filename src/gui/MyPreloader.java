@@ -42,7 +42,9 @@ public class MyPreloader extends Preloader {
      */
     @Override
     public void handleApplicationNotification(PreloaderNotification preloaderNotification) {
-
+        if(preloaderNotification instanceof ProgressNotification){
+            FirstWindowController.label.setText("Loading " + ((ProgressNotification) preloaderNotification).getProgress() + "%");
+        }
     }
 
     /*
