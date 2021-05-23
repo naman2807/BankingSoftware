@@ -1,6 +1,7 @@
 package gui;
 
 import javafx.application.Preloader;
+import javafx.stage.Stage;
 
 /**
  * Created By: Naman Agarwal
@@ -11,4 +12,9 @@ import javafx.application.Preloader;
  */
 
 public class MyPreloader extends Preloader {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+    }
 }
