@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="gui."
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="884.0"
+            style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16"
+            fx:controller="gui.FirstWindowController"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Line endX="50.0" endY="50.0" fill="#0bf273" smooth="false"
+              startX="934.4644775390625" startY="45.793392181396484" stroke="#09e122"
+              strokeWidth="5.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="50.0" />
+            </BorderPane.margin>
+        </Line>
+    </top>
+    <left>
+        <Line endX="157.5222930908203" endY="-830.7778930664062" fill="#12f71e"
+              startX="155.431396484375" startY="-227.1480255126953" stroke="#1df711"
+              strokeMiterLimit="200.0" strokeWidth="5.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets left="50.0" />
+            </BorderPane.margin>
+        </Line>
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Banking Application" textFill="#f4eeee">
+                    <font>
+                        <Font name="Algerian" size="36.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="50.0" top="50.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Version 3.0.1" textFill="#e4dbdb">
+                    <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="55.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </center>
+    <right>
+        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true"
+                   preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+            <BorderPane.margin>
+                <Insets right="50.0" />
+            </BorderPane.margin>
+            <image>
+                <Image url="@bank.png" />
+            </image>
+        </ImageView>
+    </right>
+    <bottom>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="progress" prefWidth="100.0" text="Loading" textFill="#11f411">
+                    <font>
+                        <Font name="Centaur" size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="600.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Co-Powered By naman2807" textFill="#e5efe7">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="600.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="100.0" />
+            </BorderPane.margin>
+        </VBox>
+    </bottom>
+</BorderPane>
