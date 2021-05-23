@@ -1,6 +1,10 @@
 package database;
 
+import data.Customer;
+
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  * Created By: Naman Agarwal
@@ -11,7 +15,18 @@ import java.sql.Connection;
  */
 
 public class DataSource {
-    public static void addCustomer(Connection connection, String query){
-
+    public static void addCustomer(Connection connection, Customer customer){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addCustomerQuery());
+            preparedStatement.setString(1, customer.getName());
+            preparedStatement.setInt(2, customer.getAge());
+            preparedStatement.setString(3, customer.getAddress());
+            preparedStatement.setString(4, customer.getParentName());
+            preparedStatement.setString(5, customer.getPhoneNumber());
+            preparedStatement.setString(6, customer.getAccountNumber());
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }
