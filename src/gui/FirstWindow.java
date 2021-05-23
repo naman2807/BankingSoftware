@@ -1,5 +1,15 @@
 package gui;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.util.Objects;
+
+import static javafx.application.Application.launch;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -8,5 +18,17 @@ package gui;
  * Date: 23-05-2021
  */
 
-public class FirstWindow {
+public class FirstWindow extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sample.fxml")));
+        primaryStage.setTitle("Hello JavaFX");
+        primaryStage.setScene(new Scene(root, 700, 300));
+        primaryStage.show();
+    }
+
+
+
 }
+
+
