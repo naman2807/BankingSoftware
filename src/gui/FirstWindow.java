@@ -1,6 +1,8 @@
 package gui;
 
+import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
+import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,7 +32,10 @@ public class FirstWindow extends Application {
 
     @Override
     public void init() throws Exception {
-
+        for (int i =0; i<COUNT_LIMIT; i+=10){
+            double progress = (100*i) / COUNT_LIMIT;
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
+        }
     }
 
     public static void main(String[] args) {
