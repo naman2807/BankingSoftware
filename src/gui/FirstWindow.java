@@ -23,9 +23,14 @@ public class FirstWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
-        primaryStage.setTitle("Hello JavaFX");
-        primaryStage.setScene(new Scene(root, 700, 300));
+        primaryStage.setTitle("Bank Software");
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
+    }
+
+    @Override
+    public void init() throws Exception {
+
     }
 
     public static void main(String[] args) {
