@@ -53,6 +53,13 @@ public class MyPreloader extends Preloader {
      */
     @Override
     public void handleStateChangeNotification(StateChangeNotification stateChangeNotification) {
-
+        StateChangeNotification.Type type = stateChangeNotification.getType();
+        switch (type){
+            case BEFORE_START:
+                //Called after MyApplication#init() and MyApplication#start() method.
+                System.out.println("Before Start");
+                this.stage.close();
+                break;
+        }
     }
 }
