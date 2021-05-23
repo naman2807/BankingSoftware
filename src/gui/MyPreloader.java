@@ -20,8 +20,20 @@ public class MyPreloader extends Preloader {
 
     }
 
+    /*
+    This method handles the each and every notification coming from application, here from FirstWindow.java class.
+     */
     @Override
     public void handleApplicationNotification(PreloaderNotification preloaderNotification) {
+
+    }
+
+    /*
+    This method is used to handle the stage change in application, here in FirstWindow.java class.
+    Ex. Changing state from init to start.
+     */
+    @Override
+    public void handleStateChangeNotification(StateChangeNotification stateChangeNotification) {
 
     }
 }
