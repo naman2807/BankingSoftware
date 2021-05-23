@@ -31,7 +31,7 @@ public class FirstWindow extends Application {
     }
 
     @Override
-    public void init() throws Exception {
+    public void init(){
         for (int i =0; i<COUNT_LIMIT; i+=10){
             double progress = (100*i) / COUNT_LIMIT;
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
@@ -39,7 +39,7 @@ public class FirstWindow extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        LauncherImpl.launchApplication(FirstWindow.class, MyPreloader.class, args);
     }
 
 }
