@@ -1,6 +1,7 @@
 package gui;
 
 import javafx.application.Preloader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -12,6 +13,8 @@ import javafx.stage.Stage;
  */
 
 public class MyPreloader extends Preloader {
+    private Stage stage;
+    private Scene scene;
 
     public MyPreloader(){}
 
