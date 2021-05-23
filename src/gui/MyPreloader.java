@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 public class MyPreloader extends Preloader {
 
+    public MyPreloader(){}
+
     @Override
     public void start(Stage stage) throws Exception {
 
