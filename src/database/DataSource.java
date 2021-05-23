@@ -25,13 +25,19 @@ public class DataSource {
             preparedStatement.setString(4, customer.getParentName());
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setString(6, customer.getAccountNumber());
-            preparedStatement.executeUpdate();
+            int result = preparedStatement.executeUpdate();
+            if(result != 0){
+                createAlert(Alert.AlertType.CONFIRMATION,"SUCCESS!!","Added Successfully",
+                        "The customer with " + customer.getAccountNumber() + " has been added " +
+                                "successfully to database.\n Thank You!");
+            }
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context){
-
+        Alert alert = new Alert(type);
     }
 }
