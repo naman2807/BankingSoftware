@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.util.Objects;
 
@@ -30,7 +31,10 @@ public class MyPreloader extends Preloader {
 
     @Override
     public void start(Stage stage) throws Exception {
-
+        this.stage = stage;
+        this.stage.setScene(scene);
+        this.stage.initStyle(StageStyle.UNDECORATED);
+        this.stage.show();
     }
 
     /*
