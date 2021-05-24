@@ -61,6 +61,8 @@ public class DataSource {
             preparedStatement.setString(1, branch.getBranchCode());
             preparedStatement.setString(2, branch.getName());
             int result = preparedStatement.executeUpdate();
+            checkResult(result,"CONFIRMATION", "Success", "Branch : " + branch.getName() +
+                    "\nBranch code : " + branch.getBranchCode() + "\nHas been added successfully to record.\nThank You!" );
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
