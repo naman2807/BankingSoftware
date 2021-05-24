@@ -69,4 +69,8 @@ public class SQLQueries {
      public static String getLoanRecordQuery(){
         return "SELECT * FROM " + LOAN_TABLE;
      }
+
+     public static String getCustomersRecordQuery(){
+        return "SELECT * FROM " + CUSTOMER_TABLE;
+     }
 }
