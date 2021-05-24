@@ -153,6 +153,10 @@ public class DataSource {
         return null;
     }
 
+    public static ResultSet getBranchRecord(Connection connection){
+
+    }
+
     private static void checkResult(int result, String title, String headerText, String context) {
         if(result != 0){
             createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
