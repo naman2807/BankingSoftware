@@ -2,6 +2,7 @@ package gui;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -18,6 +19,8 @@ public class FirstWindowController {
     private TextField userID;
     @FXML
     private TextField password;
+    @FXML
+    private Button login;
 
 
 }
