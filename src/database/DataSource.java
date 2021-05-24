@@ -25,7 +25,7 @@ public class DataSource {
 
     public static boolean findEmployee(Connection connection, String userID, String password){
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findEmployee());
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findEmployeeQuery());
             ResultSet resultSet = preparedStatement.executeQuery();
             String id = resultSet.getString(1);
             String pass = resultSet.getString(2);
@@ -98,7 +98,9 @@ public class DataSource {
         }
     }
 
+    public static void updateBalance(Connection connection, double amount, String accountNumber){
 
+    }
 
 
 

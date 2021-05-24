@@ -48,11 +48,11 @@ public class SQLQueries {
         return "INSERT INTO " + CUSTOMER_TABLE + " VALUES(?, ?, ?, ?, ?, ?, ?)";
     }
 
-    public static String findEmployee(){
+    public static String findEmployeeQuery(){
         return "SELECT * FROM " + EMPLOYEE_TABLE;
     }
 
-    public static String updateBalance(){
+    public static String updateBalanceQuery(){
         return "UPDATE TABLE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
     }
 }
