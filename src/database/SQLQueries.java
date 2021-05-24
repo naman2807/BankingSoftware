@@ -55,4 +55,8 @@ public class SQLQueries {
     public static String updateBalanceQuery(){
         return "UPDATE TABLE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
     }
+
+    public static String getTransactionHistoryQuery(){
+        return "SELECT * FROM " + TRANSACTIONS_TABLE + " WHERE " + ACCOUNT_NUMBER + " = ?";
+     }
 }
