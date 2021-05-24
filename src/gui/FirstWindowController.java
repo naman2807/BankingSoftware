@@ -6,6 +6,8 @@ import database.DataSource;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.TouchPoint;
+import javafx.stage.Stage;
 
 import java.util.Optional;
 
@@ -48,7 +50,7 @@ public class FirstWindowController {
     }
 
     private void startNewWindow(){
-
+        Stage stage = new Stage();
     }
 
 }
