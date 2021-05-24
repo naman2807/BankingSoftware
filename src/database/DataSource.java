@@ -154,7 +154,13 @@ public class DataSource {
     }
 
     public static ResultSet getBranchRecord(Connection connection){
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getBranchesQuery());
+            return preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 
     private static void checkResult(int result, String title, String headerText, String context) {
