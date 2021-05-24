@@ -9,6 +9,7 @@ import javafx.scene.control.ButtonType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -22,9 +23,19 @@ import java.util.Optional;
 
 public class DataSource {
 
-    public static void findEmployee(Connection connection){
-
+    public static boolean findEmployee(Connection connection, String userID, String password){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findEmployee());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            String id = resultSet.getString(1);
+            String pass = resultSet.getString(2);
+            return userID.equals(id) && pass.equals(password);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
     }
+
     public static void addCustomer(Connection connection, Customer customer){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addCustomerQuery());
