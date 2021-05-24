@@ -26,7 +26,8 @@ public class FirstWindowController {
     @FXML
     public void handleButtonClicked(ActionEvent event){
         if(event.getSource() == login){
-
+            String user = userID.getText();
+            String pass = password.getText();
         }
     }
 
