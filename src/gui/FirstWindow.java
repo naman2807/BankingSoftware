@@ -29,9 +29,10 @@ import java.util.Objects;
 
 public class FirstWindow extends Application {
     private Stage stage;
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        stage = primaryStage;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root, 900, 600));
