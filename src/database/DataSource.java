@@ -47,7 +47,10 @@ public class DataSource {
     public static void addTransaction(Connection connection, Transaction transaction){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addTransactionQuery());
-
+            preparedStatement.setString(1, transaction.getAccountNumber());
+            preparedStatement.setString(2, String.valueOf(transaction.getAmount()));
+            preparedStatement.setString(3, transaction.getTransactionDate());
+            preparedStatement.setString(4, transaction.getTransactionTime());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
