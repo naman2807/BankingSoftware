@@ -70,7 +70,8 @@ public class DataSource {
     public static void addBranch(Connection connection, Branch branch){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addBranchQuery());
-
+            preparedStatement.setString(1, branch.getBranchCode());
+            preparedStatement.setString(2, branch.getName());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
