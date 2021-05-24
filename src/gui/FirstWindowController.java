@@ -47,4 +47,8 @@ public class FirstWindowController {
         }
     }
 
+    private void startNewWindow(){
+
+    }
+
 }
