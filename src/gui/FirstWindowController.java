@@ -33,12 +33,13 @@ public class FirstWindowController {
     private Button login;
 
     @FXML
-    public void handleButtonClicked(ActionEvent event){
+    public void handleButtonClicked(ActionEvent event) throws IOException {
         if(event.getSource() == login){
             String user = userID.getText();
             String pass = password.getText();
             if(DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)){
-
+                FirstWindow.getStage().close();
+                startNewWindow();
             }
         }
     }

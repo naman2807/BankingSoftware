@@ -28,7 +28,7 @@ import java.util.Objects;
  */
 
 public class FirstWindow extends Application {
-    private Stage stage;
+    private static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -40,7 +40,7 @@ public class FirstWindow extends Application {
         DataBaseConnection.connectToDataBase();
     }
 
-    public Stage getStage() {
+    public static Stage getStage() {
         return stage;
     }
 
