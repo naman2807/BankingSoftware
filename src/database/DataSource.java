@@ -68,7 +68,12 @@ public class DataSource {
     }
 
     public static void addBranch(Connection connection, Branch branch){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addBranchQuery());
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 
