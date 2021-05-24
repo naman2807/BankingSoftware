@@ -1,5 +1,6 @@
 package database;
 
+import data.Branch;
 import data.Customer;
 import data.Transaction;
 import javafx.scene.control.Alert;
@@ -64,6 +65,10 @@ public class DataSource {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public static void addBranch(Connection connection, Branch branch){
+
     }
 
 
