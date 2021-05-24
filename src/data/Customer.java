@@ -122,6 +122,19 @@ public class Customer {
         this.transactionData = transaction;
     }
 
+    public double getAmount() {
+        return amount.get();
+    }
+
+    public SimpleDoubleProperty amountProperty() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        double newAmount = this.amount.get() + amount;
+        this.amount.set(newAmount);
+    }
+
     public void addTransaction(Transaction transaction){
         this.transactionData.add(transaction);
     }
