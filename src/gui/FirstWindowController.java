@@ -1,8 +1,8 @@
 package gui;
 
-import javafx.fxml.FXML;
 
-import java.awt.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 /**
  * Created By: Naman Agarwal
@@ -13,13 +13,7 @@ import java.awt.*;
  */
 
 public class FirstWindowController {
-    @FXML
-    private Label progress;
-    public static Label label;
 
-    public void initialize(){
-        label = progress;
-    }
 
 
 }

@@ -1,14 +1,20 @@
 package gui;
 
 
-import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.application.Preloader;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.util.Objects;
 
 
@@ -21,7 +27,6 @@ import java.util.Objects;
  */
 
 public class FirstWindow extends Application {
-    private static final int COUNT_LIMIT = 100;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
@@ -30,18 +35,10 @@ public class FirstWindow extends Application {
         primaryStage.show();
     }
 
-    @Override
-    public void init(){
-        for (int i =0; i<COUNT_LIMIT; i+=10){
-            double progress = (100*i) / COUNT_LIMIT;
-//            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
-            notifyPreloader(new Preloader.ProgressNotification(progress));
-        }
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public static void main(String[] args) {
-        launch(MyPreloader.class, args);
-    }
 
 }
 
