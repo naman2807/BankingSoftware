@@ -111,8 +111,15 @@ public class DataSource {
         }
     }
 
-    public static void getTransactionHistory(Connection connection, String accountNumber){
-
+    public static ResultSet getTransactionHistory(Connection connection, String accountNumber){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getTransactionHistoryQuery());
+            preparedStatement.setString(1, accountNumber);
+            return preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 
     private static void checkResult(int result, String title, String headerText, String context) {
