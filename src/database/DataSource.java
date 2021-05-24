@@ -1,5 +1,6 @@
 package database;
 
+import data.Bank;
 import data.Branch;
 import data.Customer;
 import data.Transaction;
@@ -69,8 +70,9 @@ public class DataSource {
     }
 
 
+    public static void addBank(Connection connection, Bank bank){
 
-
+    }
 
 
 
