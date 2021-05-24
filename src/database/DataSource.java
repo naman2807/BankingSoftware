@@ -99,7 +99,16 @@ public class DataSource {
     }
 
     public static void updateBalance(Connection connection, double amount, String accountNumber){
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.updateBalanceQuery());
+            preparedStatement.setDouble(1, amount);
+            preparedStatement.setString(2, accountNumber);
+            int result = preparedStatement.executeUpdate();
+            checkResult(result,"SUCCESS","Updated amount success", "Account number : " + accountNumber +
+                    "has been updated its amount.");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 
@@ -110,7 +119,8 @@ public class DataSource {
         if(result != 0){
             createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
         }else {
-            createAlert(Alert.AlertType.WARNING,title,headerText,context);
+            createAlert(Alert.AlertType.WARNING,"WARNING","Some Error occurred","Kindly check your details " +
+                    "and other information");
         }
     }
 
