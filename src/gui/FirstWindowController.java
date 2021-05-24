@@ -16,6 +16,8 @@ import javafx.scene.control.TextField;
 public class FirstWindowController {
     @FXML
     private TextField userID;
+    @FXML
+    private TextField password;
 
 
 }
