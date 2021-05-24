@@ -47,4 +47,8 @@ public class SQLQueries {
     public static String addCustomerQuery(){
         return "INSERT INTO " + CUSTOMER_TABLE + " VALUES(?, ?, ?, ?, ?, ?)";
     }
+
+    public static String findEmployee(){
+
+    }
 }
