@@ -61,4 +61,8 @@ public class SQLQueries {
     public static String getTransactionHistoryQuery(){
         return "SELECT * FROM " + TRANSACTIONS_TABLE + " WHERE " + ACCOUNT_NUMBER + " = ?";
      }
+
+     public static String addLoanQuery(){
+        return "INSERT INTO " + LOAN_TABLE + " VALUES(?, ?, ?)";
+     }
 }
