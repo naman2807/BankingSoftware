@@ -73,4 +73,8 @@ public class SQLQueries {
      public static String getCustomersRecordQuery(){
         return "SELECT * FROM " + CUSTOMER_TABLE;
      }
+
+     public static String getBranchesQuery(){
+        return "SELECT * FROM " + BRANCH_TABLE;
+     }
 }
