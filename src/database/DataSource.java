@@ -1,6 +1,7 @@
 package database;
 
 import data.Customer;
+import data.Transaction;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
@@ -42,6 +43,20 @@ public class DataSource {
             throwables.printStackTrace();
         }
     }
+
+    public static void addTransaction(Connection connection, Transaction transaction){
+
+    }
+
+
+
+
+
+
+
+
+
+
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context){
         Alert alert = new Alert(type);
