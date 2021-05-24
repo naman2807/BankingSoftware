@@ -1,6 +1,8 @@
 package gui;
 
 
+import database.DataBaseConnection;
+import database.DataSource;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,6 +30,9 @@ public class FirstWindowController {
         if(event.getSource() == login){
             String user = userID.getText();
             String pass = password.getText();
+            if(DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)){
+
+            }
         }
     }
 

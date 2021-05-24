@@ -1,6 +1,7 @@
 package gui;
 
 
+import database.DataBaseConnection;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.application.Preloader;
@@ -33,6 +34,7 @@ public class FirstWindow extends Application {
         primaryStage.setTitle("Bank Software");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
+        DataBaseConnection.connectToDataBase();
     }
 
     public static void main(String[] args) {
