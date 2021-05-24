@@ -31,7 +31,7 @@ public class FirstWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
-        primaryStage.setTitle("Bank Software");
+        primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
         DataBaseConnection.connectToDataBase();
