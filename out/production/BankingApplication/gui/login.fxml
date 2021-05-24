@@ -50,7 +50,7 @@
                 </Label>
                 <Label text="Lets Sign You In" textFill="#9d02f7">
                     <VBox.margin>
-                        <Insets left="50.0" top="50.0" />
+                        <Insets left="50.0" top="80.0" />
                     </VBox.margin>
                     <font>
                         <Font name="Bell MT Bold" size="24.0" />
@@ -92,7 +92,7 @@
         </VBox>
     </center>
     <right>
-        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
             <BorderPane.margin>
                 <Insets right="50.0" />
             </BorderPane.margin>
