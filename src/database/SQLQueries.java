@@ -23,6 +23,7 @@ public class SQLQueries {
     private static final String TRANSACTIONS_ID = "transactionID";
     private static final String TRANSACTION_TIME = "transaction_time";
     private static final String EMPLOYEE_TABLE = "employee_table";
+    private static final String EMPLOYEE_ID = "userid";
     private static final String CUSTOMER_NAME = "name";
     private static final String CUSTOMER_AGE = "age";
     private static final String CUSTOMER_ADDRESS = "address";
