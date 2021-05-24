@@ -21,16 +21,23 @@ import java.util.Optional;
 public class DataSource {
 
     public static boolean findEmployee(Connection connection, String userID, String password){
+        boolean found = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findEmployeeQuery());
             ResultSet resultSet = preparedStatement.executeQuery();
-            String id = resultSet.getString(1);
-            String pass = resultSet.getString(2);
-            return userID.equals(id) && pass.equals(password);
+            while (resultSet.next()){
+                String id = resultSet.getString(1);
+                String pass = resultSet.getString(2);
+                if(userID.equals(id) && pass.equals(password)){
+                    found = true;
+                    break;
+                }
+            }
+            return found;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return false;
+        return found;
     }
 
     public static void addCustomer(Connection connection, Customer customer){
