@@ -53,25 +53,21 @@ public class DataSource {
             preparedStatement.setString(3, transaction.getTransactionDate());
             preparedStatement.setString(4, transaction.getTransactionTime());
            int result =  preparedStatement.executeUpdate();
-           if(result != 0){
-               createAlert(Alert.AlertType.CONFIRMATION,"NEW TRANSACTION","Added to Record",
-                       "Transaction of Rs." + transaction.getAmount() + " from " + transaction.getAccountNumber()
-               + " on " + transaction.getTransactionDate() + " has been done successfully.");
-           }else {
-               createAlert(Alert.AlertType.WARNING,"NEW TRANSACTION","Failed","Transaction of " +
-                       transaction.getAmount() + " cannot be fulfilled due to some problem\nKindly check your account balance" +
-                       "or contact bank.");
-           }
+           checkResult(result,"NEW TRANSACTION","Added to Record",
+                   "Transaction of Rs." + transaction.getAmount() + " from " + transaction.getAccountNumber()
+                           + " on " + transaction.getTransactionDate() + " has been done successfully.");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
+
 
     public static void addBranch(Connection connection, Branch branch){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addBranchQuery());
             preparedStatement.setString(1, branch.getBranchCode());
             preparedStatement.setString(2, branch.getName());
+            int result = preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -86,6 +82,14 @@ public class DataSource {
 
 
 
+
+    private static void checkResult(int result, String title, String headerText, String context) {
+        if(result != 0){
+            createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
+        }else {
+            createAlert(Alert.AlertType.WARNING,title,headerText,context);
+        }
+    }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context){
         Alert alert = new Alert(type);
