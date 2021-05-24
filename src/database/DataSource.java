@@ -111,6 +111,10 @@ public class DataSource {
         }
     }
 
+    public static void getTransactionHistory(Connection connection, String accountNumber){
+
+    }
+
     private static void checkResult(int result, String title, String headerText, String context) {
         if(result != 0){
             createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
