@@ -1,6 +1,7 @@
 package gui;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,6 +22,13 @@ public class FirstWindowController {
     private TextField password;
     @FXML
     private Button login;
+
+    @FXML
+    public void handleButtonClicked(ActionEvent event){
+        if(event.getSource() == login){
+
+        }
+    }
 
 
 }
