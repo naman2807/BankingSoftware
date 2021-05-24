@@ -37,7 +37,14 @@ public class FirstWindowController {
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context){
-
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(context);
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            alert.close();
+        }
     }
 
 }
