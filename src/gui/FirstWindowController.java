@@ -40,6 +40,9 @@ public class FirstWindowController {
             if(DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)){
                 FirstWindow.getStage().close();
                 startNewWindow();
+            }else {
+                createAlert(Alert.AlertType.ERROR,"FAILED","Login Failed", "Check your user id and " +
+                        "password again.\nThank You!");
             }
         }
     }
