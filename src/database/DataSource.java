@@ -143,6 +143,14 @@ public class DataSource {
         return null;
     }
 
+    public static ResultSet getCustomersRecord(Connection connection){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getCustomersRecordQuery());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     private static void checkResult(int result, String title, String headerText, String context) {
         if(result != 0){
             createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
