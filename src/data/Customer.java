@@ -1,5 +1,6 @@
 package data;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -23,6 +24,7 @@ public class Customer {
     private final SimpleStringProperty parentName = new SimpleStringProperty("");
     private final SimpleStringProperty phoneNumber = new SimpleStringProperty("");
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
+    private final SimpleDoubleProperty amount = new SimpleDoubleProperty(500.0);
     private ObservableList<Transaction> transactionData;
 
     public Customer(String name, int age, String address, String parentName, String phoneNumber) {
