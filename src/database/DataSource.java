@@ -51,6 +51,16 @@ public class DataSource {
             preparedStatement.setString(2, String.valueOf(transaction.getAmount()));
             preparedStatement.setString(3, transaction.getTransactionDate());
             preparedStatement.setString(4, transaction.getTransactionTime());
+           int result =  preparedStatement.executeUpdate();
+           if(result != 0){
+               createAlert(Alert.AlertType.CONFIRMATION,"NEW TRANSACTION","Added to Record",
+                       "Transaction of Rs." + transaction.getAmount() + " from " + transaction.getAccountNumber()
+               + " on " + transaction.getTransactionDate() + " has been done successfully.");
+           }else {
+               createAlert(Alert.AlertType.WARNING,"NEW TRANSACTION","Failed","Transaction of " +
+                       transaction.getAmount() + " cannot be fulfilled due to some problem\nKindly check your account balance" +
+                       "or contact bank.");
+           }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
