@@ -59,6 +59,7 @@ public class FirstWindowController {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
         stage.setTitle("Bank Software");
         stage.setScene(new Scene(root, 800, 500));
+        stage.show();
     }
 
 }

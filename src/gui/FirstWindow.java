@@ -28,6 +28,8 @@ import java.util.Objects;
  */
 
 public class FirstWindow extends Application {
+    private Stage stage;
+    
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
