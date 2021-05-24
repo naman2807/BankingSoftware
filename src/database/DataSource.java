@@ -7,11 +7,7 @@ import data.Transaction;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Date;
+import java.sql.*;
 import java.util.Optional;
 
 /**
@@ -124,7 +120,17 @@ public class DataSource {
     }
 
     public static void addLoan(Connection connection, String accountNumber, double amount, Date date){
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addLoanQuery());
+            preparedStatement.setString(1,accountNumber );
+            preparedStatement.setDouble(2, amount);
+            preparedStatement.setDate(3, date);
+            int result = preparedStatement.executeUpdate();
+            checkResult(result, "SUCCESS", "New Loan" , "New loan of amount Rs. " +
+                    amount + " has been assigned to Account Number: " + accountNumber);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
     private static void checkResult(int result, String title, String headerText, String context) {
         if(result != 0){
