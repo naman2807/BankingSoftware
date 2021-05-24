@@ -45,7 +45,12 @@ public class DataSource {
     }
 
     public static void addTransaction(Connection connection, Transaction transaction){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addTransactionQuery());
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 
