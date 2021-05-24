@@ -40,6 +40,10 @@ public class FirstWindow extends Application {
         DataBaseConnection.connectToDataBase();
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
