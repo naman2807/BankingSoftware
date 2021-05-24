@@ -49,6 +49,6 @@ public class SQLQueries {
     }
 
     public static String findEmployee(){
-
+        return "SELECT * FROM " + EMPLOYEE_TABLE;
     }
 }

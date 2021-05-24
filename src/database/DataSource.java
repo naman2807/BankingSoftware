@@ -21,6 +21,10 @@ import java.util.Optional;
  */
 
 public class DataSource {
+
+    public static void findEmployee(Connection connection){
+
+    }
     public static void addCustomer(Connection connection, Customer customer){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addCustomerQuery());
