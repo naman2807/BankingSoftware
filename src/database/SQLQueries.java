@@ -65,4 +65,8 @@ public class SQLQueries {
      public static String addLoanQuery(){
         return "INSERT INTO " + LOAN_TABLE + " VALUES(?, ?, ?)";
      }
+
+     public static String getLoanRecordQuery(){
+        return "SELECT * FROM " + LOAN_TABLE;
+     }
 }
