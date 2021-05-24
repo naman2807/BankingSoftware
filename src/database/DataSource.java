@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Optional;
 
 /**
@@ -122,6 +123,9 @@ public class DataSource {
         return null;
     }
 
+    public static void addLoan(Connection connection, String accountNumber, double amount, Date date){
+
+    }
     private static void checkResult(int result, String title, String headerText, String context) {
         if(result != 0){
             createAlert(Alert.AlertType.CONFIRMATION,title,headerText, context);
