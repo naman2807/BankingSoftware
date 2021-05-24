@@ -29,7 +29,7 @@ import java.util.Objects;
 public class FirstWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         primaryStage.setTitle("Bank Software");
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
