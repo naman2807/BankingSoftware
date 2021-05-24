@@ -44,7 +44,8 @@ public class DataSource {
             preparedStatement.setString(3, customer.getAddress());
             preparedStatement.setString(4, customer.getParentName());
             preparedStatement.setString(5, customer.getPhoneNumber());
-            preparedStatement.setString(6, customer.getAccountNumber());
+            preparedStatement.setDouble(6, customer.getAmount());
+            preparedStatement.setString(7, customer.getAccountNumber());
             int result = preparedStatement.executeUpdate();
             checkResult(result,"SUCCESS!!","Added Successfully",
                     "The customer with " + customer.getAccountNumber() + " has been added " +

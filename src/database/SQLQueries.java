@@ -45,10 +45,14 @@ public class SQLQueries {
     }
 
     public static String addCustomerQuery(){
-        return "INSERT INTO " + CUSTOMER_TABLE + " VALUES(?, ?, ?, ?, ?, ?)";
+        return "INSERT INTO " + CUSTOMER_TABLE + " VALUES(?, ?, ?, ?, ?, ?, ?)";
     }
 
     public static String findEmployee(){
         return "SELECT * FROM " + EMPLOYEE_TABLE;
+    }
+
+    public static String updateBalance(){
+        return "UPDATE TABLE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
     }
 }
