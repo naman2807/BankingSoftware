@@ -3,6 +3,7 @@ package gui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * Created By: Naman Agarwal
@@ -13,7 +14,8 @@ import javafx.scene.control.Label;
  */
 
 public class FirstWindowController {
-
+    @FXML
+    private TextField userID;
 
 
 }
