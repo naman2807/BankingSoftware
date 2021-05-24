@@ -71,7 +71,15 @@ public class DataSource {
 
 
     public static void addBank(Connection connection, Bank bank){
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addBankQuery());
+            preparedStatement.setString(1, bank.getName());
+            int result = preparedStatement.executeUpdate();
+            checkResult(result, "CONFIRMATION", "Success", "Bank : " + bank.getName() +
+                    "Has been added successfully to record.\nThank You!" );
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 
