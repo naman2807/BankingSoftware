@@ -31,6 +31,8 @@ public class FirstWindowController {
     private TextField password;
     @FXML
     private Button login;
+    @FXML
+    private Button addCustomer;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
