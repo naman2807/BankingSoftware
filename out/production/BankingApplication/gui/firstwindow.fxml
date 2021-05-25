@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="622.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FirstWindowController">
     <children>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0"
               prefWidth="258.0" style="-fx-background-color: #3F2B63;"
@@ -78,7 +78,7 @@
                         <Insets top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Label layoutX="24.0" layoutY="51.0" text="Enter Deatils To Add New Customer"
+                        <Label layoutX="24.0" layoutY="51.0" text="Enter Details To Add New Customer!"
                                textFill="#efe5e5">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="24.0" />
@@ -96,7 +96,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
+                        <TextField fx:id="name" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
@@ -109,7 +109,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Age">
+                        <TextField fx:id="age" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Age">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
@@ -125,7 +125,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
+                        <TextField fx:id="address" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
@@ -141,7 +141,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
+                        <TextField fx:id="phoneNumber" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
@@ -157,7 +157,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
+                        <TextField fx:id="parentName" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
@@ -166,7 +166,7 @@
                         <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
-                <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0"
+                <Button fx:id="addCustomer" mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0"
                         text="Add Candidate" textFill="#f7f0f0">
                     <font>
                         <Font name="Century" size="13.0" />

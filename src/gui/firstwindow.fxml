@@ -37,7 +37,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Button fx:id="addCustomer" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
+                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
                         prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
@@ -166,7 +166,7 @@
                         <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
-                <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0"
+                <Button fx:id="addCustomer" onAction="#handleButtonClicked" mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0"
                         text="Add Candidate" textFill="#f7f0f0">
                     <font>
                         <Font name="Century" size="13.0" />
