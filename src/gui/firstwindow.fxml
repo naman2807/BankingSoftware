@@ -73,7 +73,7 @@
               prefWidth="687.0" style="-fx-background-color: B3A9E7FF;"
               stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Pane prefHeight="145.0" prefWidth="687.0" style="-fx-background-color: #7156DD;">
+                <Pane fx:id="headerPane" prefHeight="145.0" prefWidth="687.0" style="-fx-background-color: #7156DD;">
                     <VBox.margin>
                         <Insets top="30.0" />
                     </VBox.margin>
