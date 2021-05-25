@@ -49,7 +49,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="newTransaction" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                <Button fx:id="newTransaction" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
                         prefHeight="66.0" prefWidth="262.0" text="New Transaction" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
