@@ -93,6 +93,8 @@ public class FirstWindowController {
             headerLabel.setText("Enter Details To Add New Customer!");
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63,43,99), CornerRadii.EMPTY, Insets.EMPTY)));
 
+        }else if(event.getSource() == newTransaction){
+            headerLabel.setText("Do Your New Transaction By Entering Details!");
         }
     }
 
