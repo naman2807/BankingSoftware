@@ -164,7 +164,7 @@ public class Customer {
     }
 
     private String generateAccountNumber(){
-        return getPhoneNumber() + new Random(9);
+        return getPhoneNumber() + new Random().nextInt(100);
     }
 
 }
