@@ -71,7 +71,7 @@
                 </Pane>
                 <HBox spacing="15.0">
                     <VBox.margin>
-                        <Insets left="10.0" top="20.0" />
+                        <Insets left="10.0" top="30.0" />
                     </VBox.margin>
                     <children>
                         <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
@@ -92,7 +92,7 @@
                         <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
                     </children>
                     <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
                 <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
@@ -105,7 +105,7 @@
                         <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
                     </children>
                     <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
                 <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
@@ -118,7 +118,7 @@
                         <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
                     </children>
                     <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
                 <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
@@ -131,10 +131,19 @@
                         <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
                     </children>
                     <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" top="25.0" />
                     </VBox.margin>
                 </HBox>
+                <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate" textFill="#f7f0f0">
+                    <font>
+                        <Font name="Century" size="13.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="250.0" top="40.0" />
+                    </VBox.margin>
+                </Button>
             </children>
         </VBox>
     </children>
 </AnchorPane>
+K
