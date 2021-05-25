@@ -61,6 +61,7 @@ public class FirstWindowController {
             String cusAge = age.getText();
             String cusAddress = address.getText();
             String cusPhone = phoneNumber.getText();
+            String parent = parentName.getText();
         }
     }
 
