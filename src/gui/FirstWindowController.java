@@ -57,7 +57,7 @@ public class FirstWindowController {
                         "password again.\nThank You!");
             }
         }else if(event.getSource() == addCustomer){
-
+            String cusName = name.getText();
         }
     }
 
