@@ -55,6 +55,7 @@ public class DataSource {
                     "The customer with " + customer.getAccountNumber() + " has been added " +
                             "successfully to database.\n Thank You!");
         } catch (SQLException throwables) {
+            createAlert(Alert.AlertType.ERROR,"ERROR","Cannot Add to Record", "Kindly check the entered details.");
             throwables.printStackTrace();
         }
     }
