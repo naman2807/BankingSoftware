@@ -7,3 +7,8 @@
 .button:pressed{
     -fx-background-color: #73A3EF;
 }
+.table-view .column-header,
+.table-view .column-header-background .filler{
+    -fx-cell-size: 20;
+    -fx-background-color: #2D75E8;
+}
