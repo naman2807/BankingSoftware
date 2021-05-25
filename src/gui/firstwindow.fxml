@@ -3,16 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@../IdeaProjects/BankingApplication/src/gui/bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="103.0" prefWidth="258.0">
                     <children>
@@ -53,7 +55,7 @@
                 </Button>
             </children>
         </VBox>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="622.0" prefWidth="687.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="622.0" prefWidth="687.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@../IdeaProjects/BankingApplication/src/gui/bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="145.0" prefWidth="687.0" style="-fx-background-color: #7156DD;">
                     <VBox.margin>
@@ -67,6 +69,71 @@
                         </Label>
                     </children>
                 </Pane>
+                <HBox spacing="15.0">
+                    <VBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
+                            <font>
+                                <Font name="Algerian" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
+                    </children>
+                </HBox>
+                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
+                    <children>
+                        <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
+                            <font>
+                                <Font name="Algerian" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
+                    <children>
+                        <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
+                            <font>
+                                <Font name="Algerian" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
+                    <children>
+                        <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
+                            <font>
+                                <Font name="Algerian" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
+                    <children>
+                        <Label prefHeight="46.0" prefWidth="72.0" text="Name:">
+                            <font>
+                                <Font name="Algerian" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
             </children>
         </VBox>
     </children>
