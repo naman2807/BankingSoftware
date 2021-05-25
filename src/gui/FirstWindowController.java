@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -50,6 +51,8 @@ public class FirstWindowController {
     private Label headerLabel;
     @FXML
     private Button newTransaction;
+    @FXML
+    private Pane headerPane;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
@@ -85,6 +88,8 @@ public class FirstWindowController {
                 phoneNumber.clear();
                 parentName.clear();
             }
+        } else if(event.getSource() == newCustomer){
+            headerLabel.setText("Enter Details To Add New Customer!");
         }
     }
 
