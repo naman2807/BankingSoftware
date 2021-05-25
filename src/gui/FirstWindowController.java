@@ -48,6 +48,8 @@ public class FirstWindowController {
     private Button newCustomer;
     @FXML
     private Label headerLabel;
+    @FXML
+    private Button newTransaction;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
