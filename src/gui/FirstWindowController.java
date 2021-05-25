@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -49,6 +46,8 @@ public class FirstWindowController {
     private TextField parentName;
     @FXML
     private Button newCustomer;
+    @FXML
+    private Label headerLabel;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
