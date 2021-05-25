@@ -125,7 +125,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
+                        <TextField fx:id="address" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
