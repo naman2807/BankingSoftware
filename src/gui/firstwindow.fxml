@@ -78,7 +78,7 @@
                         <Insets top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Label layoutX="24.0" layoutY="51.0" text="Enter Deatils To Add New Customer"
+                        <Label layoutX="24.0" layoutY="51.0" text="Enter Details To Add New Customer!"
                                textFill="#efe5e5">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="24.0" />
@@ -96,7 +96,7 @@
                                 <Font name="Algerian" size="24.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
+                        <TextField fx:id="name" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor></TextField>
