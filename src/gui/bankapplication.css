@@ -12,3 +12,8 @@
     -fx-cell-size: 20;
     -fx-background-color: #2D75E8;
 }
+.table-view .column-header .label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
