@@ -36,7 +36,6 @@ public class FirstWindowController {
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
-        Object result = event.getSource();
         if(event.getSource() == login){
             String user = userID.getText();
             String pass = password.getText();
@@ -47,6 +46,8 @@ public class FirstWindowController {
                 createAlert(Alert.AlertType.ERROR,"FAILED","Login Failed", "Check your user id and " +
                         "password again.\nThank You!");
             }
+        }else if(event.getSource() == addCustomer){
+
         }
     }
 
