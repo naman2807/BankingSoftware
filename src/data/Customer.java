@@ -131,12 +131,11 @@ public class Customer {
     }
 
     public void setAmount(double amount) {
-        double newAmount = this.amount.get() + amount;
-        this.amount.set(newAmount);
+            this.amount.set(amount);
     }
 
     private boolean checkMinimumAccountBalance(double amount){
-        return amount < this.amount.get();
+        return amount <= this.amount.get();
     }
 
     public void addTransaction(Transaction transaction){
