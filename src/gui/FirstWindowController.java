@@ -37,6 +37,8 @@ public class FirstWindowController {
     private TextField name;
     @FXML
     private TextField age;
+    @FXML
+    private TextField address;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
