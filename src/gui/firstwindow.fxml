@@ -37,7 +37,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Button fx:id="newCustomer" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
+                <Button fx:id="newCustomer" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
                         prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
