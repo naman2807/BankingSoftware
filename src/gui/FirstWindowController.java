@@ -66,7 +66,17 @@ public class FirstWindowController {
             String cusAddress = address.getText();
             String cusPhone = phoneNumber.getText();
             String parent = parentName.getText();
-            DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
+            if(cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
+             || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()){
+                createAlert(Alert.AlertType.ERROR,"ERROR","Empty Fields", "Kindly enter all the required fields.");
+                name.clear();
+                age.clear();
+                address.clear();
+                phoneNumber.clear();
+                parentName.clear();
+            }else{
+                DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
+            }
         }
     }
 
