@@ -37,7 +37,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
+                <Button fx:id="newCustomer" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
                         prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
@@ -49,8 +49,8 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
-                        prefHeight="66.0" prefWidth="262.0" text="Label 2" textFill="#e1dcdc">
+                <Button fx:id="newTransaction" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                        prefHeight="66.0" prefWidth="262.0" text="New Transaction" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
@@ -78,7 +78,7 @@
                         <Insets top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Label layoutX="24.0" layoutY="51.0" text="Enter Details To Add New Customer!"
+                        <Label fx:id="headerLabel" layoutX="24.0" layoutY="51.0" text="Enter Details To Add New Customer!"
                                textFill="#efe5e5">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="24.0" />
