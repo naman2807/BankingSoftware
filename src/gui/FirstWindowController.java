@@ -59,6 +59,7 @@ public class FirstWindowController {
         }else if(event.getSource() == addCustomer){
             String cusName = name.getText();
             String cusAge = age.getText();
+            String cusAddress = address.getText();
         }
     }
 
