@@ -136,7 +136,7 @@ public class Customer {
     }
 
     private boolean checkMinimumAccountBalance(double amount){
-        return false;
+        return amount < this.amount.get();
     }
 
     public void addTransaction(Transaction transaction){
