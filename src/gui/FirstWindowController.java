@@ -76,6 +76,11 @@ public class FirstWindowController {
                 parentName.clear();
             }else{
                 DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
+                name.clear();
+                age.clear();
+                address.clear();
+                phoneNumber.clear();
+                parentName.clear();
             }
         }
     }
