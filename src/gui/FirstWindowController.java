@@ -47,6 +47,8 @@ public class FirstWindowController {
     private TextField phoneNumber;
     @FXML
     private TextField parentName;
+    @FXML
+    private Button newCustomer;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
