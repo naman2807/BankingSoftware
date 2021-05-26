@@ -22,6 +22,6 @@ public final class OTP {
     }
 
     public static boolean verifyOTP(long returnedOTP){
-        return false;
+        return otp == returnedOTP;
     }
 }
