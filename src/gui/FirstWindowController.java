@@ -18,6 +18,7 @@ import operations.OTP;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -148,11 +149,12 @@ public class FirstWindowController {
         return selectedButton.getText();
     }
 
-    private void doTransaction(String selectedToggle){
+    private void doTransaction(String selectedToggle) throws SQLException {
         if(selectedToggle.equals("Deposit")){
             String account = accountNumber.getText();
             String amount1 = amount.getText();
             ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
+            String name = resultSet.getString(1);
 
         }
     }
