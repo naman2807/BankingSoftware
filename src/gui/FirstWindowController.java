@@ -157,6 +157,7 @@ public class FirstWindowController {
             String name = resultSet.getString(1);
             int age = resultSet.getInt(2);
             String address = resultSet.getString(3);
+            String parent = resultSet.getString(4);
 
         }
     }
