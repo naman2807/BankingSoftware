@@ -123,4 +123,8 @@ public class FirstWindowController {
         stage.show();
     }
 
+    private void addNewCustomer(){
+
+    }
+
 }
