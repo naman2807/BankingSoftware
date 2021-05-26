@@ -13,6 +13,8 @@ import java.util.Random;
 public final class OTP {
     private static long otp;
 
+    private OTP(){}
+
     public static long generateOTP(){
         otp = new Random().nextInt(9);
         for(int i = 1; i< 4; i++){
