@@ -8,5 +8,5 @@ package operations;
  * Date: 26-05-2021
  */
 
-public class OTP {
+public final class OTP {
 }
