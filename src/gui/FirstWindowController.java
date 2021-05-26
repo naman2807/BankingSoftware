@@ -176,6 +176,9 @@ public class FirstWindowController {
         }
     }
 
+    private Customer getCustomer(String account){
+
+    }
 
 
 }
