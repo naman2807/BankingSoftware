@@ -162,7 +162,14 @@ public class DataSource {
     }
 
     public static ResultSet getCustomerByAccountNumber(Connection connection, String accountNumber){
-
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findCustomerQueryByAccountNumber());
+            preparedStatement.setString(1, accountNumber);
+            return preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 
     public static ResultSet getBranchRecord(Connection connection){
