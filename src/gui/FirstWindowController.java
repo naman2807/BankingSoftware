@@ -103,6 +103,7 @@ public class FirstWindowController {
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113,86,221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
             doTransaction.setDisable(true);
+            String selectedToggle = getSelectedToggleButton();
 
         }else if(event.getSource() == generateOTP){
             long generatedOTP = OTP.generateOTP();
@@ -144,6 +145,10 @@ public class FirstWindowController {
     private String getSelectedToggleButton(){
         ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
         return selectedButton.getText();
+    }
+
+    private void doTransaction(String selectedToggle){
+
     }
 
 }
