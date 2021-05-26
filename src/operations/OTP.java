@@ -29,8 +29,8 @@ public final class OTP {
         return otp;
     }
 
-    public static boolean verifyOTP(long returnedOTP){
-        return otp == returnedOTP;
+    public static boolean verifyOTP(String returnedOTP){
+        return String.valueOf(otp).equals(returnedOTP);
     }
 
     public static void sendOTPToLinkedAccountNumber(){

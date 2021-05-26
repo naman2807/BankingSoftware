@@ -46,7 +46,13 @@ public class FirstWindowController {
     @FXML
     private TextField name;
     @FXML
-    private TextField age, otp, accountNumber, amount;
+    private TextField age;
+    @FXML
+    private TextField otp;
+    @FXML
+    private TextField accountNumber;
+    @FXML
+    private TextField amount;
     @FXML
     private TextField address;
     @FXML
@@ -67,6 +73,8 @@ public class FirstWindowController {
     private Pane newTransactionPane;
     @FXML
     private ToggleGroup transactionToggleGroup;
+    @FXML
+    private Button verifyOTP;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
@@ -114,13 +122,15 @@ public class FirstWindowController {
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
+
+
+        } else if(event.getSource() == verifyOTP) {
             String enteredOTP = otp.getText();
-            if (OTP.verifyOTP(Long.parseLong(enteredOTP))) {
+            if (OTP.verifyOTP(enteredOTP)) {
                 doTransaction.setDisable(false);
             } else {
                 createAlert(Alert.AlertType.WARNING,"ERROR", "Incorrect OTP", "Please enter correct OTP");
             }
-
         }else if(event.getSource() == doTransaction){
             doTransaction(getSelectedToggleButton());
         }
