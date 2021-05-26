@@ -200,7 +200,7 @@
                                 <Font name="Bookman Old Style Bold" size="14.0" />
                             </font>
                         </RadioButton>
-                        <RadioButton layoutX="261.0" layoutY="38.0" mnemonicParsing="false" text="Withdraw">
+                        <RadioButton toggleGroup="$transactionToggleGroup" layoutX="261.0" layoutY="38.0" mnemonicParsing="false" text="Withdraw">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="14.0" />
                             </font>
