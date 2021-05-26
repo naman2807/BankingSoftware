@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 /**
@@ -34,25 +36,26 @@ public final class OTP {
     public static void sendOTPToLinkedAccountNumber(){
         try {
             // Construct data
-            String apiKey = "apikey=" + "MGJkMTc3NWQxZTBlNDYwMjk4OWJlNzhlZTJhYzI5ZGI=";
-            String message = "&message=" + "This is your message";
-            String sender = "&sender=" + "Bank Of India";
-            String numbers = "&numbers=" + "919838164810";
+            String apiKey = "apikey=" + "MTdjMjgxMWNiOGRkYTk4OGQ1ODZkYzlhOGQwMjBjODc=";
+            String message = "&message=" + "Hello";
+//            String sender = "&sender=" + "Bank Of India";
+            String numbers = "&numbers=" + "919140321247";
 
             // Send data
             HttpURLConnection conn = (HttpURLConnection) new URL("https://api.textlocal.in/send/?").openConnection();
-            String data = apiKey + numbers + message + sender;
+            String data = apiKey + numbers + message;
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
-            conn.getOutputStream().write(data.getBytes("UTF-8"));
-//            final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-//            final StringBuffer stringBuffer = new StringBuffer();
-//            String line;
-//            while ((line = rd.readLine()) != null) {
-//                stringBuffer.append(line);
-//            }
-//            rd.close();
+            conn.getOutputStream().write(data.getBytes(StandardCharsets.US_ASCII));
+            final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            final StringBuffer stringBuffer = new StringBuffer();
+            String line;
+            while ((line = rd.readLine()) != null) {
+                stringBuffer.append(line);
+            }
+            System.out.println(stringBuffer.toString());
+            rd.close();
         } catch (Exception e) {
             System.out.println("Error SMS "+e);
 

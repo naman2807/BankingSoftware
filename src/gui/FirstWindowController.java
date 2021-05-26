@@ -59,6 +59,8 @@ public class FirstWindowController {
     private Pane newCustomerPane;
     @FXML
     private Pane newTransactionPane;
+    @FXML
+    private ToggleGroup transactionToggleGroup;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException {
