@@ -37,6 +37,18 @@ public class Customer {
         this.accountNumber.set(generateAccountNumber());
     }
 
+    public Customer(String name, int age, String address, String parentName, String phoneNumber, String accountNumber, double amount) {
+        this.name.set(name);
+        this.age.set(age);
+        this.address.set(address);
+        this.parentName.set(parentName);
+        this.phoneNumber.set(phoneNumber);
+        this.transactionData = FXCollections.observableArrayList();
+        this.accountNumber.set(accountNumber);
+        this.amount.set(amount);
+    }
+
+
     public Customer() {
         this.transactionData = FXCollections.observableArrayList();
         this.accountNumber.set(generateAccountNumber());

@@ -11,7 +11,10 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import operations.OTP;
@@ -82,15 +85,15 @@ public class FirstWindowController {
             String cusAddress = address.getText();
             String cusPhone = phoneNumber.getText();
             String parent = parentName.getText();
-            if(cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
-             || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()){
-                createAlert(Alert.AlertType.ERROR,"ERROR","Empty Fields", "Kindly enter all the required fields.");
+            if (cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
+                    || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()) {
+                createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
                 name.clear();
                 age.clear();
                 address.clear();
                 phoneNumber.clear();
                 parentName.clear();
-            }else{
+            } else {
                 DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
                 name.clear();
                 age.clear();
@@ -98,21 +101,21 @@ public class FirstWindowController {
                 phoneNumber.clear();
                 parentName.clear();
             }
-        } else if(event.getSource() == newCustomer){
-                addNewCustomer();
-        }else if(event.getSource() == newTransaction){
+        } else if (event.getSource() == newCustomer) {
+            addNewCustomer();
+        } else if (event.getSource() == newTransaction) {
             headerLabel.setText("Do Your New Transaction By Entering Details!");
-            headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113,86,221), CornerRadii.EMPTY, Insets.EMPTY)));
+            headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
             doTransaction.setDisable(true);
             String selectedToggle = getSelectedToggleButton();
 
-        }else if(event.getSource() == generateOTP){
+        } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
-            if(OTP.verifyOTP(generatedOTP)){
+            if (OTP.verifyOTP(generatedOTP)) {
                 doTransaction.setDisable(false);
-            }else {
+            } else {
                 System.err.println("Enter correct otp");
             }
 
@@ -138,29 +141,33 @@ public class FirstWindowController {
         stage.show();
     }
 
-    private void addNewCustomer(){
+    private void addNewCustomer() {
         headerLabel.setText("Enter Details To Add New Customer!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63,43,99), CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
         newCustomerPane.toFront();
     }
 
-    private String getSelectedToggleButton(){
+    private String getSelectedToggleButton() {
         ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
         return selectedButton.getText();
     }
 
     private void doTransaction(String selectedToggle) throws SQLException {
-        if(selectedToggle.equals("Deposit")){
+        if (selectedToggle.equals("Deposit")) {
             String account = accountNumber.getText();
             String amount1 = amount.getText();
             ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
-            String name = resultSet.getString(1);
-            int age = resultSet.getInt(2);
-            String address = resultSet.getString(3);
-            String parent = resultSet.getString(4);
-            String phone = resultSet.getString(5);
-            double amount = resultSet.getDouble(6);
-            String accountNumber = resultSet.getString(7);
+            if (resultSet != null) {
+                String name = resultSet.getString(1);
+                int age = resultSet.getInt(2);
+                String address = resultSet.getString(3);
+                String parent = resultSet.getString(4);
+                String phone = resultSet.getString(5);
+                double amount = resultSet.getDouble(6);
+                String accountNumber = resultSet.getString(7);
+                Customer customer = new Customer(name, age, address, parent, phone, accountNumber, amount);
+            }
+
         }
     }
 
