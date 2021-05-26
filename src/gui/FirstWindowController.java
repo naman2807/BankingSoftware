@@ -103,6 +103,7 @@ public class FirstWindowController {
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113,86,221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
             doTransaction.setDisable(true);
+
         }else if(event.getSource() == generateOTP){
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
@@ -138,6 +139,10 @@ public class FirstWindowController {
         headerLabel.setText("Enter Details To Add New Customer!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63,43,99), CornerRadii.EMPTY, Insets.EMPTY)));
         newCustomerPane.toFront();
+    }
+
+    private String getSelectedToggleButton(){
+
     }
 
 }
