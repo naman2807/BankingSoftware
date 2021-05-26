@@ -39,7 +39,7 @@ public class FirstWindowController {
     @FXML
     private TextField name;
     @FXML
-    private TextField age;
+    private TextField age, otp, accountNumber, amount;
     @FXML
     private TextField address;
     @FXML
@@ -67,7 +67,6 @@ public class FirstWindowController {
             if (DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)) {
                 FirstWindow.getStage().close();
                 startNewWindow();
-                addNewCustomer();
             } else {
                 createAlert(Alert.AlertType.ERROR, "FAILED", "Login Failed", "Check your user id and " +
                         "password again.\nThank You!");
