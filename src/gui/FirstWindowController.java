@@ -166,9 +166,16 @@ public class FirstWindowController {
                 double amount = resultSet.getDouble(6);
                 String accountNumber = resultSet.getString(7);
                 Customer customer = new Customer(name, age, address, parent, phone, accountNumber, amount);
+                double newAmount = customer.addAmount(Double.parseDouble(amount1));
+                DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+            }else {
+                createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Either there " +
+                        "is insufficient balance or kindly check your account number.");
             }
 
         }
     }
+
+
 
 }
