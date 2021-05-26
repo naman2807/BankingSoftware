@@ -69,7 +69,7 @@ public class FirstWindowController {
     private ToggleGroup transactionToggleGroup;
 
     @FXML
-    public void handleButtonClicked(ActionEvent event) throws IOException {
+    public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
         if (event.getSource() == login) {
             String user = userID.getText();
             String pass = password.getText();
@@ -109,8 +109,6 @@ public class FirstWindowController {
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
             doTransaction.setDisable(true);
-            String selectedToggle = getSelectedToggleButton();
-
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
@@ -119,7 +117,8 @@ public class FirstWindowController {
             } else {
                 System.err.println("Enter correct otp");
             }
-
+        }else if(event.getSource() == doTransaction){
+            doTransaction(getSelectedToggleButton());
         }
     }
 
