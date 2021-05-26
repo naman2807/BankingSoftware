@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import operations.OTP;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -151,6 +152,8 @@ public class FirstWindowController {
         if(selectedToggle.equals("Deposit")){
             String account = accountNumber.getText();
             String amount1 = amount.getText();
+            ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
+
         }
     }
 
