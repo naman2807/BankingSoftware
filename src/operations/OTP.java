@@ -9,4 +9,5 @@ package operations;
  */
 
 public final class OTP {
+    private long otp;
 }
