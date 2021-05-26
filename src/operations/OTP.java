@@ -9,5 +9,9 @@ package operations;
  */
 
 public final class OTP {
-    private long otp;
+    private static long otp;
+
+    public static long generateOTP(){
+        return 0;
+    }
 }
