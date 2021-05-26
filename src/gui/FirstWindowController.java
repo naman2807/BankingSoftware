@@ -148,7 +148,10 @@ public class FirstWindowController {
     }
 
     private void doTransaction(String selectedToggle){
-
+        if(selectedToggle.equals("Deposit")){
+            String account = accountNumber.getText();
+            String amount1 = amount.getText();
+        }
     }
 
 }

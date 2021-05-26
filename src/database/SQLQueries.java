@@ -54,6 +54,10 @@ public class SQLQueries {
         return "SELECT * FROM " + EMPLOYEE_TABLE;
     }
 
+    public static String findCustomerQueryByAccountNumber(){
+        return "SELECT * FROM " + CUSTOMER_TABLE + " WHERE " + ACCOUNT_NUMBER + " =?";
+    }
+
     public static String updateBalanceQuery(){
         return "UPDATE TABLE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
     }
