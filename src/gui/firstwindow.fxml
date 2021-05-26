@@ -15,7 +15,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.ToggleGroup?>
+<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -33,7 +34,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
+                <Button fx:id="newCustomer" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
@@ -44,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="66.0" prefWidth="260.0" text="New Transaction" textFill="#e1dcdc">
+                <Button fx:id="newTransaction" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="66.0" prefWidth="260.0" text="New Transaction" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
@@ -69,7 +70,7 @@
         </VBox>
         <StackPane layoutX="258.0" layoutY="182.0" prefHeight="439.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="257.79999999999995" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.00000000000006">
             <children>
-                <Pane prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
+                <Pane fx:id="newCustomerPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
                     <children>
                         <HBox layoutX="0.234375" spacing="15.0">
                             <children>
@@ -181,7 +182,7 @@
                         <Insets left="2.0" />
                     </StackPane.margin>
                 </Pane>
-                <Pane layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
+                <Pane fx:id="newTransactionPane" layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
                     <StackPane.margin>
                         <Insets left="2.0" />
                     </StackPane.margin>
@@ -191,6 +192,9 @@
                                 <Font name="Century Schoolbook Bold" size="24.0" />
                             </font>
                         </Label>
+                        <fx:define>
+                            <ToggleGroup fx:id="transactionToggleGroup"/>
+                        </fx:define>
                         <RadioButton layoutX="23.0" layoutY="40.0" mnemonicParsing="false" text="Deposit">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="14.0" />
@@ -240,9 +244,9 @@
                     </children></Pane>
             </children>
         </StackPane>
-        <Pane layoutX="260.0" layoutY="36.0" prefHeight="104.0" prefWidth="689.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-2.0">
+        <Pane fx:id="headerPane" layoutX="260.0" layoutY="36.0" prefHeight="104.0" prefWidth="689.0" style="-fx-background-color: #7156DD;" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-2.0">
             <children>
-                <Label layoutX="50.0" layoutY="38.0" text="Enter Details to Add New Customer" textFill="#f2f0f0">
+                <Label fx:id="headerLabel" layoutX="50.0" layoutY="38.0" text="Enter Details to Add New Customer" textFill="#f2f0f0">
                     <font>
                         <Font name="Bookman Old Style Bold" size="24.0" />
                     </font>
