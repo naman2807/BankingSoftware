@@ -168,7 +168,7 @@ public class FirstWindowController {
             Customer customer = getCustomer(account);
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
-
+            resetTransactionSection();
         }else {
             Customer customer = getCustomer(account);
             double newAmount = customer.deductAmount(Double.parseDouble(amount1));
@@ -178,6 +178,7 @@ public class FirstWindowController {
             }else {
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
             }
+            resetTransactionSection();
             System.out.println(newAmount);
         }
 
