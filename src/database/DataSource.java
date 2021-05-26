@@ -161,6 +161,10 @@ public class DataSource {
         return null;
     }
 
+    public static ResultSet getCustomerByAccountNumber(Connection connection, String accountNumber){
+
+    }
+
     public static ResultSet getBranchRecord(Connection connection){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getBranchesQuery());
