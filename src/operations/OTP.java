@@ -20,4 +20,8 @@ public final class OTP {
         }
         return otp;
     }
+
+    public static boolean verifyOTP(long returnedOTP){
+        return false;
+    }
 }
