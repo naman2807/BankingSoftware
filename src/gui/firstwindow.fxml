@@ -16,9 +16,13 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.ToggleGroup?>
-<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0"
+              style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="103.0" prefWidth="258.0">
                     <children>

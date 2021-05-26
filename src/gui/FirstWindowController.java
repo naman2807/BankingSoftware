@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import operations.OTP;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -99,6 +100,12 @@ public class FirstWindowController {
             headerLabel.setText("Do Your New Transaction By Entering Details!");
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113,86,221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
+            doTransaction.setDisable(true);
+        }else if(event.getSource() == generateOTP){
+            long generatedOTP = OTP.generateOTP();
+            System.out.println(generatedOTP);
+
+
         }
     }
 
