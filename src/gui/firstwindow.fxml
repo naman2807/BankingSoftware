@@ -124,7 +124,7 @@
                                         <Font name="Century" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="otp" prefHeight="50.0" prefWidth="357.0" promptText="Enter The OTP" />
+                                <TextField fx:id="otp" onAction="#handleButtonClicked" prefHeight="50.0" prefWidth="357.0" promptText="Enter The OTP" />
                                 <Button fx:id="generateOTP" mnemonicParsing="false" text="Generate OTP" textFill="#f4f2f2">
                                     <HBox.margin>
                                         <Insets top="12.0" />

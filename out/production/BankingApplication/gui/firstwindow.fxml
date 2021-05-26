@@ -16,9 +16,13 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.ToggleGroup?>
-<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="258.0"
+              style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="103.0" prefWidth="258.0">
                     <children>
@@ -100,7 +104,7 @@
                                         <Font name="Century" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="50.0" prefWidth="357.0" promptText="Enter Your Account Number" />
+                                <TextField fx:id="accountNumber" prefHeight="50.0" prefWidth="357.0" promptText="Enter Your Account Number" />
                             </children>
                         </HBox>
                         <HBox layoutX="24.0" layoutY="173.0" spacing="15.0">
@@ -110,7 +114,7 @@
                                         <Font name="Century" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="50.0" prefWidth="357.0" promptText="Enter The Amount" />
+                                <TextField fx:id="amount" prefHeight="50.0" prefWidth="357.0" promptText="Enter The Amount" />
                             </children>
                         </HBox>
                         <HBox layoutX="23.0" layoutY="255.0" spacing="15.0">
@@ -120,15 +124,15 @@
                                         <Font name="Century" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="50.0" prefWidth="357.0" promptText="Enter The OTP" />
-                                <Button mnemonicParsing="false" text="Generate OTP" textFill="#f4f2f2">
+                                <TextField fx:id="otp" prefHeight="50.0" prefWidth="357.0" promptText="Enter The OTP" />
+                                <Button fx:id="generateOTP" mnemonicParsing="false" text="Generate OTP" textFill="#f4f2f2">
                                     <HBox.margin>
                                         <Insets top="12.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <Button layoutX="284.0" layoutY="362.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Submit" textFill="#efe6e6" />
+                        <Button layoutX="284.0" layoutY="362.0" mnemonicParsing="false" fx:id="doTransaction" prefHeight="35.0" prefWidth="102.0" text="Do Transaction" textFill="#efe6e6" />
                     </children>
                 </Pane>
                 <Pane fx:id="newCustomerPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
