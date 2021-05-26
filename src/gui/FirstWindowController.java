@@ -142,7 +142,8 @@ public class FirstWindowController {
     }
 
     private String getSelectedToggleButton(){
-
+        ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
+        return selectedButton.getText();
     }
 
 }
