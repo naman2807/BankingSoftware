@@ -160,6 +160,7 @@ public class FirstWindowController {
             String parent = resultSet.getString(4);
             String phone = resultSet.getString(5);
             double amount = resultSet.getDouble(6);
+            String accountNumber = resultSet.getString(7);
         }
     }
 
