@@ -154,7 +154,7 @@ public class Customer {
         if(checkMinimumAccountBalance(amount)){
             return this.amount.get() - amount;
         }
-        return 0.0;
+        return this.amount.get();
     }
 
     private boolean checkMinimumAccountBalance(double amount){

@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import operations.OTP;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -153,11 +154,15 @@ public class FirstWindowController {
     }
 
     private void doTransaction(String selectedToggle) throws SQLException {
+        String account = accountNumber.getText();
+        String amount1 = amount.getText();
         if (selectedToggle.equals("Deposit")) {
-            String account = accountNumber.getText();
-            String amount1 = amount.getText();
             Customer customer = getCustomer(account);
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
+            DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+        }else {
+            Customer customer = getCustomer(account);
+            double newAmount = customer.deductAmount(Double.parseDouble(amount1));
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
         }
 
