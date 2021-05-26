@@ -153,12 +153,14 @@ public class Customer {
     public double deductAmount(double amount){
         if(checkMinimumAccountBalance(amount)){
             return this.amount.get() - amount;
+        }else {
+            return this.amount.get();
+
         }
-        return this.amount.get();
     }
 
     private boolean checkMinimumAccountBalance(double amount){
-        return amount <= this.amount.get();
+        return amount < this.amount.get();
     }
 
     public void addTransaction(Transaction transaction){

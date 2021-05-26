@@ -175,7 +175,13 @@ public class FirstWindowController {
         }else {
             Customer customer = getCustomer(account);
             double newAmount = customer.deductAmount(Double.parseDouble(amount1));
-            DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+            if(newAmount == customer.getAmount()){
+                createAlert(Alert.AlertType.WARNING,"FAILURE", "Cannoy do transaction!","" +
+                        "There is insufficient balance in your account.");
+            }else {
+                DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+            }
+            System.out.println(newAmount);
         }
 
     }
@@ -209,6 +215,10 @@ public class FirstWindowController {
                     "is insufficient balance or kindly check your account number.");
         }
         return null;
+    }
+
+    private void resetTransactionSection(){
+
     }
 }
 
