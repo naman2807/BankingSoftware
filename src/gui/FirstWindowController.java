@@ -121,7 +121,6 @@ public class FirstWindowController {
         stage.setTitle("Bank Software");
         stage.setScene(new Scene(root, 1200, 800));
         stage.show();
-        newCustomerPane.toFront();
     }
 
 }

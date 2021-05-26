@@ -195,7 +195,7 @@
                         <fx:define>
                             <ToggleGroup fx:id="transactionToggleGroup"/>
                         </fx:define>
-                        <RadioButton layoutX="23.0" layoutY="40.0" mnemonicParsing="false" text="Deposit" selected="true">
+                        <RadioButton toggleGroup="$transactionToggleGroup" layoutX="23.0" layoutY="40.0" mnemonicParsing="false" text="Deposit" selected="true">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="14.0" />
                             </font>
