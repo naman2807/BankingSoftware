@@ -100,6 +100,7 @@ public class FirstWindowController {
         }else if(event.getSource() == newTransaction){
             headerLabel.setText("Do Your New Transaction By Entering Details!");
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113,86,221), CornerRadii.EMPTY, Insets.EMPTY)));
+            newTransactionPane.toFront();
         }
     }
 
