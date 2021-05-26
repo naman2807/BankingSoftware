@@ -26,4 +26,8 @@ public final class OTP {
     public static boolean verifyOTP(long returnedOTP){
         return otp == returnedOTP;
     }
+
+    public static void sendOTPToLinkedAccountNumber(){
+
+    }
 }
