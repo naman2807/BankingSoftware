@@ -155,6 +155,7 @@ public class FirstWindowController {
             String amount1 = amount.getText();
             ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
             String name = resultSet.getString(1);
+            int age = resultSet.getInt(2);
 
         }
     }
