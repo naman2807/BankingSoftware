@@ -10,16 +10,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="622.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FirstWindowController">
+<AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0"
-              prefWidth="258.0" style="-fx-background-color: #3F2B63;"
-              stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+              prefWidth="258.0" style="-fx-background-color: #3F2B63;" stylesheets="@bankapplication.css"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Pane prefHeight="103.0" prefWidth="258.0">
                     <children>
@@ -37,7 +38,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Button fx:id="newCustomer" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
+                <Button fx:id="newCustomer" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0"
                         prefWidth="259.0" text="Add Customer" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
@@ -49,20 +50,29 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="newTransaction" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
-                        prefHeight="66.0" prefWidth="262.0" text="New Transaction" textFill="#e1dcdc">
+                <Button fx:id="newTransaction" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="66.0"
+                        prefWidth="260.0" text="New Transaction" textFill="#e1dcdc">
+                    <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                </Button>
+                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0"
+                        mnemonicParsing="false" prefHeight="66.0" prefWidth="260.0"
+                        text="Label 3" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
-                        prefHeight="66.0" prefWidth="260.0" text="Label 3" textFill="#e1dcdc">
-                    <font>
-                        <Font name="Bell MT Bold" size="18.0" />
-                    </font>
-                </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
-                        prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
+                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0"
+                        mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4"
+                        textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
@@ -70,114 +80,119 @@
             </children>
         </VBox>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="622.0"
-              prefWidth="687.0" style="-fx-background-color: B3A9E7FF;"
-              stylesheets="@bankapplication.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              prefWidth="687.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
             <children>
                 <Pane fx:id="headerPane" prefHeight="145.0" prefWidth="687.0" style="-fx-background-color: #7156DD;">
                     <VBox.margin>
                         <Insets top="30.0" />
                     </VBox.margin>
                     <children>
-                        <Label fx:id="headerLabel" layoutX="24.0" layoutY="51.0" text="Enter Details To Add New Customer!"
-                               textFill="#efe5e5">
+                        <Label fx:id="headerLabel" layoutX="24.0" layoutY="51.0"
+                               text="Enter Deatils To Add New Customer" textFill="#efe5e5">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="24.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-                <HBox spacing="15.0">
+                <StackPane>
                     <VBox.margin>
-                        <Insets left="10.0" top="30.0" />
+                        <Insets left="20.0" top="20.0" />
                     </VBox.margin>
                     <children>
-                        <Label prefHeight="46.0" prefWidth="195.0" text="Name:">
-                            <font>
-                                <Font name="Algerian" size="24.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="name" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor></TextField>
+                        <Pane fx:id="newCustomerPane">
+                            <children>
+                                <HBox layoutX="0.234375" spacing="15.0">
+                                    <children>
+                                        <Label prefHeight="46.0" prefWidth="195.0" text="Name:">
+                                            <font>
+                                                <Font name="Algerian" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="44.0" prefWidth="418.0"
+                                                   fx:id="name" promptText="Enter Customer's Name">
+                                            <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                            </cursor>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="0.234375" layoutY="71.20001220703125" spacing="15.0">
+                                    <children>
+                                        <Label prefHeight="46.0" prefWidth="195.0" text="Age:">
+                                            <font>
+                                                <Font name="Algerian" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="44.0" prefWidth="418.0"
+                                                   fx:id="age" promptText="Enter Customer's Age">
+                                            <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                            </cursor>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="0.234375" layoutY="142.39999389648438" spacing="15.0">
+                                    <children>
+                                        <Label prefHeight="46.0" prefWidth="195.0" text="Address:">
+                                            <font>
+                                                <Font name="Algerian" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
+                                            <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                            </cursor>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="0.234375" layoutY="213.60000610351562" spacing="15.0">
+                                    <children>
+                                        <Label prefHeight="46.0" prefWidth="195.0" text="Phone Number:">
+                                            <font>
+                                                <Font name="Algerian" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
+                                            <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                            </cursor>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="0.234375" layoutY="284.8000183105469" spacing="15.0">
+                                    <children>
+                                        <Label prefHeight="46.0" prefWidth="195.0" text="Parent's Name:">
+                                            <font>
+                                                <Font name="Algerian" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
+                                            <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                            </cursor>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <Button layoutX="240.2343692779541" layoutY="371.1999816894531" mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate" textFill="#f7f0f0">
+                                    <font>
+                                        <Font name="Century" size="13.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="newTransactionPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" />
+                            </children>
+                        </Pane>
                     </children>
-                </HBox>
-                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
-                    <children>
-                        <Label prefHeight="46.0" prefWidth="195.0" text="Age:">
-                            <font>
-                                <Font name="Algerian" size="24.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="age" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Age">
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor></TextField>
-                    </children>
-                    <VBox.margin>
-                        <Insets left="10.0" top="25.0" />
-                    </VBox.margin>
-                </HBox>
-                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
-                    <children>
-                        <Label prefHeight="46.0" prefWidth="195.0" text="Address:">
-                            <font>
-                                <Font name="Algerian" size="24.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="address" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor></TextField>
-                    </children>
-                    <VBox.margin>
-                        <Insets left="10.0" top="25.0" />
-                    </VBox.margin>
-                </HBox>
-                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
-                    <children>
-                        <Label prefHeight="46.0" prefWidth="195.0" text="Phone Number:">
-                            <font>
-                                <Font name="Algerian" size="24.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="phoneNumber" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor></TextField>
-                    </children>
-                    <VBox.margin>
-                        <Insets left="10.0" top="25.0" />
-                    </VBox.margin>
-                </HBox>
-                <HBox layoutX="20.0" layoutY="206.0" spacing="15.0">
-                    <children>
-                        <Label prefHeight="46.0" prefWidth="195.0" text="Parent's Name:">
-                            <font>
-                                <Font name="Algerian" size="24.0" />
-                            </font>
-                        </Label>
-                        <TextField fx:id="parentName" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor></TextField>
-                    </children>
-                    <VBox.margin>
-                        <Insets left="10.0" top="25.0" />
-                    </VBox.margin>
-                </HBox>
-                <Button fx:id="addCustomer" onAction="#handleButtonClicked" mnemonicParsing="false" prefHeight="36.0" prefWidth="115.0"
-                        text="Add Candidate" textFill="#f7f0f0">
-                    <font>
-                        <Font name="Century" size="13.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets left="250.0" top="40.0" />
-                    </VBox.margin>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
+                </StackPane>
             </children>
         </VBox>
     </children>
