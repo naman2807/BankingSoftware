@@ -156,29 +156,30 @@ public class FirstWindowController {
         if (selectedToggle.equals("Deposit")) {
             String account = accountNumber.getText();
             String amount1 = amount.getText();
-            ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
-            if (resultSet != null) {
-                String name = resultSet.getString(1);
-                int age = resultSet.getInt(2);
-                String address = resultSet.getString(3);
-                String parent = resultSet.getString(4);
-                String phone = resultSet.getString(5);
-                double amount = resultSet.getDouble(6);
-                String accountNumber = resultSet.getString(7);
-                Customer customer = new Customer(name, age, address, parent, phone, accountNumber, amount);
-                double newAmount = customer.addAmount(Double.parseDouble(amount1));
-                DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
-            }else {
-                createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Either there " +
-                        "is insufficient balance or kindly check your account number.");
-            }
-
+            Customer customer = getCustomer(account);
+            double newAmount = customer.addAmount(Double.parseDouble(amount1));
+            DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
         }
-    }
-
-    private Customer getCustomer(String account){
 
     }
 
 
+    private Customer getCustomer(String account) throws SQLException {
+        ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
+        if (resultSet != null) {
+            String name = resultSet.getString(1);
+            int age = resultSet.getInt(2);
+            String address = resultSet.getString(3);
+            String parent = resultSet.getString(4);
+            String phone = resultSet.getString(5);
+            double amount = resultSet.getDouble(6);
+            String accountNumber = resultSet.getString(7);
+            return new Customer(name, age, address, parent, phone, accountNumber, amount);
+        }else {
+            createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Either there " +
+                    "is insufficient balance or kindly check your account number.");
+        }
+        return null;
+    }
 }
+
