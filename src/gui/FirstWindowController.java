@@ -104,7 +104,11 @@ public class FirstWindowController {
         }else if(event.getSource() == generateOTP){
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
-
+            if(OTP.verifyOTP(generatedOTP)){
+                doTransaction.setDisable(false);
+            }else {
+                System.err.println("Enter correct otp");
+            }
 
         }
     }
