@@ -173,6 +173,10 @@ public class FirstWindowController {
             Customer customer = getCustomer(account);
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+            accountNumber.clear();
+            amount.clear();
+            otp.clear();
+            doTransaction.setDisable(true);
         }else {
             Customer customer = getCustomer(account);
             double newAmount = customer.deductAmount(Double.parseDouble(amount1));
@@ -185,14 +189,16 @@ public class FirstWindowController {
     private Customer getCustomer(String account) throws SQLException {
         ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
         if (resultSet != null) {
-            String name = resultSet.getString(1);
-            int age = resultSet.getInt(2);
-            String address = resultSet.getString(3);
-            String parent = resultSet.getString(4);
-            String phone = resultSet.getString(5);
-            double amount = resultSet.getDouble(6);
-            String accountNumber = resultSet.getString(7);
-            return new Customer(name, age, address, parent, phone, accountNumber, amount);
+            while (resultSet.next()){
+                String name = resultSet.getString(1);
+                int age = resultSet.getInt(2);
+                String address = resultSet.getString(3);
+                String parent = resultSet.getString(4);
+                String phone = resultSet.getString(5);
+                double amount = resultSet.getDouble(6);
+                String accountNumber = resultSet.getString(7);
+                return new Customer(name, age, address, parent, phone, accountNumber, amount);
+            }
         }else {
             createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Either there " +
                     "is insufficient balance or kindly check your account number.");

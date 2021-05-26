@@ -110,7 +110,7 @@ public class DataSource {
             preparedStatement.setString(2, accountNumber);
             int result = preparedStatement.executeUpdate();
             checkResult(result,"SUCCESS","Updated amount success", "Account number : " + accountNumber +
-                    "has been updated its amount.");
+                    " has been updated its amount.");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

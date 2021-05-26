@@ -55,11 +55,11 @@ public class SQLQueries {
     }
 
     public static String findCustomerQueryByAccountNumber(){
-        return "SELECT * FROM " + CUSTOMER_TABLE + " WHERE " + ACCOUNT_NUMBER + " =?";
+        return "SELECT * FROM " + CUSTOMER_TABLE + " WHERE " + ACCOUNT_NUMBER + " = ?";
     }
 
     public static String updateBalanceQuery(){
-        return "UPDATE TABLE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
+        return "UPDATE " + CUSTOMER_TABLE + " SET " + AMOUNT + " = ? WHERE " + ACCOUNT_NUMBER + " = ?";
     }
 
     public static String getTransactionHistoryQuery(){
