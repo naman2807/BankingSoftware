@@ -123,14 +123,8 @@ public class FirstWindowController {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
 
-
         } else if(event.getSource() == verifyOTP) {
-            String enteredOTP = otp.getText();
-            if (OTP.verifyOTP(enteredOTP)) {
-                doTransaction.setDisable(false);
-            } else {
-                createAlert(Alert.AlertType.WARNING,"ERROR", "Incorrect OTP", "Please enter correct OTP");
-            }
+
         }else if(event.getSource() == doTransaction){
             doTransaction(getSelectedToggleButton());
         }
@@ -185,6 +179,16 @@ public class FirstWindowController {
 
     }
 
+    private void verifyOTP(){
+        String enteredOTP = otp.getText();
+        if (OTP.verifyOTP(enteredOTP)) {
+            doTransaction.setDisable(false);
+            createAlert(Alert.AlertType.INFORMATION,"VERIFICATION SUCCESS","Congratulations","" +
+                    "Your OTP has been verified successfully.");
+        } else {
+            createAlert(Alert.AlertType.WARNING,"ERROR", "Incorrect OTP", "Please enter correct OTP");
+        }
+    }
 
     private Customer getCustomer(String account) throws SQLException {
         ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
