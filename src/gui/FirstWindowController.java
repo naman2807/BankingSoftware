@@ -131,17 +131,6 @@ public class FirstWindowController {
         }
     }
 
-    private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(headerText);
-        alert.setContentText(context);
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            alert.close();
-        }
-    }
-
     private void startNewWindow() throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
@@ -173,7 +162,7 @@ public class FirstWindowController {
             Customer customer = getCustomer(account);
             double newAmount = customer.deductAmount(Double.parseDouble(amount1));
             if(newAmount == customer.getAmount()){
-                createAlert(Alert.AlertType.WARNING,"FAILURE", "Cannoy do transaction!","" +
+                createAlert(Alert.AlertType.WARNING,"FAILURE", "Cannot do transaction!","" +
                         "There is insufficient balance in your account.");
             }else {
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
@@ -209,8 +198,7 @@ public class FirstWindowController {
                 return new Customer(name, age, address, parent, phone, accountNumber, amount);
             }
         }else {
-            createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Either there " +
-                    "is insufficient balance or kindly check your account number.");
+            createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Kindly check your account number.");
         }
         return null;
     }
@@ -221,5 +209,18 @@ public class FirstWindowController {
         otp.clear();
         doTransaction.setDisable(true);
     }
+
+
+    private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(context);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            alert.close();
+        }
+    }
+
 }
 
