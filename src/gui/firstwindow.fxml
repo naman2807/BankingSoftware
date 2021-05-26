@@ -128,7 +128,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <Button layoutX="284.0" layoutY="362.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Submit" textFill="#efe6e6" />
+                        <Button layoutX="284.0" layoutY="362.0" mnemonicParsing="false" fx:id="doTransaction" prefHeight="35.0" prefWidth="102.0" text="Do Transaction" textFill="#efe6e6" />
                     </children>
                 </Pane>
                 <Pane fx:id="newCustomerPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
