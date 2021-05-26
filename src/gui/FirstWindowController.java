@@ -104,19 +104,23 @@ public class FirstWindowController {
             }
         } else if (event.getSource() == newCustomer) {
             addNewCustomer();
+
         } else if (event.getSource() == newTransaction) {
             headerLabel.setText("Do Your New Transaction By Entering Details!");
             headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
             newTransactionPane.toFront();
             doTransaction.setDisable(true);
+
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
-            if (OTP.verifyOTP(generatedOTP)) {
+            String enteredOTP = otp.getText();
+            if (OTP.verifyOTP(Long.parseLong(enteredOTP))) {
                 doTransaction.setDisable(false);
             } else {
-                System.err.println("Enter correct otp");
+                createAlert(Alert.AlertType.WARNING,"ERROR", "Incorrect OTP", "Please enter correct OTP");
             }
+
         }else if(event.getSource() == doTransaction){
             doTransaction(getSelectedToggleButton());
         }
