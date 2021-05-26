@@ -47,7 +47,7 @@ public class FirstWindowController {
     @FXML
     private TextField parentName;
     @FXML
-    private Button newCustomer, generateOTP;
+    private Button newCustomer, generateOTP, doTransaction;
     @FXML
     private Label headerLabel;
     @FXML
