@@ -110,7 +110,7 @@
                                         <Font name="Century" size="18.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="50.0" prefWidth="357.0" promptText="Enter The Amount" />
+                                <TextField fx:id="amount" prefHeight="50.0" prefWidth="357.0" promptText="Enter The Amount" />
                             </children>
                         </HBox>
                         <HBox layoutX="23.0" layoutY="255.0" spacing="15.0">
