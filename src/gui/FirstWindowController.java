@@ -84,6 +84,7 @@ public class FirstWindowController {
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
         if (event.getSource() == login) {
+            login();
 
         } else if (event.getSource() == addCustomer) {
             String cusName = name.getText();
