@@ -119,7 +119,7 @@ public class FirstWindowController {
             addNewCustomer();
 
         } else if (event.getSource() == newTransaction) {
-
+            openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
