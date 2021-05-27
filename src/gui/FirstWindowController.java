@@ -254,7 +254,7 @@ public class FirstWindowController {
     }
 
     private void showTransactionTable(){
-
+        headerLabel.setText("Transaction History Section!");
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
