@@ -16,6 +16,9 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
@@ -74,6 +77,23 @@
         </VBox>
         <StackPane layoutX="258.0" layoutY="182.0" prefHeight="439.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="257.79999999999995" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.00000000000006">
             <children>
+                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B3A9E7FF;">
+                    <children>
+                        <TableView fx:id="transactionTable" prefHeight="439.0" prefWidth="689.0" stylesheets="@bankapplication.css">
+                            <columns>
+                                <TableColumn prefWidth="105.59997254610062" text="Transaction ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="transactionID"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="187.2000274658203" text="Account Number" />
+                                <TableColumn prefWidth="147.19989013671875" text="Action" />
+                                <TableColumn prefWidth="131.199951171875" text="Date" />
+                                <TableColumn prefWidth="131.199951171875" text="Time" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </Pane>
                 <Pane fx:id="newTransactionPane" layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
                     <StackPane.margin>
                         <Insets left="2.0" />
