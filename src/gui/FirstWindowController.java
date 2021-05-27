@@ -82,6 +82,8 @@ public class FirstWindowController {
     private Button verifyOTP;
     @FXML
     private TableView<Transaction> transactionTable;
+    @FXML
+    private Button showTransactionPane;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
