@@ -5,6 +5,8 @@ import data.Customer;
 import data.Transaction;
 import database.DataBaseConnection;
 import database.DataSource;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -271,6 +273,7 @@ public class FirstWindowController {
     }
 
     private void showTransactions(ResultSet result){
+        ObservableList<Transaction> transactions = FXCollections.observableArrayList();
 
     }
 
