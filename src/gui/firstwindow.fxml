@@ -117,6 +117,12 @@
                                 </TableColumn>
                             </columns>
                         </TableView>
+                        <TextField layoutX="191.0" prefHeight="44.0" prefWidth="326.0" promptText="Enter Account Number " />
+                        <Label layoutX="35.0" layoutY="9.0" text="Account Number: ">
+                            <font>
+                                <Font name="Perpetua Bold" size="18.0" />
+                            </font>
+                        </Label>
                     </children>
                 </Pane>
                 <Pane fx:id="newTransactionPane" layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
