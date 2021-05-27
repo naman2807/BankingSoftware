@@ -39,6 +39,18 @@ public final class Transaction {
         this.operation.set(operation);
     }
 
+    public String getOperation() {
+        return operation.get();
+    }
+
+    public SimpleStringProperty operationProperty() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation.set(operation);
+    }
+
     public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate, String operation) {
         this.accountNumber.set(accountNumber);
         this.amount.set(amount);
