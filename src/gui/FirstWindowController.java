@@ -97,14 +97,14 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == newCustomer) {
-            resetTransactionSection();
+            resetTransactionHistoryPane();
             openNewCustomerWindow();
 
         } else if (event.getSource() == addCustomer) {
             addCustomer();
 
         } else if (event.getSource() == newTransaction) {
-            resetTransactionSection();
+            resetTransactionHistoryPane();
             openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
@@ -147,7 +147,7 @@ public class FirstWindowController {
     }
 
     private void openNewCustomerWindow() {
-        headerLabel.setText("Enter Details To Add New Customer!");
+        headerLabel.setText("Enter Details to Add New Customer!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
         newCustomerPane.toFront();
     }
@@ -263,7 +263,7 @@ public class FirstWindowController {
 
     private void showTransactionTable() {
         headerLabel.setText("Transaction History Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(106, 211, 222), CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(69,116,226), CornerRadii.EMPTY, Insets.EMPTY)));
         transactionHistoryPane.toFront();
     }
 

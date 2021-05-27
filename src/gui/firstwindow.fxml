@@ -311,9 +311,11 @@
                 </Pane>
             </children>
         </StackPane>
-        <Pane fx:id="headerPane" layoutX="260.0" layoutY="36.0" prefHeight="104.0" prefWidth="689.0" style="-fx-background-color:#3F2B63;" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-2.0">
+        <Pane fx:id="headerPane" layoutX="260.0" layoutY="36.0" prefHeight="104.0" prefWidth="689.0"
+              style="-fx-background-color:#3F2B63;" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="-2.0">
             <children>
-                <Label fx:id="headerLabel" layoutX="50.0" layoutY="38.0" text="Enter Details to Add New Customer" textFill="#f2f0f0">
+                <Label fx:id="headerLabel" layoutX="50.0" layoutY="38.0"
+                       text="Enter Details to Add New Customer!" textFill="#f2f0f0">
                     <font>
                         <Font name="Bookman Old Style Bold" size="24.0" />
                     </font>
