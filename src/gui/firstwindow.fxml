@@ -117,7 +117,7 @@
                                 </TableColumn>
                             </columns>
                         </TableView>
-                        <TextField layoutX="191.0" prefHeight="44.0" prefWidth="326.0" promptText="Enter Account Number " />
+                        <TextField fx:id="accountNumberForTransaction" layoutX="191.0" prefHeight="44.0" prefWidth="326.0" promptText="Enter Account Number " />
                         <Label layoutX="35.0" layoutY="9.0" text="Account Number: ">
                             <font>
                                 <Font name="Perpetua Bold" size="18.0" />
