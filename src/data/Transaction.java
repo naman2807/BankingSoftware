@@ -18,6 +18,7 @@ public final class Transaction {
     private final SimpleStringProperty transactionID = new SimpleStringProperty("");
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty amount = new SimpleDoubleProperty();
+    private final SimpleStringProperty operation = new SimpleStringProperty("");
     private final SimpleStringProperty transactionTime = new SimpleStringProperty("");
     private final SimpleStringProperty transactionDate = new SimpleStringProperty("");
 
