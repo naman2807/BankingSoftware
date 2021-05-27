@@ -125,7 +125,13 @@
                                 </TableColumn>
                             </columns>
                         </TableView>
-                        <TextField fx:id="accountNumberForTransaction" layoutX="191.0" layoutY="4.0" prefHeight="50.0" prefWidth="315.0" promptText="Enter Account Number" />                    </children>
+                        <TextField fx:id="accountNumberForTransaction" layoutX="191.0" layoutY="4.0" prefHeight="50.0" prefWidth="315.0" promptText="Enter Account Number" />
+                        <Button layoutX="535.0" layoutY="13.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" stylesheets="@bankapplication.css" text="Search" textFill="#eae3e3">
+                            <font>
+                                <Font name="Calisto MT Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
                 </Pane>
                 <Pane fx:id="newTransactionPane" layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
                     <StackPane.margin>
