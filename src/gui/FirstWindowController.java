@@ -86,12 +86,13 @@ public class FirstWindowController {
         if (event.getSource() == login) {
             login();
 
-        } else if (event.getSource() == addCustomer) {
-
         } else if (event.getSource() == newCustomer) {
-                openNewCustomerWindow();
+            openNewCustomerWindow();
 
-        } else if (event.getSource() == newTransaction) {
+        }else if (event.getSource() == addCustomer) {
+            addCustomer();
+
+        }  else if (event.getSource() == newTransaction) {
             openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
