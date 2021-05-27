@@ -264,6 +264,10 @@ public class FirstWindowController {
         transactionHistoryPane.toFront();
     }
 
+    private void searchTransactionRecordAndShow(){
+
+    }
+
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
