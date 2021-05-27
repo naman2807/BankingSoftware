@@ -159,6 +159,8 @@ public class FirstWindowController {
         String account = accountNumber.getText();
         String amount1 = amount.getText();
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd, MMMM yyyy");
+        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss");
+
         if (selectedToggle.equals("Deposit")) {
             Customer customer = getCustomer(account);
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
