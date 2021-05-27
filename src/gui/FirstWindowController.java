@@ -166,6 +166,7 @@ public class FirstWindowController {
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
             LocalDate date = LocalDate.now();
+            LocalTime time = LocalTime.now();
             resetTransactionSection();
         }else {
             Customer customer = getCustomer(account);
