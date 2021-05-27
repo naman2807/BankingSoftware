@@ -39,6 +39,18 @@ public final class Transaction {
         this.operation.set(operation);
     }
 
+    public String getTransactionID() {
+        return transactionID.get();
+    }
+
+    public SimpleStringProperty transactionIDProperty() {
+        return transactionID;
+    }
+
+    public void setTransactionID(String transactionID) {
+        this.transactionID.set(transactionID);
+    }
+
     public String getOperation() {
         return operation.get();
     }

@@ -97,12 +97,14 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == newCustomer) {
+            transactionTable.getItems().clear();
             openNewCustomerWindow();
 
         } else if (event.getSource() == addCustomer) {
             addCustomer();
 
         } else if (event.getSource() == newTransaction) {
+            transactionTable.getItems().clear();
             openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
@@ -120,6 +122,7 @@ public class FirstWindowController {
 
         } else if (event.getSource() == search) {
             searchTransactionRecordAndShow();
+
         }
     }
 
@@ -282,11 +285,16 @@ public class FirstWindowController {
                 int id = result.getInt(6);
                 transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
             }
-            transactionTable.setItems(transactions);
-        }else {
-            createAlert(Alert.AlertType.WARNING,"NO DATA", "Account Number: " + accountNumber, "" +
-                    "No transaction history found for above mentioned account.");
+            if(transactions.size() > 0){
+                transactionTable.setItems(transactions);
+            }else {
+                createAlert(Alert.AlertType.WARNING,"NO DATA", "Account Number: " + accountNumber, "" +
+                        "No transaction history found for above mentioned account.");
+            }
         }
+    }
+
+    private void resetTransactionHistoryPane(){
 
     }
 
