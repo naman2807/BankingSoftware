@@ -37,7 +37,7 @@ public final class OTP {
         try {
             // Construct data
             String apiKey = "apikey=" + "MTdjMjgxMWNiOGRkYTk4OGQ1ODZkYzlhOGQwMjBjODc=";
-            String message = "&message=" + "Hello";
+            String message = "&message=" + "Hi there, thank you for sending your first message text from Textlocal. Get 20% off today with our code : ";
 //            String sender = "&sender=" + "Bank Of India";
             String numbers = "&numbers=" + "919140321247";
 
@@ -47,7 +47,7 @@ public final class OTP {
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
-            conn.getOutputStream().write(data.getBytes(StandardCharsets.US_ASCII));
+            conn.getOutputStream().write(data.getBytes(StandardCharsets.UTF_8));
             final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             final StringBuffer stringBuffer = new StringBuffer();
             String line;

@@ -21,6 +21,7 @@ import operations.OTP;
 
 import javax.xml.crypto.Data;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
@@ -201,6 +202,10 @@ public class FirstWindowController {
             createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Kindly check your account number.");
         }
         return null;
+    }
+
+    private void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation){
+
     }
 
     private void resetTransactionSection(){
