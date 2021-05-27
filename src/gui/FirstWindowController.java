@@ -86,6 +86,8 @@ public class FirstWindowController {
     private TableView<Transaction> transactionTable;
     @FXML
     private Button showTransactionPane;
+    @FXML
+    private TextField accountNumberForTransaction;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
