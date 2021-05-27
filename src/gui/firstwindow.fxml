@@ -103,10 +103,14 @@
                                 </TableColumn>
                                 <TableColumn prefWidth="131.199951171875" text="Date">
                                     <cellValueFactory>
-                                        <PropertyValueFactory property="date"/>
+                                        <PropertyValueFactory property="transactionDate"/>
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="131.199951171875" text="Time" />
+                                <TableColumn prefWidth="131.199951171875" text="Time">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="transactionTime"/>
+                                    </cellValueFactory>
+                                </TableColumn>
                             </columns>
                         </TableView>
                     </children>
