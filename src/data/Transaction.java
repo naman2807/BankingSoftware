@@ -30,12 +30,13 @@ public final class Transaction {
         return accountNumber;
     }
 
-    public Transaction(String transactionID, String accountNumber, double amount, String transactionTime, String transactionDate) {
+    public Transaction(String transactionID, String accountNumber, double amount, String transactionTime, String transactionDate, String operation) {
         this.accountNumber.set(accountNumber);
         this.amount.set(amount);
         this.transactionTime.set(transactionTime);
         this.transactionDate.set(transactionDate);
         this.transactionID.set(transactionID);
+        this.operation.set(operation);
     }
 
     public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate) {
