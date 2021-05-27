@@ -265,7 +265,7 @@ public class FirstWindowController {
     }
 
     private void searchTransactionRecordAndShow(){
-
+        String accountNumber = accountNumberForTransaction.getText();
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
