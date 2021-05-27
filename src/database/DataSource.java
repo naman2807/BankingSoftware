@@ -69,9 +69,8 @@ public class DataSource {
             preparedStatement.setString(4, transaction.getTransactionDate());
             preparedStatement.setString(5, transaction.getTransactionTime());
            int result =  preparedStatement.executeUpdate();
-           checkResult(result,"NEW TRANSACTION","Added to Record",
-                   "Transaction of Rs." + transaction.getAmount() + " from " + transaction.getAccountNumber()
-                           + " on " + transaction.getTransactionDate() + " has been done successfully.");
+           checkResult(result,"NEW TRANSACTION","Account Number: " + transaction.getAccountNumber(),
+                   "Amount Rs. " + transaction.getAmount() + " has been " + transaction.getOperation());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -19,9 +19,9 @@ public class SQLQueries {
     private static final String BRANCH_NAME = "branch_name";
     private static final String ACCOUNT_NUMBER = "account_number";
     private static final String AMOUNT = "amount";
-    private static final String TRANSACTION_DATE = "transaction_date";
+    private static final String TRANSACTION_DATE = "date";
     private static final String TRANSACTIONS_ID = "transactionID";
-    private static final String TRANSACTION_TIME = "transaction_time";
+    private static final String TRANSACTION_TIME = "time";
     private static final String EMPLOYEE_TABLE = "employee_table";
     private static final String LOAN_TABLE = "loan_table";
     private static final String EMPLOYEE_ID = "userid";
