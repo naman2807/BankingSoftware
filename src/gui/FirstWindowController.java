@@ -249,6 +249,9 @@ public class FirstWindowController {
         doTransaction.setDisable(true);
     }
 
+    private void showTransactionTable(){
+
+    }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
