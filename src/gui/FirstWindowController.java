@@ -119,10 +119,7 @@ public class FirstWindowController {
             addNewCustomer();
 
         } else if (event.getSource() == newTransaction) {
-            headerLabel.setText("Do Your New Transaction By Entering Details!");
-            headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
-            newTransactionPane.toFront();
-            doTransaction.setDisable(true);
+
 
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
@@ -151,7 +148,10 @@ public class FirstWindowController {
     }
 
     private void openNewTransactionWindow(){
-
+        headerLabel.setText("Do Your New Transaction By Entering Details!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
+        newTransactionPane.toFront();
+        doTransaction.setDisable(true);
     }
 
     private String getSelectedToggleButton() {
