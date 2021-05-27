@@ -63,7 +63,7 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button fx:id="showTransactionPane" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                <Button fx:id="showTransactionPane" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
                         prefHeight="66.0" prefWidth="260.0" text="Show Transaction History" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
