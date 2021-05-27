@@ -109,7 +109,7 @@ public class FirstWindowController {
                 parentName.clear();
             }
         } else if (event.getSource() == newCustomer) {
-            addNewCustomer();
+                openNewCustomerWindow();
 
         } else if (event.getSource() == newTransaction) {
             openNewTransactionWindow();
@@ -146,10 +146,14 @@ public class FirstWindowController {
         stage.show();
     }
 
-    private void addNewCustomer() {
+    private void openNewCustomerWindow() {
         headerLabel.setText("Enter Details To Add New Customer!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
         newCustomerPane.toFront();
+    }
+
+    private void addCustomer(){
+
     }
 
     private void openNewTransactionWindow(){
