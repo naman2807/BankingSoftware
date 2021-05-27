@@ -39,11 +39,12 @@ public final class Transaction {
         this.operation.set(operation);
     }
 
-    public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate) {
+    public Transaction(String accountNumber, double amount, String transactionTime, String transactionDate, String operation) {
         this.accountNumber.set(accountNumber);
         this.amount.set(amount);
         this.transactionTime.set(transactionTime);
         this.transactionDate.set(transactionDate);
+        this.operation.set(operation);
     }
 
     public String getTransactionDate() {
