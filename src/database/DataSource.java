@@ -65,8 +65,9 @@ public class DataSource {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addTransactionQuery());
             preparedStatement.setString(1, transaction.getAccountNumber());
             preparedStatement.setString(2, String.valueOf(transaction.getAmount()));
-            preparedStatement.setString(3, transaction.getTransactionDate());
-            preparedStatement.setString(4, transaction.getTransactionTime());
+            preparedStatement.setString(3, transaction.getOperation());
+            preparedStatement.setString(4, transaction.getTransactionDate());
+            preparedStatement.setString(5, transaction.getTransactionTime());
            int result =  preparedStatement.executeUpdate();
            checkResult(result,"NEW TRANSACTION","Added to Record",
                    "Transaction of Rs." + transaction.getAmount() + " from " + transaction.getAccountNumber()
