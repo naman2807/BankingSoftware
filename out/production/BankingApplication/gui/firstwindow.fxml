@@ -16,6 +16,9 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
@@ -60,10 +63,14 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="260.0" text="Label 3" textFill="#e1dcdc">
+                <Button fx:id="showTransactionPane" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                        prefHeight="66.0" prefWidth="260.0" text="Show Transaction History" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
                 </Button>
                 <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
                     <font>
@@ -74,6 +81,52 @@
         </VBox>
         <StackPane layoutX="258.0" layoutY="182.0" prefHeight="439.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="257.79999999999995" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.00000000000006">
             <children>
+                <Pane fx:id="transactionHistoryPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;">
+                    <StackPane.margin>
+                        <Insets left="2.0" />
+                    </StackPane.margin>
+                    <children>
+                        <Label layoutX="14.0" layoutY="16.0" text="Account Number:">
+                            <font>
+                                <Font name="Sitka Small" size="18.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="transactionTable" layoutY="80.0" layoutX="80.0" prefHeight="400.0" prefWidth="803.0" stylesheets="@bankapplication.css">
+                            <columns>
+                                <TableColumn prefWidth="102.39995872974396" text="Transaction ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="transactionID"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="177.5999984741211" text="Account Number">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="accountNumber"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="152.00006103515625" text="Amount">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="amount"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="152.00006103515625" text="Action">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="operation"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="117.60009765625" text="Date">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="transactionDate"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="120.60009765625" text="Time">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="transactionTime"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="accountNumberForTransaction" layoutX="191.0" layoutY="4.0" prefHeight="50.0" prefWidth="315.0" promptText="Enter Account Number" />                    </children>
+                </Pane>
                 <Pane fx:id="newTransactionPane" layoutX="10.0" layoutY="10.0" prefHeight="439.0" prefWidth="680.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
                     <StackPane.margin>
                         <Insets left="2.0" />
