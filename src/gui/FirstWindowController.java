@@ -255,6 +255,8 @@ public class FirstWindowController {
 
     private void showTransactionTable(){
         headerLabel.setText("Transaction History Section!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(192,86,211),CornerRadii.EMPTY, Insets.EMPTY)));
+
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
