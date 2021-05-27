@@ -22,9 +22,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import operations.OTP;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -101,26 +99,26 @@ public class FirstWindowController {
         } else if (event.getSource() == newCustomer) {
             openNewCustomerWindow();
 
-        }else if (event.getSource() == addCustomer) {
+        } else if (event.getSource() == addCustomer) {
             addCustomer();
 
-        }  else if (event.getSource() == newTransaction) {
+        } else if (event.getSource() == newTransaction) {
             openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
             System.out.println(generatedOTP);
 
-        } else if(event.getSource() == verifyOTP) {
+        } else if (event.getSource() == verifyOTP) {
             verifyOTP();
 
-        }else if(event.getSource() == doTransaction){
+        } else if (event.getSource() == doTransaction) {
             doTransaction(getSelectedToggleButton());
 
-        }else if(event.getSource() == showTransactionPane){
+        } else if (event.getSource() == showTransactionPane) {
             showTransactionTable();
 
-        }else if(event.getSource() == search){
+        } else if (event.getSource() == search) {
             searchTransactionRecordAndShow();
         }
     }
@@ -151,7 +149,7 @@ public class FirstWindowController {
         newCustomerPane.toFront();
     }
 
-    private void addCustomer(){
+    private void addCustomer() {
         String cusName = name.getText();
         String cusAge = age.getText();
         String cusAddress = address.getText();
@@ -175,7 +173,7 @@ public class FirstWindowController {
         }
     }
 
-    private void openNewTransactionWindow(){
+    private void openNewTransactionWindow() {
         headerLabel.setText("Do Your New Transaction By Entering Details!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
         newTransactionPane.toFront();
@@ -199,19 +197,19 @@ public class FirstWindowController {
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
             LocalDate date = LocalDate.now();
             LocalTime time = LocalTime.now();
-            addTransaction(account,Double.parseDouble(amount1), dateFormat.format(date),timeFormat.format(time),selectedToggle);
+            addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
             resetTransactionSection();
-        }else {
+        } else {
             Customer customer = getCustomer(account);
             double newAmount = customer.deductAmount(Double.parseDouble(amount1));
-            if(newAmount == customer.getAmount()){
-                createAlert(Alert.AlertType.WARNING,"FAILURE", "Cannot do transaction!","" +
+            if (newAmount == customer.getAmount()) {
+                createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
                         "There is insufficient balance in your account.");
-            }else {
+            } else {
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
                 LocalDate date = LocalDate.now();
                 LocalTime time = LocalTime.now();
-                addTransaction(account,Double.parseDouble(amount1), dateFormat.format(date),timeFormat.format(time),selectedToggle);
+                addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
             }
             resetTransactionSection();
             System.out.println(newAmount);
@@ -219,21 +217,21 @@ public class FirstWindowController {
 
     }
 
-    private void verifyOTP(){
+    private void verifyOTP() {
         String enteredOTP = otp.getText();
         if (OTP.verifyOTP(enteredOTP)) {
             doTransaction.setDisable(false);
-            createAlert(Alert.AlertType.INFORMATION,"VERIFICATION SUCCESS","Congratulations","" +
+            createAlert(Alert.AlertType.INFORMATION, "VERIFICATION SUCCESS", "Congratulations", "" +
                     "Your OTP has been verified successfully.");
         } else {
-            createAlert(Alert.AlertType.WARNING,"ERROR", "Incorrect OTP", "Please enter correct OTP");
+            createAlert(Alert.AlertType.WARNING, "ERROR", "Incorrect OTP", "Please enter correct OTP");
         }
     }
 
     private Customer getCustomer(String account) throws SQLException {
         ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
         if (resultSet != null) {
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String name = resultSet.getString(1);
                 int age = resultSet.getInt(2);
                 String address = resultSet.getString(3);
@@ -243,37 +241,48 @@ public class FirstWindowController {
                 String accountNumber = resultSet.getString(7);
                 return new Customer(name, age, address, parent, phone, accountNumber, amount);
             }
-        }else {
-            createAlert(Alert.AlertType.WARNING,"WARNING","Cannot do transaction","Kindly check your account number.");
+        } else {
+            createAlert(Alert.AlertType.WARNING, "WARNING", "Cannot do transaction", "Kindly check your account number.");
         }
         return null;
     }
 
-    private void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation){
+    private void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation) {
         DataSource.addTransaction(DataBaseConnection.getConnection(), new Transaction(accountNumber, amount, transactionTime, transactionDate, operation));
     }
 
-    private void resetTransactionSection(){
+    private void resetTransactionSection() {
         accountNumber.clear();
         amount.clear();
         otp.clear();
         doTransaction.setDisable(true);
     }
 
-    private void showTransactionTable(){
+    private void showTransactionTable() {
         headerLabel.setText("Transaction History Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(106,211,222),CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(106, 211, 222), CornerRadii.EMPTY, Insets.EMPTY)));
         transactionHistoryPane.toFront();
     }
 
-    private void searchTransactionRecordAndShow(){
+    private void searchTransactionRecordAndShow() throws SQLException {
         String accountNumber = accountNumberForTransaction.getText();
         ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
         showTransactions(resultSet);
     }
 
-    private void showTransactions(ResultSet result){
+    private void showTransactions(ResultSet result) throws SQLException {
         ObservableList<Transaction> transactions = FXCollections.observableArrayList();
+        if (result != null) {
+            while (result.next()) {
+                String account = result.getString(1);
+                String amount = result.getString(2);
+                String action = result.getString(3);
+                String date = result.getString(4);
+                String time = result.getString(5);
+                int id = result.getInt(6);
+                transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
+            }
+        }
 
     }
 
