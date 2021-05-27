@@ -108,6 +108,9 @@ public class FirstWindowController {
 
         }else if(event.getSource() == doTransaction){
             doTransaction(getSelectedToggleButton());
+
+        }else if(event.getSource() == showTransactionPane){
+
         }
     }
 
