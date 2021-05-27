@@ -40,7 +40,7 @@ public class SQLQueries {
 
     public static String addTransactionQuery(){
         return "INSERT INTO " + TRANSACTIONS_TABLE + " (" + ACCOUNT_NUMBER + ", " +
-                AMOUNT + ", " + TRANSACTION_DATE + ", " + TRANSACTION_TIME + ") VALUES(?, ?, ?, ?)";
+                AMOUNT + ", " + OPERATION + ", " + TRANSACTION_DATE + ", " + TRANSACTION_TIME + ") VALUES(?, ?, ?, ?, ?)";
     }
 
     public static String addBranchQuery(){
