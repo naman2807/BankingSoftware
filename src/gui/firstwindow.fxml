@@ -91,7 +91,11 @@
                                         <PropertyValueFactory property="accountNumber"/>
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn prefWidth="147.19989013671875" text="Action" />
+                                <TableColumn prefWidth="147.19989013671875" text="Action">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="operation"/>
+                                    </cellValueFactory>
+                                </TableColumn>
                                 <TableColumn prefWidth="131.199951171875" text="Date" />
                                 <TableColumn prefWidth="131.199951171875" text="Time" />
                             </columns>
