@@ -80,6 +80,8 @@ public class FirstWindowController {
     private ToggleGroup transactionToggleGroup;
     @FXML
     private Button verifyOTP;
+    @FXML
+    private TableView<Transaction> transactionTable;
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
