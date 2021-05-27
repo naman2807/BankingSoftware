@@ -295,7 +295,8 @@ public class FirstWindowController {
     }
 
     private void resetTransactionHistoryPane(){
-
+        transactionTable.getItems().clear();
+        accountNumberForTransaction.clear();
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
