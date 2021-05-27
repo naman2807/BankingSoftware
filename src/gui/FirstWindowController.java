@@ -267,6 +267,7 @@ public class FirstWindowController {
     private void searchTransactionRecordAndShow(){
         String accountNumber = accountNumberForTransaction.getText();
         ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
+        showTransactions(resultSet);
     }
 
     private void showTransactions(ResultSet result){
