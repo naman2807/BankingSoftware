@@ -150,6 +150,10 @@ public class FirstWindowController {
         newCustomerPane.toFront();
     }
 
+    private void openNewTransactionWindow(){
+
+    }
+
     private String getSelectedToggleButton() {
         ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
         return selectedButton.getText();
@@ -167,7 +171,7 @@ public class FirstWindowController {
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
             LocalDate date = LocalDate.now();
             LocalTime time = LocalTime.now();
-            addTransaction(account,newAmount, dateFormat.format(date),timeFormat.format(time),selectedToggle);
+            addTransaction(account,Double.parseDouble(amount1), dateFormat.format(date),timeFormat.format(time),selectedToggle);
             resetTransactionSection();
         }else {
             Customer customer = getCustomer(account);
@@ -179,7 +183,7 @@ public class FirstWindowController {
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
                 LocalDate date = LocalDate.now();
                 LocalTime time = LocalTime.now();
-                addTransaction(account,newAmount, dateFormat.format(date),timeFormat.format(time),selectedToggle);
+                addTransaction(account,Double.parseDouble(amount1), dateFormat.format(date),timeFormat.format(time),selectedToggle);
             }
             resetTransactionSection();
             System.out.println(newAmount);
