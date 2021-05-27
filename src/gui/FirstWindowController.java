@@ -266,6 +266,11 @@ public class FirstWindowController {
 
     private void searchTransactionRecordAndShow(){
         String accountNumber = accountNumberForTransaction.getText();
+        ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
+    }
+
+    private void showTransactions(ResultSet result){
+
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
