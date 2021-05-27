@@ -119,7 +119,7 @@ public class FirstWindowController {
             showTransactionTable();
 
         }else if(event.getSource() == search){
-
+            searchTransactionRecordAndShow();
         }
     }
 
