@@ -97,14 +97,14 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == newCustomer) {
-            transactionTable.getItems().clear();
+            resetTransactionSection();
             openNewCustomerWindow();
 
         } else if (event.getSource() == addCustomer) {
             addCustomer();
 
         } else if (event.getSource() == newTransaction) {
-            transactionTable.getItems().clear();
+            resetTransactionSection();
             openNewTransactionWindow();
 
         } else if (event.getSource() == generateOTP) {
