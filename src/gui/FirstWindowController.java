@@ -112,7 +112,7 @@ public class FirstWindowController {
             doTransaction(getSelectedToggleButton());
 
         }else if(event.getSource() == showTransactionPane){
-
+            showTransactionTable();
         }
     }
 
