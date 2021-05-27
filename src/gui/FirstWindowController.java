@@ -25,6 +25,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -155,6 +158,7 @@ public class FirstWindowController {
     private void doTransaction(String selectedToggle) throws SQLException {
         String account = accountNumber.getText();
         String amount1 = amount.getText();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd, MMMM yyyy");
         if (selectedToggle.equals("Deposit")) {
             Customer customer = getCustomer(account);
             double newAmount = customer.addAmount(Double.parseDouble(amount1));
