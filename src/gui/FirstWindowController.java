@@ -84,15 +84,7 @@ public class FirstWindowController {
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
         if (event.getSource() == login) {
-            String user = userID.getText();
-            String pass = password.getText();
-            if (DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)) {
-                FirstWindow.getStage().close();
-                startNewWindow();
-            } else {
-                createAlert(Alert.AlertType.ERROR, "FAILED", "Login Failed", "Check your user id and " +
-                        "password again.\nThank You!");
-            }
+
         } else if (event.getSource() == addCustomer) {
             String cusName = name.getText();
             String cusAge = age.getText();
@@ -133,8 +125,16 @@ public class FirstWindowController {
         }
     }
 
-    private void login(){
-
+    private void login() throws IOException {
+        String user = userID.getText();
+        String pass = password.getText();
+        if (DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)) {
+            FirstWindow.getStage().close();
+            startNewWindow();
+        } else {
+            createAlert(Alert.AlertType.ERROR, "FAILED", "Login Failed", "Check your user id and " +
+                    "password again.\nThank You!");
+        }
     }
 
     private void startNewWindow() throws IOException {
