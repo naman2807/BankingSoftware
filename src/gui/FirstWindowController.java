@@ -167,6 +167,7 @@ public class FirstWindowController {
             DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
             LocalDate date = LocalDate.now();
             LocalTime time = LocalTime.now();
+            addTransaction(account,newAmount, dateFormat.format(date),timeFormat.format(time),selectedToggle);
             resetTransactionSection();
         }else {
             Customer customer = getCustomer(account);
@@ -176,6 +177,9 @@ public class FirstWindowController {
                         "There is insufficient balance in your account.");
             }else {
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+                LocalDate date = LocalDate.now();
+                LocalTime time = LocalTime.now();
+                addTransaction(account,newAmount, dateFormat.format(date),timeFormat.format(time),selectedToggle);
             }
             resetTransactionSection();
             System.out.println(newAmount);
