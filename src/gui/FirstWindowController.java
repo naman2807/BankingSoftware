@@ -282,6 +282,7 @@ public class FirstWindowController {
                 int id = result.getInt(6);
                 transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
             }
+            transactionTable.setItems(transactions);
         }
 
     }
