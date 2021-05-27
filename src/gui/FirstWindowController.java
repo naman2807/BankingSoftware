@@ -77,6 +77,8 @@ public class FirstWindowController {
     @FXML
     private Pane newTransactionPane;
     @FXML
+    private Pane transactionHistoryPane;
+    @FXML
     private ToggleGroup transactionToggleGroup;
     @FXML
     private Button verifyOTP;
