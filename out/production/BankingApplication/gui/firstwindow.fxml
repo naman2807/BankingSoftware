@@ -126,7 +126,7 @@
                             </columns>
                         </TableView>
                         <TextField fx:id="accountNumberForTransaction" layoutX="191.0" layoutY="4.0" prefHeight="50.0" prefWidth="315.0" promptText="Enter Account Number" />
-                        <Button layoutX="535.0" layoutY="13.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" stylesheets="@bankapplication.css" text="Search" textFill="#eae3e3">
+                        <Button fx:id="search" layoutX="535.0" layoutY="13.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" stylesheets="@bankapplication.css" text="Search" textFill="#eae3e3">
                             <font>
                                 <Font name="Calisto MT Bold" size="14.0" />
                             </font>
@@ -207,7 +207,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
+                                <TextField fx:id="name" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Name">
                                     <cursor>
                                         <Cursor fx:constant="TEXT" />
                                     </cursor>
