@@ -87,27 +87,7 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == addCustomer) {
-            String cusName = name.getText();
-            String cusAge = age.getText();
-            String cusAddress = address.getText();
-            String cusPhone = phoneNumber.getText();
-            String parent = parentName.getText();
-            if (cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
-                    || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()) {
-                createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
-                name.clear();
-                age.clear();
-                address.clear();
-                phoneNumber.clear();
-                parentName.clear();
-            } else {
-                DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
-                name.clear();
-                age.clear();
-                address.clear();
-                phoneNumber.clear();
-                parentName.clear();
-            }
+
         } else if (event.getSource() == newCustomer) {
                 openNewCustomerWindow();
 
@@ -153,7 +133,27 @@ public class FirstWindowController {
     }
 
     private void addCustomer(){
-
+        String cusName = name.getText();
+        String cusAge = age.getText();
+        String cusAddress = address.getText();
+        String cusPhone = phoneNumber.getText();
+        String parent = parentName.getText();
+        if (cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
+                || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()) {
+            createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+            name.clear();
+            age.clear();
+            address.clear();
+            phoneNumber.clear();
+            parentName.clear();
+        } else {
+            DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
+            name.clear();
+            age.clear();
+            address.clear();
+            phoneNumber.clear();
+            parentName.clear();
+        }
     }
 
     private void openNewTransactionWindow(){
