@@ -2,6 +2,7 @@ package gui;
 
 
 import data.Customer;
+import data.Transaction;
 import database.DataBaseConnection;
 import database.DataSource;
 import javafx.event.ActionEvent;
@@ -205,7 +206,7 @@ public class FirstWindowController {
     }
 
     private void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation){
-
+        DataSource.addTransaction(DataBaseConnection.getConnection(), new Transaction(accountNumber, amount, transactionTime, transactionDate, operation));
     }
 
     private void resetTransactionSection(){
