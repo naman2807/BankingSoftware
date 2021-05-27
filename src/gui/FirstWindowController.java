@@ -117,6 +117,9 @@ public class FirstWindowController {
 
         }else if(event.getSource() == showTransactionPane){
             showTransactionTable();
+
+        }else if(event.getSource() == search){
+
         }
     }
 
@@ -257,7 +260,7 @@ public class FirstWindowController {
 
     private void showTransactionTable(){
         headerLabel.setText("Transaction History Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(192,86,211),CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(106,211,222),CornerRadii.EMPTY, Insets.EMPTY)));
         transactionHistoryPane.toFront();
     }
 

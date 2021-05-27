@@ -289,7 +289,9 @@
                                 </TextField>
                             </children>
                         </HBox>
-                        <Button layoutX="240.2343692779541" layoutY="371.1999816894531" mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate" textFill="#f7f0f0">
+                        <Button fx:id="addCustomer" layoutX="240.2343692779541" layoutY="371.1999816894531"
+                                mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate"
+                                textFill="#f7f0f0">
                             <font>
                                 <Font name="Century" size="13.0" />
                             </font>

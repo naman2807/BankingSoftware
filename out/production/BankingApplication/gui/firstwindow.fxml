@@ -239,7 +239,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
+                                <TextField fx:id="address" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Address">
                                     <cursor>
                                         <Cursor fx:constant="TEXT" />
                                     </cursor>
@@ -259,7 +259,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
+                                <TextField fx:id="phoneNumber" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Phone Number">
                                     <cursor>
                                         <Cursor fx:constant="TEXT" />
                                     </cursor>
@@ -279,7 +279,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
+                                <TextField fx:id="parentName" prefHeight="44.0" prefWidth="418.0" promptText="Enter Customer's Parent's Name">
                                     <cursor>
                                         <Cursor fx:constant="TEXT" />
                                     </cursor>
@@ -289,7 +289,9 @@
                                 </TextField>
                             </children>
                         </HBox>
-                        <Button layoutX="240.2343692779541" layoutY="371.1999816894531" mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate" textFill="#f7f0f0">
+                        <Button fx:id="addCustomer" layoutX="240.2343692779541" layoutY="371.1999816894531"
+                                mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate"
+                                textFill="#f7f0f0">
                             <font>
                                 <Font name="Century" size="13.0" />
                             </font>
@@ -297,7 +299,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <TextField layoutX="221.0" layoutY="80.0" prefHeight="46.0" prefWidth="418.0" promptText="Enter Customer's Age">
+                        <TextField fx:id="age" layoutX="221.0" layoutY="80.0" prefHeight="46.0" prefWidth="418.0" promptText="Enter Customer's Age">
                             <cursor>
                                 <Cursor fx:constant="TEXT" />
                             </cursor>
