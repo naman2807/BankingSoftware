@@ -67,7 +67,7 @@ public class DataSource {
             preparedStatement.setString(5, transaction.getTransactionTime());
            int result =  preparedStatement.executeUpdate();
            checkResult(result,"NEW TRANSACTION","Action Status: " + transaction.getOperation(),
-                   "Amount Rs. " + transaction.getAmount() + " from Account: " + transaction.getAccountNumber()) ;
+                   "Amount Rs. " + transaction.getAmount() + ".... Account: " + transaction.getAccountNumber()) ;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -106,7 +106,6 @@ public class DataSource {
             preparedStatement.setDouble(1, amount);
             preparedStatement.setString(2, accountNumber);
             int result = preparedStatement.executeUpdate();
-            checkResult(result,"SUCCESS","Account number : " + accountNumber, "Amount Rs.: " + amount);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

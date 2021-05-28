@@ -76,7 +76,10 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button fx:id="showNewLoanPane"  onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
+                <Button fx:id="showNewLoanPane"  onAction="#handleButtonClicked"
+                        alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0"
+                        mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Issue Loan"
+                        textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
@@ -103,7 +106,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <TextField prefHeight="41.0" prefWidth="286.0" promptText="Enter Account Number">
+                                <TextField fx:id="loanAccountField" prefHeight="41.0" prefWidth="286.0" promptText="Enter Account Number">
                                     <HBox.margin>
                                         <Insets left="20.0" />
                                     </HBox.margin>
@@ -120,7 +123,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <TextField prefHeight="41.0" prefWidth="286.0" promptText="Enter Loan Amount">
+                                <TextField prefHeight="41.0" prefWidth="286.0" fx:id="loanAmount" promptText="Enter Loan Amount">
                                     <HBox.margin>
                                         <Insets left="20.0" />
                                     </HBox.margin>
@@ -137,7 +140,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <DatePicker prefHeight="42.0" prefWidth="283.0" promptText="Choose Date">
+                                <DatePicker fx:id="dueDate" prefHeight="42.0" prefWidth="283.0" promptText="Choose Date">
                                     <HBox.margin>
                                         <Insets left="21.0" />
                                     </HBox.margin>
@@ -154,7 +157,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <ComboBox prefHeight="38.0" prefWidth="238.0"
+                                <ComboBox fx:id="loanType" prefHeight="38.0" prefWidth="238.0"
                                           promptText="Drop Down to Choose Type">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
