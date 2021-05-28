@@ -90,6 +90,9 @@ public class FirstWindowController {
     private TextField accountNumberForTransaction;
     @FXML
     private Button search;
+    @FXML
+    private Button showNewLoanPane;
+
 
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
