@@ -21,6 +21,8 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
@@ -152,13 +154,27 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <ComboBox prefHeight="38.0" prefWidth="238.0" promptText="Drop Down to Choose Type">
+                                <ComboBox prefHeight="38.0" prefWidth="238.0"
+                                          promptText="Drop Down to Choose Type">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Education Loan" />
+                                            <String fx:value="Home Loan" />
+                                            <String fx:value="Car Loan" />
+                                            <String fx:value="Medical Loan" />
+                                        </FXCollections>
+                                    </items>
                                     <HBox.margin>
                                         <Insets left="35.0" />
                                     </HBox.margin>
                                 </ComboBox>
                             </children>
                         </HBox>
+                        <Button layoutX="273.0" layoutY="309.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="108.0" stylesheets="@bankapplication.css" text="Issue Loan" textFill="#f2eeee">
+                            <font>
+                                <Font name="Arial Italic" size="13.0" />
+                            </font>
+                        </Button>
                     </children></Pane>
                 <Pane fx:id="transactionHistoryPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;">
                     <StackPane.margin>
