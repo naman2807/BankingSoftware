@@ -333,6 +333,9 @@ public class FirstWindowController {
             String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
             String date = dueDate.getText();
             DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, Date.valueOf(date)));
+        }else {
+            createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
+                    "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
         }
     }
 
