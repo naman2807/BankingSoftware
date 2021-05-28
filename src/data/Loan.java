@@ -19,4 +19,7 @@ public class Loan {
     private final SimpleDoubleProperty loanAmount = new SimpleDoubleProperty(0.0);
     private final SimpleStringProperty loanType = new SimpleStringProperty("");
     private final SimpleObjectProperty<Date> dueDate = new SimpleObjectProperty<>();
+
+    public Loan() {
+    }
 }
