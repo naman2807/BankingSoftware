@@ -307,6 +307,8 @@ public class FirstWindowController {
     }
 
     private void showLoanPane(){
+        headerLabel.setText("Enter Details To Apply For Loan!");
+
 
     }
 
