@@ -22,4 +22,8 @@ public class Loan {
 
     public Loan() {
     }
+
+    public Loan(String accountNumber, double loanAmount, String loanType, Date dueDate){
+
+    }
 }
