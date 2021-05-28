@@ -306,6 +306,10 @@ public class FirstWindowController {
         accountNumberForTransaction.clear();
     }
 
+    private void showLoanPane(){
+
+    }
+
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
