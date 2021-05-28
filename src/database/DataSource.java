@@ -1,9 +1,6 @@
 package database;
 
-import data.Bank;
-import data.Branch;
-import data.Customer;
-import data.Transaction;
+import data.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
@@ -126,15 +123,16 @@ public class DataSource {
         return null;
     }
 
-    public static void addLoan(Connection connection, String accountNumber, double amount, Date date){
+    public static void addLoan(Connection connection, Loan loan){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.addLoanQuery());
-            preparedStatement.setString(1,accountNumber );
-            preparedStatement.setDouble(2, amount);
-            preparedStatement.setDate(3, date);
+            preparedStatement.setString(1,loan.getAccountNumber() );
+            preparedStatement.setDouble(2, loan.getLoanAmount());
+            preparedStatement.setString(3, loan.getLoanType());
+            preparedStatement.setDate(4, loan.getDueDate());
             int result = preparedStatement.executeUpdate();
             checkResult(result, "SUCCESS", "New Loan" , "New loan of amount Rs. " +
-                    amount + " has been assigned to Account Number: " + accountNumber);
+                    loan.getLoanAmount() + " has been assigned to Account Number: " + loan.getAccountNumber());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
