@@ -308,6 +308,7 @@ public class FirstWindowController {
 
     private void showLoanPane(){
         headerLabel.setText("Enter Details To Apply For Loan!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(130,23,224),CornerRadii.EMPTY, Insets.EMPTY)));
 
 
     }
