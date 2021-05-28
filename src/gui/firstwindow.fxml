@@ -123,7 +123,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <TextField prefHeight="41.0" prefWidth="286.0" promptText="Enter Loan Amount">
+                                <TextField prefHeight="41.0" prefWidth="286.0" fx:id="loanAmount" promptText="Enter Loan Amount">
                                     <HBox.margin>
                                         <Insets left="20.0" />
                                     </HBox.margin>
