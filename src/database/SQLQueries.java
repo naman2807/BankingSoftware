@@ -26,6 +26,7 @@ public class SQLQueries {
     private static final String LOAN_TABLE = "loan_table";
     private static final String LOAN_AMOUNT = "loan_amount";
     private static final String LOAN_TYPE = "loan_type";
+    private static final String DUE_DATE = "due_date";
     private static final String EMPLOYEE_ID = "userid";
     private static final String OPERATION = "operation_type";
     private static final String CUSTOMER_NAME = "name";
