@@ -140,6 +140,8 @@ public class FirstWindowController {
 
         }else if(event.getSource() == showNewLoanPane){
             showLoanPane();
+        }else if(event.getSource() == issueLoan){
+
         }
     }
 
