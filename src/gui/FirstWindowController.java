@@ -114,6 +114,7 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == newCustomer) {
+            resetIssueLoanPane();
             resetTransactionHistoryPane();
             openNewCustomerWindow();
 
@@ -121,6 +122,7 @@ public class FirstWindowController {
             addCustomer();
 
         } else if (event.getSource() == newTransaction) {
+            resetIssueLoanPane();
             resetTransactionHistoryPane();
             openNewTransactionWindow();
 
@@ -135,12 +137,16 @@ public class FirstWindowController {
             doTransaction(getSelectedToggleButton());
 
         } else if (event.getSource() == showTransactionPane) {
+            resetIssueLoanPane();
+            resetTransactionHistoryPane();
             showTransactionTable();
 
         } else if (event.getSource() == search) {
             searchTransactionRecordAndShow();
 
         }else if(event.getSource() == showNewLoanPane){
+            resetTransactionHistoryPane();
+            resetIssueLoanPane();
             showLoanPane();
 
         }else if(event.getSource() == issueLoan){
