@@ -348,6 +348,7 @@ public class FirstWindowController {
     private void resetIssueLoanPane(){
         loanAccountField.clear();
         loanAmount.clear();
+        dueDate.getEditor().clear();
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
