@@ -2,6 +2,7 @@ package gui;
 
 
 import data.Customer;
+import data.Loan;
 import data.Transaction;
 import database.DataBaseConnection;
 import database.DataSource;
@@ -23,6 +24,7 @@ import javafx.stage.Stage;
 import operations.OTP;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -330,6 +332,7 @@ public class FirstWindowController {
             String loanAmountToIssue = loanAmount.getText();
             String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
             String date = dueDate.getText();
+            DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, Date.valueOf(date)));
         }
     }
 
