@@ -99,7 +99,7 @@ public class FirstWindowController {
     @FXML
     private TextField loanAmount;
     @FXML
-    private TextField loanType;
+    private ComboBox<String> loanType;
     @FXML
     private TextField dueDate;
     @FXML
@@ -326,6 +326,11 @@ public class FirstWindowController {
 
     private void issueLoanToCustomer(){
         String account = loanAccountField.getText();
+        if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
+            String loanAmountToIssue = loanAmount.getText();
+            String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
+            String date = dueDate.getText();
+        }
     }
 
     private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber){
