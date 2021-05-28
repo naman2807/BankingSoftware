@@ -19,6 +19,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <AnchorPane fx:controller="gui.FirstWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" style="-fx-background-color: B3A9E7FF;"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
@@ -72,15 +74,92 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
+                <Button fx:id="showNewLoanPane"  onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
                 </Button>
             </children>
         </VBox>
         <StackPane layoutX="258.0" layoutY="182.0" prefHeight="439.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="257.79999999999995" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.00000000000006">
             <children>
+                <Pane fx:id="newLoanPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B3A9E7FF;">
+                    <StackPane.margin>
+                        <Insets left="10.0" />
+                    </StackPane.margin>
+                    <children>
+                        <HBox>
+                            <children>
+                                <Label prefHeight="41.0" prefWidth="194.0" text="Account Number:">
+                                    <font>
+                                        <Font name="Bodoni MT Bold" size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="20.0" />
+                                    </padding>
+                                </Label>
+                                <TextField prefHeight="41.0" prefWidth="286.0" promptText="Enter Account Number">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="-1.0" layoutY="67.0">
+                            <children>
+                                <Label prefHeight="41.0" prefWidth="194.0" text="Loan Amount:">
+                                    <font>
+                                        <Font name="Bodoni MT Bold" size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="20.0" />
+                                    </padding>
+                                </Label>
+                                <TextField prefHeight="41.0" prefWidth="286.0" promptText="Enter Loan Amount">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="-1.0" layoutY="200.0">
+                            <children>
+                                <Label prefHeight="41.0" prefWidth="194.0" text="Due Date:">
+                                    <font>
+                                        <Font name="Bodoni MT Bold" size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="20.0" />
+                                    </padding>
+                                </Label>
+                                <DatePicker prefHeight="42.0" prefWidth="283.0" promptText="Choose Date">
+                                    <HBox.margin>
+                                        <Insets left="21.0" />
+                                    </HBox.margin>
+                                </DatePicker>
+                            </children>
+                        </HBox>
+                        <HBox layoutY="133.0">
+                            <children>
+                                <Label prefHeight="41.0" prefWidth="194.0" text="Loan Type:">
+                                    <font>
+                                        <Font name="Bodoni MT Bold" size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="20.0" />
+                                    </padding>
+                                </Label>
+                                <ComboBox prefHeight="38.0" prefWidth="238.0" promptText="Drop Down to Choose Type">
+                                    <HBox.margin>
+                                        <Insets left="35.0" />
+                                    </HBox.margin>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                    </children></Pane>
                 <Pane fx:id="transactionHistoryPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;">
                     <StackPane.margin>
                         <Insets left="2.0" />

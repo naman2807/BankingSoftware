@@ -159,6 +159,11 @@
                                 </ComboBox>
                             </children>
                         </HBox>
+                        <Button layoutX="273.0" layoutY="309.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="108.0" stylesheets="@bankapplication.css" text="Issue Loan" textFill="#f2eeee">
+                            <font>
+                                <Font name="Arial Italic" size="13.0" />
+                            </font>
+                        </Button>
                     </children></Pane>
                 <Pane fx:id="transactionHistoryPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;">
                     <StackPane.margin>
