@@ -157,7 +157,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <ComboBox prefHeight="38.0" prefWidth="238.0"
+                                <ComboBox fx:id="loanType" prefHeight="38.0" prefWidth="238.0"
                                           promptText="Drop Down to Choose Type">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
