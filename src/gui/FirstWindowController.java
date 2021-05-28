@@ -325,6 +325,10 @@ public class FirstWindowController {
     }
 
     private void issueLoanToCustomer(){
+        String account = loanAccountField.getText();
+    }
+
+    private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber){
 
     }
 
