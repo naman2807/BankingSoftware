@@ -96,6 +96,8 @@ public class FirstWindowController {
     private Pane newLoanPane;
     @FXML
     private TextField loanAccountField;
+    @FXML
+    private TextField loanAmount;
 
 
     @FXML
