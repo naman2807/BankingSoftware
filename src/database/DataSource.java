@@ -153,9 +153,12 @@ public class DataSource {
     public static ResultSet getLoanRecordByAccountNumber(Connection connection, String accountNumber){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getLoanRecordByAccountNumberQuery());
+            preparedStatement.setString(1, accountNumber);
+            return preparedStatement.executeQuery();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return null;
     }
 
     public static ResultSet getCustomersRecord(Connection connection){
