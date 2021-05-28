@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.sql.Date;
+import java.util.Objects;
 
 /**
  * Created By: Naman Agarwal
@@ -76,5 +77,18 @@ public class Loan {
 
     public void setDueDate(Date dueDate) {
         this.dueDate.set(dueDate);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Loan loan = (Loan) o;
+        return Objects.equals(accountNumber, loan.accountNumber) && Objects.equals(loanAmount, loan.loanAmount) && Objects.equals(loanType, loan.loanType) && Objects.equals(dueDate, loan.dueDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountNumber, loanAmount, loanType, dueDate);
     }
 }
