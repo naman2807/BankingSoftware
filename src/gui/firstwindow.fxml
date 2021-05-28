@@ -157,7 +157,9 @@
                                 <ComboBox prefHeight="38.0" prefWidth="238.0"
                                           promptText="Drop Down to Choose Type">
                                     <items>
+                                        <FXCollections fx:factory="observableArrayList">
 
+                                        </FXCollections>
                                     </items>
                                     <HBox.margin>
                                         <Insets left="35.0" />
