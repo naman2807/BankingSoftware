@@ -158,7 +158,8 @@
                                           promptText="Drop Down to Choose Type">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
-                                            <String fx:id="pass" fx:value="Education Loan" />
+                                            <String fx:value="Education Loan" />
+                                            <String fx:value="Home Loan" />
                                         </FXCollections>
                                     </items>
                                     <HBox.margin>
