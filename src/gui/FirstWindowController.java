@@ -94,6 +94,8 @@ public class FirstWindowController {
     private Button showNewLoanPane;
     @FXML
     private Pane newLoanPane;
+    @FXML
+    private TextField loanAccountField;
 
 
     @FXML
@@ -309,8 +311,7 @@ public class FirstWindowController {
     private void showLoanPane(){
         headerLabel.setText("Enter Details To Apply For Loan!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(130,23,224),CornerRadii.EMPTY, Insets.EMPTY)));
-
-
+        newLoanPane.toFront();
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
