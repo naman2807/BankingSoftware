@@ -129,7 +129,7 @@ public class FirstWindowController {
             searchTransactionRecordAndShow();
 
         }else if(event.getSource() == showNewLoanPane){
-
+            showLoanPane();
         }
     }
 
