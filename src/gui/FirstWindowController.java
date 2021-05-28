@@ -128,6 +128,8 @@ public class FirstWindowController {
         } else if (event.getSource() == search) {
             searchTransactionRecordAndShow();
 
+        }else if(event.getSource() == showNewLoanPane){
+
         }
     }
 
