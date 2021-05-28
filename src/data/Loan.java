@@ -1,7 +1,10 @@
 package data;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+
+import java.sql.Date;
 
 /**
  * Created By: Naman Agarwal
@@ -15,4 +18,5 @@ public class Loan {
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty loanAmount = new SimpleDoubleProperty(0.0);
     private final SimpleStringProperty loanType = new SimpleStringProperty("");
+    private final SimpleObjectProperty<Date> dueDate = new SimpleObjectProperty<>();
 }
