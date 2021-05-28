@@ -92,6 +92,8 @@ public class FirstWindowController {
     private Button search;
     @FXML
     private Button showNewLoanPane;
+    @FXML
+    private Pane newLoanPane;
 
 
     @FXML
