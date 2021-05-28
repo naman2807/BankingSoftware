@@ -161,6 +161,7 @@
                                             <String fx:value="Education Loan" />
                                             <String fx:value="Home Loan" />
                                             <String fx:value="Car Loan" />
+                                            <String fx:value="Medical Loan" />
                                         </FXCollections>
                                     </items>
                                     <HBox.margin>
