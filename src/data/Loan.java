@@ -1,5 +1,6 @@
 package data;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -12,4 +13,5 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Loan {
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
+    private final SimpleDoubleProperty loanAmount = new SimpleDoubleProperty(0.0);
 }
