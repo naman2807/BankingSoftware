@@ -102,6 +102,8 @@ public class FirstWindowController {
     private TextField loanType;
     @FXML
     private TextField dueDate;
+    @FXML
+    private Button issueLoan;
 
 
     @FXML
