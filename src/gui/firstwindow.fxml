@@ -160,6 +160,7 @@
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Education Loan" />
                                             <String fx:value="Home Loan" />
+                                            <String fx:value="Car Loan" />
                                         </FXCollections>
                                     </items>
                                     <HBox.margin>
