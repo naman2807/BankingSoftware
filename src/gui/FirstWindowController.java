@@ -329,7 +329,8 @@ public class FirstWindowController {
     }
 
     private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber){
-
+        ResultSet resultSet = DataSource.getLoanRecordByAccountNumber(DataBaseConnection.getConnection(), accountNumber);
+        return resultSet != null;
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
