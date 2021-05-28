@@ -173,7 +173,7 @@
                                 </ComboBox>
                             </children>
                         </HBox>
-                        <Button fx:id="issueLoan" layoutX="273.0" layoutY="309.0" mnemonicParsing="false"
+                        <Button fx:id="issueLoan" onAction="#handleButtonClicked" layoutX="273.0" layoutY="309.0" mnemonicParsing="false"
                                 prefHeight="38.0" prefWidth="108.0"
                                 stylesheets="@bankapplication.css" text="Issue Loan" textFill="#f2eeee">
                             <font>
