@@ -74,6 +74,10 @@ public class SQLQueries {
          + LOAN_TYPE + ", " + DUE_DATE + ") VALUES(?, ?, ?, ?)";
      }
 
+     public static String getLoanRecordByAccountNumberQuery(){
+        return "SELECT * FROM " + LOAN_TABLE + " WHERE " + ACCOUNT_NUMBER + "= ?";
+     }
+
      public static String getLoanRecordQuery(){
         return "SELECT * FROM " + LOAN_TABLE;
      }
