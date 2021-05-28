@@ -70,7 +70,8 @@ public class SQLQueries {
      }
 
      public static String addLoanQuery(){
-        return "INSERT INTO " + LOAN_TABLE + " VALUES(?, ?, ?)";
+        return "INSERT INTO " + LOAN_TABLE + " (" + ACCOUNT_NUMBER  + ", " + LOAN_AMOUNT + ", "
+         + LOAN_TYPE + ", " + DUE_DATE + ") VALUES(?, ?, ?, ?)";
      }
 
      public static String getLoanRecordQuery(){
