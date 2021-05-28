@@ -150,6 +150,10 @@ public class DataSource {
         return null;
     }
 
+    public static ResultSet getLoanRecordByAccountNumber(Connection connection, String accountNumber){
+
+    }
+
     public static ResultSet getCustomersRecord(Connection connection){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getCustomersRecordQuery());
