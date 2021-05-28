@@ -345,6 +345,10 @@ public class FirstWindowController {
         return resultSet != null;
     }
 
+    private void resetIssueLoanPane(){
+
+    }
+
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
