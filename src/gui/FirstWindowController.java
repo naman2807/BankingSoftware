@@ -324,6 +324,10 @@ public class FirstWindowController {
         newLoanPane.toFront();
     }
 
+    private void issueLoanToCustomer(){
+
+    }
+
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
