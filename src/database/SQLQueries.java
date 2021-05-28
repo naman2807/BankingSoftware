@@ -28,7 +28,7 @@ public class SQLQueries {
     private static final String OPERATION = "operation_type";
     private static final String CUSTOMER_NAME = "name";
     private static final String CUSTOMER_AGE = "age";
-
+    private static final String LOAN_AMOUNT = "loan_amount";
     private static final String CUSTOMER_ADDRESS = "address";
     private static final String CUSTOMER_PARENT_NAME = "parentname";
     private static final String CUSTOMER_PHONE_NUMBER = "phone_number";
