@@ -14,4 +14,5 @@ import javafx.beans.property.SimpleStringProperty;
 public class Loan {
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty loanAmount = new SimpleDoubleProperty(0.0);
+    private final SimpleStringProperty loanType = new SimpleStringProperty("");
 }
