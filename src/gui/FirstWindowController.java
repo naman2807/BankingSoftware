@@ -103,7 +103,7 @@ public class FirstWindowController {
     @FXML
     private ComboBox<String> loanType;
     @FXML
-    private TextField dueDate;
+    private DatePicker dueDate;
     @FXML
     private Button issueLoan;
 
@@ -332,7 +332,7 @@ public class FirstWindowController {
         if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
             String loanAmountToIssue = loanAmount.getText();
             String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
-            String date = dueDate.getText();
+            String date = dueDate.getValue().format(DateTimeFormatter.ofPattern("dd, MMMM yyyy"));
             DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, Date.valueOf(date)));
         }else {
             createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
