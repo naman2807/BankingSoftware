@@ -72,7 +72,7 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button fx:id="showNewLoanPane"  alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
+                <Button fx:id="showNewLoanPane"  onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0" text="Label 4" textFill="#e1dcdc">
                     <font>
                         <Font name="Bell MT Bold" size="18.0" />
                     </font>
