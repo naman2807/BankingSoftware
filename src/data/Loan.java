@@ -19,12 +19,12 @@ public class Loan {
     private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
     private final SimpleDoubleProperty loanAmount = new SimpleDoubleProperty(0.0);
     private final SimpleStringProperty loanType = new SimpleStringProperty("");
-    private final SimpleObjectProperty<Date> dueDate = new SimpleObjectProperty<>();
+    private final SimpleStringProperty dueDate = new SimpleStringProperty("");
 
     public Loan() {
     }
 
-    public Loan(String accountNumber, double loanAmount, String loanType, Date dueDate){
+    public Loan(String accountNumber, double loanAmount, String loanType, String dueDate){
         this.accountNumber.set(accountNumber);
         this.loanAmount.set(loanAmount);
         this.loanType.set(loanType);
@@ -67,15 +67,15 @@ public class Loan {
         this.loanType.set(loanType);
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate.get();
     }
 
-    public SimpleObjectProperty<Date> dueDateProperty() {
+    public SimpleStringProperty dueDateProperty() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate.set(dueDate);
     }
 

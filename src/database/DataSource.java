@@ -128,7 +128,7 @@ public class DataSource {
             preparedStatement.setString(1,loan.getAccountNumber() );
             preparedStatement.setDouble(2, loan.getLoanAmount());
             preparedStatement.setString(3, loan.getLoanType());
-            preparedStatement.setDate(4, loan.getDueDate());
+            preparedStatement.setString(4, loan.getDueDate());
             int result = preparedStatement.executeUpdate();
             checkResult(result, "SUCCESS", "New Loan" , "New loan of amount Rs. " +
                     loan.getLoanAmount() + " has been assigned to Account Number: " + loan.getAccountNumber());

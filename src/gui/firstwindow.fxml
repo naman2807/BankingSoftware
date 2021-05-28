@@ -66,6 +66,9 @@
                     <padding>
                         <Insets left="30.0" />
                     </padding>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </Button>
                 <Button fx:id="showTransactionPane" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
                         prefHeight="66.0" prefWidth="260.0" text="Show Transaction History" textFill="#e1dcdc">
@@ -75,6 +78,9 @@
                     <padding>
                         <Insets left="30.0" />
                     </padding>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </Button>
                 <Button fx:id="showNewLoanPane"  onAction="#handleButtonClicked"
                         alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0"
@@ -86,6 +92,9 @@
                     <padding>
                         <Insets left="30.0" />
                     </padding>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </Button>
             </children>
         </VBox>
@@ -179,6 +188,9 @@
                             <font>
                                 <Font name="Arial Italic" size="13.0" />
                             </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </Button>
                     </children></Pane>
                 <Pane fx:id="transactionHistoryPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;">
@@ -230,6 +242,9 @@
                             <font>
                                 <Font name="Calisto MT Bold" size="14.0" />
                             </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </Button>
                     </children>
                 </Pane>
@@ -250,11 +265,17 @@
                             <font>
                                 <Font name="Bookman Old Style Bold" size="14.0" />
                             </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </RadioButton>
                         <RadioButton toggleGroup="$transactionToggleGroup" layoutX="261.0" layoutY="38.0" mnemonicParsing="false" text="Withdraw">
                             <font>
                                 <Font name="Bookman Old Style Bold" size="14.0" />
                             </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
                         </RadioButton>
                         <HBox layoutX="24.0" layoutY="92.0" spacing="15.0">
                             <children>
@@ -288,11 +309,27 @@
                                     <HBox.margin>
                                         <Insets top="12.0" />
                                     </HBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
                                 </Button>
+
                             </children>
                         </HBox>
-                        <Button fx:id="doTransaction" onAction="#handleButtonClicked" layoutX="292.0" layoutY="400.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Submit" textFill="#efe6e6" />
-                        <Button fx:id="verifyOTP" onAction="#handleButtonClicked" layoutX="441.0" layoutY="337.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Verify OTP" textFill="#efe6e6" />
+                        <Button fx:id="doTransaction" onAction="#handleButtonClicked"
+                                layoutX="292.0" layoutY="400.0" mnemonicParsing="false"
+                                prefHeight="35.0" prefWidth="102.0" text="Submit" textFill="#efe6e6" >
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="verifyOTP" onAction="#handleButtonClicked"
+                                layoutX="441.0" layoutY="337.0" mnemonicParsing="false"
+                                prefHeight="35.0" prefWidth="102.0" text="Verify OTP" textFill="#efe6e6" >
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
                     </children>
                 </Pane>
                 <Pane fx:id="newCustomerPane" prefHeight="439.0" prefWidth="665.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
@@ -390,7 +427,7 @@
                             </children>
                         </HBox>
                         <Button fx:id="addCustomer" onAction="#handleButtonClicked" layoutX="240.2343692779541" layoutY="371.1999816894531"
-                                mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add Candidate"
+                                mnemonicParsing="false" prefHeight="36.0" prefWidth="120.0" text="Add Candidate"
                                 textFill="#f7f0f0">
                             <font>
                                 <Font name="Century" size="13.0" />

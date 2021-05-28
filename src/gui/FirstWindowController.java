@@ -221,31 +221,33 @@ public class FirstWindowController {
         String amount1 = amount.getText();
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd, MMMM yyyy");
         DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss");
-
-        if (selectedToggle.equals("Deposit")) {
-            Customer customer = getCustomer(account);
-            double newAmount = customer.addAmount(Double.parseDouble(amount1));
-            DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
-            LocalDate date = LocalDate.now();
-            LocalTime time = LocalTime.now();
-            addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
-            resetTransactionSection();
-        } else {
-            Customer customer = getCustomer(account);
-            double newAmount = customer.deductAmount(Double.parseDouble(amount1));
-            if (newAmount == customer.getAmount()) {
-                createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
-                        "There is insufficient balance in your account.");
-            } else {
+        if(account.isEmpty() || account.trim().isEmpty() || amount1.isEmpty() || amount1.trim().isEmpty()){
+            createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+        }else {
+            if (selectedToggle.equals("Deposit")) {
+                Customer customer = getCustomer(account);
+                double newAmount = customer.addAmount(Double.parseDouble(amount1));
                 DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
                 LocalDate date = LocalDate.now();
                 LocalTime time = LocalTime.now();
                 addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                resetTransactionSection();
+            } else {
+                Customer customer = getCustomer(account);
+                double newAmount = customer.deductAmount(Double.parseDouble(amount1));
+                if (newAmount == customer.getAmount()) {
+                    createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
+                            "There is insufficient balance in your account.");
+                } else {
+                    DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+                    LocalDate date = LocalDate.now();
+                    LocalTime time = LocalTime.now();
+                    addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                }
+                resetTransactionSection();
+                System.out.println(newAmount);
             }
-            resetTransactionSection();
-            System.out.println(newAmount);
         }
-
     }
 
     private void verifyOTP() {
@@ -333,22 +335,31 @@ public class FirstWindowController {
         newLoanPane.toFront();
     }
 
-    private void issueLoanToCustomer(){
+    private void issueLoanToCustomer() throws SQLException {
         String account = loanAccountField.getText();
         if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
             String loanAmountToIssue = loanAmount.getText();
             String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
             String date = dueDate.getValue().format(DateTimeFormatter.ofPattern("dd, MMMM yyyy"));
-            DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, Date.valueOf(date)));
+            if(account.isEmpty() || account.trim().isEmpty() || loanAmountToIssue.isEmpty() || loanAmountToIssue.trim().isEmpty() ||
+                loanTypeToIssue.isEmpty() || loanTypeToIssue.trim().isEmpty() || date.isEmpty() || date.trim().isEmpty()){
+                createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+            }else {
+                DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, date));
+            }
         }else {
             createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
                     "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
         }
     }
 
-    private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber){
+    private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber) throws SQLException {
         ResultSet resultSet = DataSource.getLoanRecordByAccountNumber(DataBaseConnection.getConnection(), accountNumber);
-        return resultSet != null;
+        if(resultSet == null){
+            return true;
+        }else {
+            return resultSet.next();
+        }
     }
 
     private void resetIssueLoanPane(){
