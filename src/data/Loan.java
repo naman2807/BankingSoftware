@@ -1,5 +1,7 @@
 package data;
 
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  * Created By: Naman Agarwal
  * User ID: naman2807
@@ -9,4 +11,5 @@ package data;
  */
 
 public class Loan {
+    private final SimpleStringProperty accountNumber = new SimpleStringProperty("");
 }
