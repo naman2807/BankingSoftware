@@ -24,6 +24,9 @@ public class Loan {
     }
 
     public Loan(String accountNumber, double loanAmount, String loanType, Date dueDate){
-
+        this.accountNumber.set(accountNumber);
+        this.loanAmount.set(loanAmount);
+        this.loanType.set(loanType);
+        this.dueDate.set(dueDate);
     }
 }
