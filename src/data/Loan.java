@@ -91,4 +91,14 @@ public class Loan {
     public int hashCode() {
         return Objects.hash(accountNumber, loanAmount, loanType, dueDate);
     }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "accountNumber=" + accountNumber +
+                ", loanAmount=" + loanAmount +
+                ", loanType=" + loanType +
+                ", dueDate=" + dueDate +
+                '}';
+    }
 }
