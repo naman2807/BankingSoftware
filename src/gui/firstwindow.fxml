@@ -140,7 +140,7 @@
                                         <Insets left="20.0" />
                                     </padding>
                                 </Label>
-                                <DatePicker prefHeight="42.0" prefWidth="283.0" promptText="Choose Date">
+                                <DatePicker fx:id="dueDate" prefHeight="42.0" prefWidth="283.0" promptText="Choose Date">
                                     <HBox.margin>
                                         <Insets left="21.0" />
                                     </HBox.margin>
