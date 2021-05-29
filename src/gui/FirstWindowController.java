@@ -120,15 +120,15 @@ public class FirstWindowController {
             login();
 
         } else if (event.getSource() == newCustomer) {
-            resetIssueLoanPane();
             resetTransactionHistoryPane();
+            resetLoanRecordPane();
             openNewCustomerWindow();
 
         } else if (event.getSource() == addCustomer) {
             addCustomer();
 
         } else if (event.getSource() == newTransaction) {
-            resetIssueLoanPane();
+            resetLoanRecordPane();
             resetTransactionHistoryPane();
             openNewTransactionWindow();
 
@@ -143,8 +143,7 @@ public class FirstWindowController {
             doTransaction(getSelectedToggleButton());
 
         } else if (event.getSource() == showTransactionPane) {
-            resetIssueLoanPane();
-            resetTransactionHistoryPane();
+            resetLoanRecordPane();
             showTransactionTable();
 
         } else if (event.getSource() == search) {
@@ -152,13 +151,14 @@ public class FirstWindowController {
 
         }else if(event.getSource() == showNewLoanPane){
             resetTransactionHistoryPane();
-            resetIssueLoanPane();
+            resetLoanRecordPane();
             showLoanPane();
 
         }else if(event.getSource() == issueLoan){
             issueLoanToCustomer();
 
         }else if(event.getSource() == loanRecordPane){
+            resetTransactionHistoryPane();
             showLoanRecordPane();
         }
     }
@@ -360,6 +360,7 @@ public class FirstWindowController {
             createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
                     "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
         }
+        resetIssueLoanPane();
     }
 
     private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber) throws SQLException {
