@@ -155,7 +155,7 @@ public class FirstWindowController {
             issueLoanToCustomer();
 
         }else if(event.getSource() == loanRecordPane){
-
+            showLoanRecordPane();
         }
     }
 
