@@ -132,7 +132,7 @@
                                 </TableColumn>
                                 <TableColumn minWidth="50.0" prefWidth="170.39999389648438" text="Loan Type" >
                                     <cellValueFactory>
-
+                                            <PropertyValueFactory property="loanType"/>
                                     </cellValueFactory>
                                 </TableColumn>
                                 <TableColumn minWidth="50.0" prefWidth="147.20001220703125" text="Due Date">
