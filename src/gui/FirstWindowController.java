@@ -233,28 +233,31 @@ public class FirstWindowController {
         if(account.isEmpty() || account.trim().isEmpty() || amount1.isEmpty() || amount1.trim().isEmpty()){
             createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
         }else {
-            if (selectedToggle.equals("Deposit")) {
-                Customer customer = getCustomer(account);
-                double newAmount = customer.addAmount(Double.parseDouble(amount1));
-                DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
-                LocalDate date = LocalDate.now();
-                LocalTime time = LocalTime.now();
-                addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
-                resetTransactionSection();
-            } else {
-                Customer customer = getCustomer(account);
-                double newAmount = customer.deductAmount(Double.parseDouble(amount1));
-                if (newAmount == customer.getAmount()) {
-                    createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
-                            "There is insufficient balance in your account.");
-                } else {
+            Customer customer = getCustomer(account);
+            if(customer == null){
+                createAlert(Alert.AlertType.WARNING, "WARNING", "Cannot do transaction", "Kindly check your account number.");
+            }else {
+                if (selectedToggle.equals("Deposit")) {
+                    double newAmount = customer.addAmount(Double.parseDouble(amount1));
                     DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
                     LocalDate date = LocalDate.now();
                     LocalTime time = LocalTime.now();
                     addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                    resetTransactionSection();
+                } else {
+                    double newAmount = customer.deductAmount(Double.parseDouble(amount1));
+                    if (newAmount == customer.getAmount()) {
+                        createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
+                                "There is insufficient balance in your account.");
+                    } else {
+                        DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+                        LocalDate date = LocalDate.now();
+                        LocalTime time = LocalTime.now();
+                        addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                    }
+                    System.out.println(newAmount);
                 }
                 resetTransactionSection();
-                System.out.println(newAmount);
             }
         }
     }
@@ -283,8 +286,6 @@ public class FirstWindowController {
                 String accountNumber = resultSet.getString(7);
                 return new Customer(name, age, address, parent, phone, accountNumber, amount);
             }
-        } else {
-            createAlert(Alert.AlertType.WARNING, "WARNING", "Cannot do transaction", "Kindly check your account number.");
         }
         return null;
     }

@@ -96,10 +96,54 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
+                <Button fx:id="loanRecordPane" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="312.0"
+                        mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0"
+                        text="Show Loan Record" textFill="#e1dcdc">
+                    <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
             </children>
         </VBox>
         <StackPane layoutX="258.0" layoutY="182.0" prefHeight="439.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="257.79999999999995" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.00000000000006">
             <children>
+                <Pane fx:id="loanRecordPaneWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B3A9E7FF;" stylesheets="@bankapplication.css">
+                    <StackPane.margin>
+                        <Insets left="10.0" />
+                    </StackPane.margin>
+                    <children>
+                        <TableView fx:id="loanTableView" layoutX="118.0" layoutY="69.0" prefHeight="370.0" prefWidth="707.0">
+                            <columns>
+                                <TableColumn minWidth="50.0" prefWidth="199.20003509521484" text="Loan Account Number">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="accountNumber"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn minWidth="50.0" prefWidth="183.20001220703125" text="Loan Amount">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="loanAmount"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn minWidth="50.0" prefWidth="170.39999389648438" text="Loan Type" >
+                                    <cellValueFactory>
+                                            <PropertyValueFactory property="loanType"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn minWidth="50.0" prefWidth="147.20001220703125" text="Due Date">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="dueDate"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </children>
+                </Pane>
                 <Pane fx:id="newLoanPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B3A9E7FF;">
                     <StackPane.margin>
                         <Insets left="10.0" />
