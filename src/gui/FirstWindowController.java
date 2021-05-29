@@ -385,8 +385,22 @@ public class FirstWindowController {
         loanRecordPaneWindow.toFront();
     }
 
-    private void setLoanTableContents(){
-
+    private void setLoanTableContents() throws SQLException {
+        ResultSet resultSet = DataSource.getLoanRecord(DataBaseConnection.getConnection());
+        ObservableList<Loan> loanList = FXCollections.observableArrayList();
+        if(resultSet != null){
+            while (resultSet.next()){
+                String account = resultSet.getString(1);
+                double loanAmount = resultSet.getDouble(2);
+                String type = resultSet.getString(3);
+                String dueDate = resultSet.getString(4);
+                loanList.add(new Loan(account, loanAmount, type, dueDate));
+            }
+            loanTableView.setItems(loanList);
+        }else {
+            createAlert(Alert.AlertType.WARNING, "LOAN RECORDS","No Data", "No loan had been " +
+                    "issued to any customer.");
+        }
     }
 
     private void resetLoanRecordPane(){
