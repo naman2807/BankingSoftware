@@ -106,6 +106,8 @@ public class FirstWindowController {
     private DatePicker dueDate;
     @FXML
     private Button issueLoan;
+    @FXML
+    private Button loanRecordPane;
 
 
     @FXML
