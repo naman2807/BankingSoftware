@@ -380,7 +380,7 @@ public class FirstWindowController {
     }
 
     private void showLoanRecordPane(){
-
+        headerLabel.setText("Welcome to Loan Records Section!");
     }
 
     private void resetLoanRecordPane(){
