@@ -179,6 +179,10 @@ public class DataSource {
         return null;
     }
 
+    public static boolean isAccountExist(Connection connection, String accountNumber){
+        return false;
+    }
+
     public static ResultSet getBranchRecord(Connection connection){
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.getBranchesQuery());
