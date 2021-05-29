@@ -125,7 +125,11 @@
 
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn minWidth="50.0" prefWidth="183.20001220703125" text="Loan Amount" />
+                                <TableColumn minWidth="50.0" prefWidth="183.20001220703125" text="Loan Amount">
+                                    <cellValueFactory>
+
+                                    </cellValueFactory>
+                                </TableColumn>
                                 <TableColumn minWidth="50.0" prefWidth="170.39999389648438" text="Loan Type" />
                                 <TableColumn minWidth="50.0" prefWidth="147.20001220703125" text="Due Date" />
                             </columns>
