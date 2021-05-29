@@ -137,7 +137,7 @@
                                 </TableColumn>
                                 <TableColumn minWidth="50.0" prefWidth="147.20001220703125" text="Due Date">
                                     <cellValueFactory>
-
+                                        <PropertyValueFactory property="dueDate"/>
                                     </cellValueFactory>
                                 </TableColumn>
                             </columns>
