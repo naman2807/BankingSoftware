@@ -381,6 +381,8 @@ public class FirstWindowController {
 
     private void showLoanRecordPane(){
         headerLabel.setText("Welcome to Loan Records Section!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(9,156,236), CornerRadii.EMPTY, Insets.EMPTY)));
+
     }
 
     private void resetLoanRecordPane(){
