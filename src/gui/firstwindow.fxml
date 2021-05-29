@@ -122,7 +122,7 @@
                             <columns>
                                 <TableColumn minWidth="50.0" prefWidth="199.20003509521484" text="Loan Account Number">
                                     <cellValueFactory>
-
+                                        <PropertyValueFactory property="accountNumber"/>
                                     </cellValueFactory>
                                 </TableColumn>
                                 <TableColumn minWidth="50.0" prefWidth="183.20001220703125" text="Loan Amount">
