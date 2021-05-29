@@ -379,10 +379,11 @@ public class FirstWindowController {
         loanType.getEditor().clear();
     }
 
-    private void showLoanRecordPane(){
+    private void showLoanRecordPane() throws SQLException {
         headerLabel.setText("Welcome to Loan Records Section!");
         headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(9,156,236), CornerRadii.EMPTY, Insets.EMPTY)));
         loanRecordPaneWindow.toFront();
+        setLoanTableContents();
     }
 
     private void setLoanTableContents() throws SQLException {
