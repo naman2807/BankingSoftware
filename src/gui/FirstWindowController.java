@@ -110,6 +110,8 @@ public class FirstWindowController {
     private Button loanRecordPane;
     @FXML
     private TableView<Loan> loanTableView;
+    @FXML
+    private Pane loanRecordPaneWindow;
 
 
     @FXML
