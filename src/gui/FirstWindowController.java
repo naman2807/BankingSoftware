@@ -153,6 +153,9 @@ public class FirstWindowController {
 
         }else if(event.getSource() == issueLoan){
             issueLoanToCustomer();
+
+        }else if(event.getSource() == loanRecordPane){
+
         }
     }
 
