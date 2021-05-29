@@ -96,7 +96,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="loanRecordPane" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="312.0"
+                <Button fx:id="loanRecordPane" onAction="#handleButtonClicked" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="312.0"
                         mnemonicParsing="false" prefHeight="66.0" prefWidth="258.0"
                         text="Show Loan Record" textFill="#e1dcdc">
                     <font>
