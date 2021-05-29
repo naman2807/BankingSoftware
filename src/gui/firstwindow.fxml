@@ -118,7 +118,14 @@
                         <Insets left="10.0" />
                     </StackPane.margin>
                     <children>
-
+                        <TableView layoutX="118.0" layoutY="69.0" prefHeight="370.0" prefWidth="707.0">
+                            <columns>
+                                <TableColumn minWidth="50.0" prefWidth="199.20003509521484" text="Loan Account Number" />
+                                <TableColumn minWidth="50.0" prefWidth="183.20001220703125" text="Loan Amount" />
+                                <TableColumn minWidth="50.0" prefWidth="170.39999389648438" text="Loan Type" />
+                                <TableColumn minWidth="50.0" prefWidth="147.20001220703125" text="Due Date" />
+                            </columns>
+                        </TableView>
                     </children>
                 </Pane>
                 <Pane fx:id="newLoanPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: B3A9E7FF;">
