@@ -383,7 +383,7 @@ public class FirstWindowController {
     }
 
     private void resetLoanRecordPane(){
-
+        loanTableView.getItems().clear();
     }
 
     private void createAlert(Alert.AlertType type, String title, String headerText, String context) {
