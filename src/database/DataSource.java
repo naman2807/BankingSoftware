@@ -180,6 +180,13 @@ public class DataSource {
     }
 
     public static boolean isAccountExist(Connection connection, String accountNumber){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findCustomerQueryByAccountNumber());
+            preparedStatement.setString(1, accountNumber);
+            return preparedStatement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return false;
     }
 
