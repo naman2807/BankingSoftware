@@ -385,6 +385,10 @@ public class FirstWindowController {
         loanRecordPaneWindow.toFront();
     }
 
+    private void setLoanTableContents(){
+
+    }
+
     private void resetLoanRecordPane(){
         loanTableView.getItems().clear();
     }
