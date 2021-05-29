@@ -118,7 +118,7 @@
                         <Insets left="10.0" />
                     </StackPane.margin>
                     <children>
-                        <TableView layoutX="118.0" layoutY="69.0" prefHeight="370.0" prefWidth="707.0">
+                        <TableView fx:id="loanTableView" layoutX="118.0" layoutY="69.0" prefHeight="370.0" prefWidth="707.0">
                             <columns>
                                 <TableColumn minWidth="50.0" prefWidth="199.20003509521484" text="Loan Account Number">
                                     <cellValueFactory>
