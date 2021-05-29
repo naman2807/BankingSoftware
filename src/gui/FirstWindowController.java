@@ -347,21 +347,29 @@ public class FirstWindowController {
 
     private void issueLoanToCustomer() throws SQLException {
         String account = loanAccountField.getText();
-        if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
-            String loanAmountToIssue = loanAmount.getText();
-            String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
-            String date = dueDate.getValue().format(DateTimeFormatter.ofPattern("dd, MMMM yyyy"));
-            if(account.isEmpty() || account.trim().isEmpty() || loanAmountToIssue.isEmpty() || loanAmountToIssue.trim().isEmpty() ||
-                loanTypeToIssue.isEmpty() || loanTypeToIssue.trim().isEmpty() || date.isEmpty() || date.trim().isEmpty()){
-                createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+        if(DataSource.isAccountExist(DataBaseConnection.getConnection(), account)){
+            if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
+                String loanAmountToIssue = loanAmount.getText();
+                String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
+                String date = dueDate.getValue().format(DateTimeFormatter.ofPattern("dd, MMMM yyyy"));
+                if(account.isEmpty() || account.trim().isEmpty() || loanAmountToIssue.isEmpty() ||
+                        loanAmountToIssue.trim().isEmpty() || loanTypeToIssue.isEmpty() ||
+                        loanTypeToIssue.trim().isEmpty() || loanTypeToIssue.isBlank() || date.isEmpty() ||
+                        date.trim().isEmpty()){
+                    createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+                }else {
+                    DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, date));
+                }
             }else {
-                DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, date));
+                createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
+                        "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
             }
+            resetIssueLoanPane();
         }else {
-            createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
-                    "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
+            createAlert(Alert.AlertType.WARNING, "ERROR", "ACCOUNT NUMBER: " + account, "" +
+                    "Mentioned account number doesn't exist.");
         }
-        resetIssueLoanPane();
+
     }
 
     private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber) throws SQLException {
