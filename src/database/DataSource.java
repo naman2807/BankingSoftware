@@ -183,7 +183,8 @@ public class DataSource {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.findCustomerQueryByAccountNumber());
             preparedStatement.setString(1, accountNumber);
-            return preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
