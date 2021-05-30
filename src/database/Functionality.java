@@ -80,7 +80,10 @@ public final class Functionality {
     }
 
     public static void openNewTransactionWindow(Label headerLabel, Pane headerPane, Pane newTransactionPane, Button doTransaction){
-
+        headerLabel.setText("Do Your New Transaction By Entering Details!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
+        newTransactionPane.toFront();
+        doTransaction.setDisable(true);
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
