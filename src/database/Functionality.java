@@ -9,4 +9,8 @@ package database;
  */
 
 public final class Functionality {
+
+    public static void login(){
+
+    }
 }
