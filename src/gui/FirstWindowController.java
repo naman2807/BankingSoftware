@@ -6,6 +6,7 @@ import data.Loan;
 import data.Transaction;
 import database.DataBaseConnection;
 import database.DataSource;
+import database.Functionality;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -117,7 +118,7 @@ public class FirstWindowController {
     @FXML
     public void handleButtonClicked(ActionEvent event) throws IOException, SQLException {
         if (event.getSource() == login) {
-            login();
+            Functionality.login();
 
         } else if (event.getSource() == newCustomer) {
             resetTransactionHistoryPane();
