@@ -158,13 +158,6 @@ public class FirstWindowController {
         }
     }
 
-    private void openNewTransactionWindow() {
-        headerLabel.setText("Do Your New Transaction By Entering Details!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(113, 86, 221), CornerRadii.EMPTY, Insets.EMPTY)));
-        newTransactionPane.toFront();
-        doTransaction.setDisable(true);
-    }
-
     private String getSelectedToggleButton() {
         ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
         return selectedButton.getText();

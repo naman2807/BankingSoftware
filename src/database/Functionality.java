@@ -86,6 +86,10 @@ public final class Functionality {
         doTransaction.setDisable(true);
     }
 
+    public static void verifyOTP(TextField otp, Button doTransaction){
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
