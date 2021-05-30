@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -80,6 +77,10 @@ public final class Functionality {
             phoneNumber.clear();
             parentName.clear();
         }
+    }
+
+    public static void openNewTransactionWindow(Label headerLabel, Pane headerPane, Pane newTransactionPane, Button doTransaction){
+
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
