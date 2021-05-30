@@ -1,5 +1,6 @@
 package database;
 
+import data.Customer;
 import gui.FirstWindow;
 import gui.FirstWindowController;
 import javafx.fxml.FXMLLoader;
@@ -58,8 +59,27 @@ public final class Functionality {
     }
 
     public static void addNewCustomer(TextField name, TextField age, TextField phoneNumber, TextField address, TextField parentName){
-
-
+        String cusName = name.getText();
+        String cusAge = age.getText();
+        String cusAddress = address.getText();
+        String cusPhone = phoneNumber.getText();
+        String parent = parentName.getText();
+        if (cusName.isEmpty() || cusName.trim().isEmpty() || cusAge.isEmpty() || cusAge.trim().isEmpty() || cusAddress.isEmpty() || cusAddress.trim().isEmpty()
+                || cusPhone.isEmpty() || cusPhone.trim().isEmpty() || parent.isEmpty() || parent.trim().isEmpty()) {
+            createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+            name.clear();
+            age.clear();
+            address.clear();
+            phoneNumber.clear();
+            parentName.clear();
+        } else {
+            DataSource.addCustomer(DataBaseConnection.getConnection(), new Customer(cusName, Integer.parseInt(cusAge), cusAddress, parent, cusPhone));
+            name.clear();
+            age.clear();
+            address.clear();
+            phoneNumber.clear();
+            parentName.clear();
+        }
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
