@@ -14,6 +14,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import operations.OTP;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -87,7 +88,14 @@ public final class Functionality {
     }
 
     public static void verifyOTP(TextField otp, Button doTransaction){
-
+        String enteredOTP = otp.getText();
+        if (OTP.verifyOTP(enteredOTP)) {
+            doTransaction.setDisable(false);
+            createAlert(Alert.AlertType.INFORMATION, "VERIFICATION SUCCESS", "Congratulations", "" +
+                    "Your OTP has been verified successfully.");
+        } else {
+            createAlert(Alert.AlertType.WARNING, "ERROR", "Incorrect OTP", "Please enter correct OTP");
+        }
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
