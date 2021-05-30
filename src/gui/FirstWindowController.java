@@ -132,7 +132,7 @@ public class FirstWindowController {
             System.out.println(generatedOTP);
 
         } else if (event.getSource() == verifyOTP) {
-            verifyOTP();
+            Functionality.verifyOTP(otp, doTransaction);
 
         } else if (event.getSource() == doTransaction) {
             doTransaction(getSelectedToggleButton());
