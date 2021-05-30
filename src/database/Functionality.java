@@ -3,13 +3,18 @@ package database;
 import gui.FirstWindow;
 import gui.FirstWindowController;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,7 +52,9 @@ public final class Functionality {
     }
 
     public static void openNewCustomerWindow(Label headerLabel, Pane headerPane, Pane newCustomerPane){
-
+        headerLabel.setText("Enter Details to Add New Customer!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
+        newCustomerPane.toFront();
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
