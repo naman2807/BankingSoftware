@@ -123,7 +123,7 @@ public class FirstWindowController {
         } else if (event.getSource() == newCustomer) {
             resetTransactionHistoryPane();
             resetLoanRecordPane();
-            openNewCustomerWindow();
+            Functionality.openNewCustomerWindow(headerLabel, headerPane, newCustomerPane);
 
         } else if (event.getSource() == addCustomer) {
             addCustomer();
