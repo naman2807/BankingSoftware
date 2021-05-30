@@ -11,27 +11,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import operations.OTP;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -126,7 +120,7 @@ public class FirstWindowController {
             Functionality.openNewCustomerWindow(headerLabel, headerPane, newCustomerPane);
 
         } else if (event.getSource() == addCustomer) {
-            addCustomer();
+            Functionality.addNewCustomer(name, age, phoneNumber, address, parentName);
 
         } else if (event.getSource() == newTransaction) {
             resetLoanRecordPane();
@@ -150,15 +144,15 @@ public class FirstWindowController {
         } else if (event.getSource() == search) {
             searchTransactionRecordAndShow();
 
-        }else if(event.getSource() == showNewLoanPane){
+        } else if (event.getSource() == showNewLoanPane) {
             resetTransactionHistoryPane();
             resetLoanRecordPane();
             showLoanPane();
 
-        }else if(event.getSource() == issueLoan){
+        } else if (event.getSource() == issueLoan) {
             issueLoanToCustomer();
 
-        }else if(event.getSource() == loanRecordPane){
+        } else if (event.getSource() == loanRecordPane) {
             resetTransactionHistoryPane();
             showLoanRecordPane();
         }
@@ -205,13 +199,13 @@ public class FirstWindowController {
         String amount1 = amount.getText();
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd, MMMM yyyy");
         DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss");
-        if(account.isEmpty() || account.trim().isEmpty() || amount1.isEmpty() || amount1.trim().isEmpty()){
+        if (account.isEmpty() || account.trim().isEmpty() || amount1.isEmpty() || amount1.trim().isEmpty()) {
             createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
-        }else {
+        } else {
             Customer customer = getCustomer(account);
-            if(customer == null){
+            if (customer == null) {
                 createAlert(Alert.AlertType.WARNING, "WARNING", "Cannot do transaction", "Kindly check your account number.");
-            }else {
+            } else {
                 if (selectedToggle.equals("Deposit")) {
                     double newAmount = customer.addAmount(Double.parseDouble(amount1));
                     DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
@@ -278,7 +272,7 @@ public class FirstWindowController {
 
     private void showTransactionTable() {
         headerLabel.setText("Transaction History Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(69,116,226), CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(69, 116, 226), CornerRadii.EMPTY, Insets.EMPTY)));
         transactionHistoryPane.toFront();
     }
 
@@ -300,47 +294,47 @@ public class FirstWindowController {
                 int id = result.getInt(6);
                 transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
             }
-            if(transactions.size() > 0){
+            if (transactions.size() > 0) {
                 transactionTable.setItems(transactions);
-            }else {
-                createAlert(Alert.AlertType.WARNING,"NO DATA", "Account Number: " + accountNumber, "" +
+            } else {
+                createAlert(Alert.AlertType.WARNING, "NO DATA", "Account Number: " + accountNumber, "" +
                         "No transaction history found for above mentioned account.");
             }
         }
     }
 
-    private void resetTransactionHistoryPane(){
+    private void resetTransactionHistoryPane() {
         transactionTable.getItems().clear();
         accountNumberForTransaction.clear();
     }
 
-    private void showLoanPane(){
+    private void showLoanPane() {
         headerLabel.setText("Enter Details To Apply For Loan!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(130,23,224),CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(130, 23, 224), CornerRadii.EMPTY, Insets.EMPTY)));
         newLoanPane.toFront();
     }
 
     private void issueLoanToCustomer() throws SQLException {
         String account = loanAccountField.getText();
-        if(DataSource.isAccountExist(DataBaseConnection.getConnection(), account)){
-            if(!checkIfLoanAlreadyIssuedToAccountNumber(account)){
+        if (DataSource.isAccountExist(DataBaseConnection.getConnection(), account)) {
+            if (!checkIfLoanAlreadyIssuedToAccountNumber(account)) {
                 String loanAmountToIssue = loanAmount.getText();
                 String loanTypeToIssue = loanType.getSelectionModel().getSelectedItem();
                 String date = dueDate.getValue().format(DateTimeFormatter.ofPattern("dd, MMMM yyyy"));
-                if(account.isEmpty() || account.trim().isEmpty() || loanAmountToIssue.isEmpty() ||
+                if (account.isEmpty() || account.trim().isEmpty() || loanAmountToIssue.isEmpty() ||
                         loanAmountToIssue.trim().isEmpty() || loanTypeToIssue.isEmpty() ||
                         loanTypeToIssue.trim().isEmpty() || loanTypeToIssue.isBlank() || date.isEmpty() ||
-                        date.trim().isEmpty()){
+                        date.trim().isEmpty()) {
                     createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
-                }else {
+                } else {
                     DataSource.addLoan(DataBaseConnection.getConnection(), new Loan(account, Double.parseDouble(loanAmountToIssue), loanTypeToIssue, date));
                 }
-            }else {
-                createAlert(Alert.AlertType.WARNING,"ERROR", "ACCOUNT NUMBER: " + account , "" +
+            } else {
+                createAlert(Alert.AlertType.WARNING, "ERROR", "ACCOUNT NUMBER: " + account, "" +
                         "Above account had already issued a loan of amount Rs.: " + loanAmount.getText());
             }
             resetIssueLoanPane();
-        }else {
+        } else {
             createAlert(Alert.AlertType.WARNING, "ERROR", "ACCOUNT NUMBER: " + account, "" +
                     "Mentioned account number doesn't exist.");
         }
@@ -349,14 +343,14 @@ public class FirstWindowController {
 
     private boolean checkIfLoanAlreadyIssuedToAccountNumber(String accountNumber) throws SQLException {
         ResultSet resultSet = DataSource.getLoanRecordByAccountNumber(DataBaseConnection.getConnection(), accountNumber);
-        if(resultSet == null){
+        if (resultSet == null) {
             return true;
-        }else {
+        } else {
             return resultSet.next();
         }
     }
 
-    private void resetIssueLoanPane(){
+    private void resetIssueLoanPane() {
         loanAccountField.clear();
         loanAmount.clear();
         dueDate.getEditor().clear();
@@ -365,7 +359,7 @@ public class FirstWindowController {
 
     private void showLoanRecordPane() throws SQLException {
         headerLabel.setText("Welcome to Loan Records Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(9,156,236), CornerRadii.EMPTY, Insets.EMPTY)));
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(9, 156, 236), CornerRadii.EMPTY, Insets.EMPTY)));
         loanRecordPaneWindow.toFront();
         setLoanTableContents();
     }
@@ -373,8 +367,8 @@ public class FirstWindowController {
     private void setLoanTableContents() throws SQLException {
         ResultSet resultSet = DataSource.getLoanRecord(DataBaseConnection.getConnection());
         ObservableList<Loan> loanList = FXCollections.observableArrayList();
-        if(resultSet != null){
-            while (resultSet.next()){
+        if (resultSet != null) {
+            while (resultSet.next()) {
                 String account = resultSet.getString(1);
                 double loanAmount = resultSet.getDouble(2);
                 String type = resultSet.getString(3);
@@ -382,13 +376,13 @@ public class FirstWindowController {
                 loanList.add(new Loan(account, loanAmount, type, dueDate));
             }
             loanTableView.setItems(loanList);
-        }else {
-            createAlert(Alert.AlertType.WARNING, "LOAN RECORDS","No Data", "No loan had been " +
+        } else {
+            createAlert(Alert.AlertType.WARNING, "LOAN RECORDS", "No Data", "No loan had been " +
                     "issued to any customer.");
         }
     }
 
-    private void resetLoanRecordPane(){
+    private void resetLoanRecordPane() {
         loanTableView.getItems().clear();
     }
 
