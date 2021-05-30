@@ -166,11 +166,7 @@ public class FirstWindowController {
 
 
     private void startNewWindow() throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstwindow.fxml")));
-        stage.setTitle("Bank Software");
-        stage.setScene(new Scene(root, 1200, 800));
-        stage.show();
+
     }
 
     private void openNewCustomerWindow() {

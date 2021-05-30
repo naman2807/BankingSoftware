@@ -1,8 +1,16 @@
 package database;
 
 import gui.FirstWindow;
+import gui.FirstWindowController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Created By: Naman Agarwal
@@ -14,7 +22,7 @@ import javafx.scene.control.TextField;
 
 public final class Functionality {
 
-    public static void login(TextField userID, TextField password){
+    public static void login(TextField userID, TextField password) throws IOException {
         String user = userID.getText();
         String pass = password.getText();
         if (DataSource.findEmployee(DataBaseConnection.getConnection(), user, pass)) {
@@ -26,7 +34,11 @@ public final class Functionality {
         }
     }
 
-    private static void startNewWindow(){
-
+    private static void startNewWindow() throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(FirstWindowController.class.getResource("firstwindow.fxml")));
+        stage.setTitle("Bank Software");
+        stage.setScene(new Scene(root, 1200, 800));
+        stage.show();
     }
 }
