@@ -125,7 +125,7 @@ public class FirstWindowController {
         } else if (event.getSource() == newTransaction) {
             resetLoanRecordPane();
             resetTransactionHistoryPane();
-            openNewTransactionWindow();
+            Functionality.openNewTransactionWindow(headerLabel, headerPane, newTransactionPane, doTransaction);
 
         } else if (event.getSource() == generateOTP) {
             long generatedOTP = OTP.generateOTP();
