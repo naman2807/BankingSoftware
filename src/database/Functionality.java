@@ -25,4 +25,8 @@ public final class Functionality {
                     "password again.\nThank You!");
         }
     }
+
+    private static void startNewWindow(){
+
+    }
 }

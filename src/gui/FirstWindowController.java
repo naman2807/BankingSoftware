@@ -164,9 +164,6 @@ public class FirstWindowController {
         }
     }
 
-    private void login() throws IOException {
-
-    }
 
     private void startNewWindow() throws IOException {
         Stage stage = new Stage();
