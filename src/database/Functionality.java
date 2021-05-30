@@ -57,6 +57,11 @@ public final class Functionality {
         newCustomerPane.toFront();
     }
 
+    public static void addNewCustomer(TextField name, TextField age, TextField phoneNumber, TextField address, TextField parentName){
+
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

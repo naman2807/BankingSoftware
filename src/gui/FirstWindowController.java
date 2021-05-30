@@ -164,12 +164,6 @@ public class FirstWindowController {
         }
     }
 
-    private void openNewCustomerWindow() {
-        headerLabel.setText("Enter Details to Add New Customer!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
-        newCustomerPane.toFront();
-    }
-
     private void addCustomer() {
         String cusName = name.getText();
         String cusAge = age.getText();
