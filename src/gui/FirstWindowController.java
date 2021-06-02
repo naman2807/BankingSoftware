@@ -145,7 +145,7 @@ public class FirstWindowController {
             Functionality.searchTransactionRecordAndShow(accountNumberForTransaction, transactionTable);
 
         } else if (event.getSource() == showNewLoanPane) {
-            resetTransactionHistoryPane();
+            Functionality.resetTransactionHistoryPane(transactionTable, accountNumberForTransaction);
             resetLoanRecordPane();
             showLoanPane();
 
