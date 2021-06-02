@@ -159,12 +159,6 @@ public class FirstWindowController {
     }
 
 
-    private void showTransactionTable() {
-        headerLabel.setText("Transaction History Section!");
-        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(69, 116, 226), CornerRadii.EMPTY, Insets.EMPTY)));
-        transactionHistoryPane.toFront();
-    }
-
     private void searchTransactionRecordAndShow() throws SQLException {
         String accountNumber = accountNumberForTransaction.getText();
         ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);

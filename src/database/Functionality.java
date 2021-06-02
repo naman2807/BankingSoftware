@@ -183,6 +183,10 @@ public final class Functionality {
         transactionHistoryPane.toFront();
     }
 
+    public static void searchTransactionRecordAndShow() throws SQLException {
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
