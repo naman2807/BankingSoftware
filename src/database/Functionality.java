@@ -183,8 +183,10 @@ public final class Functionality {
         transactionHistoryPane.toFront();
     }
 
-    public static void searchTransactionRecordAndShow() throws SQLException {
-
+    public static void searchTransactionRecordAndShow(TextField accountNumberForTransaction) throws SQLException {
+        String accountNumber = accountNumberForTransaction.getText();
+        ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
+        showTransactions(resultSet, accountNumber);
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
