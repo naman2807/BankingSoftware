@@ -142,7 +142,7 @@ public class FirstWindowController {
             Functionality.showTransactionTable(headerLabel, headerPane, transactionHistoryPane);
 
         } else if (event.getSource() == search) {
-            searchTransactionRecordAndShow();
+            Functionality.searchTransactionRecordAndShow(accountNumberForTransaction, transactionTable);
 
         } else if (event.getSource() == showNewLoanPane) {
             resetTransactionHistoryPane();
