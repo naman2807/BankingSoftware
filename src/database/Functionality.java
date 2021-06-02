@@ -189,6 +189,10 @@ public final class Functionality {
         showTransactions(resultSet, accountNumber);
     }
 
+    private static void showTransactions(ResultSet resultSet, String accountNumber) {
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
