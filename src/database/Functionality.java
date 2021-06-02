@@ -212,6 +212,10 @@ public final class Functionality {
         }
     }
 
+    public static void resetTransactionHistoryPane(TableView<Transaction> transactionTable, TextField accountNumberForTransaction){
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

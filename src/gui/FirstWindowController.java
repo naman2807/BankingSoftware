@@ -159,33 +159,6 @@ public class FirstWindowController {
     }
 
 
-    private void searchTransactionRecordAndShow() throws SQLException {
-        String accountNumber = accountNumberForTransaction.getText();
-        ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
-        showTransactions(resultSet, accountNumber);
-    }
-
-    private void showTransactions(ResultSet result, String accountNumber) throws SQLException {
-        ObservableList<Transaction> transactions = FXCollections.observableArrayList();
-        if (result != null) {
-            while (result.next()) {
-                String account = result.getString(1);
-                String amount = result.getString(2);
-                String action = result.getString(3);
-                String date = result.getString(4);
-                String time = result.getString(5);
-                int id = result.getInt(6);
-                transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
-            }
-            if (transactions.size() > 0) {
-                transactionTable.setItems(transactions);
-            } else {
-                createAlert(Alert.AlertType.WARNING, "NO DATA", "Account Number: " + accountNumber, "" +
-                        "No transaction history found for above mentioned account.");
-            }
-        }
-    }
-
     private void resetTransactionHistoryPane() {
         transactionTable.getItems().clear();
         accountNumberForTransaction.clear();
