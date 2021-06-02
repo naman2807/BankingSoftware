@@ -4,6 +4,8 @@ import data.Customer;
 import data.Transaction;
 import gui.FirstWindow;
 import gui.FirstWindowController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
@@ -183,14 +185,31 @@ public final class Functionality {
         transactionHistoryPane.toFront();
     }
 
-    public static void searchTransactionRecordAndShow(TextField accountNumberForTransaction) throws SQLException {
+    public static void searchTransactionRecordAndShow(TextField accountNumberForTransaction, TableView<Transaction> transactionTable) throws SQLException {
         String accountNumber = accountNumberForTransaction.getText();
         ResultSet resultSet = DataSource.getTransactionHistory(DataBaseConnection.getConnection(), accountNumber);
-        showTransactions(resultSet, accountNumber);
+        showTransactions(resultSet, accountNumber, transactionTable);
     }
 
-    private static void showTransactions(ResultSet resultSet, String accountNumber) {
-
+    private static void showTransactions(ResultSet result, String accountNumber, TableView<Transaction> transactionTable) throws SQLException {
+        ObservableList<Transaction> transactions = FXCollections.observableArrayList();
+        if (result != null) {
+            while (result.next()) {
+                String account = result.getString(1);
+                String amount = result.getString(2);
+                String action = result.getString(3);
+                String date = result.getString(4);
+                String time = result.getString(5);
+                int id = result.getInt(6);
+                transactions.add(new Transaction(String.valueOf(id), account, Double.parseDouble(amount), time, date, action));
+            }
+            if (transactions.size() > 0) {
+                transactionTable.setItems(transactions);
+            } else {
+                createAlert(Alert.AlertType.WARNING, "NO DATA", "Account Number: " + accountNumber, "" +
+                        "No transaction history found for above mentioned account.");
+            }
+        }
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
