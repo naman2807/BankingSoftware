@@ -169,8 +169,11 @@ public final class Functionality {
         DataSource.addTransaction(DataBaseConnection.getConnection(), new Transaction(accountNumber, amount, transactionTime, transactionDate, operation));
     }
 
-    private static void resetTransactionSection() {
-
+    private static void resetTransactionSection(TextField accountNumber, TextField amount, TextField otp, Button doTransaction) {
+        accountNumber.clear();
+        amount.clear();
+        otp.clear();
+        doTransaction.setDisable(true);
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
