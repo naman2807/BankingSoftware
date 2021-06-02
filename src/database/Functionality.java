@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import operations.OTP;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -96,6 +97,10 @@ public final class Functionality {
         } else {
             createAlert(Alert.AlertType.WARNING, "ERROR", "Incorrect OTP", "Please enter correct OTP");
         }
+    }
+
+    public static void doTransaction(String selectedToggle, ToggleGroup transactionToggleGroup) throws SQLException{
+
     }
 
     private String getSelectedToggleButton(ToggleGroup transactionToggleGroup){
