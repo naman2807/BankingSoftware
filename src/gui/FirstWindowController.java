@@ -115,7 +115,7 @@ public class FirstWindowController {
             Functionality.login(userID, password);
 
         } else if (event.getSource() == newCustomer) {
-            resetTransactionHistoryPane();
+            Functionality.resetTransactionHistoryPane(transactionTable, accountNumberForTransaction);
             resetLoanRecordPane();
             Functionality.openNewCustomerWindow(headerLabel, headerPane, newCustomerPane);
 
@@ -158,11 +158,6 @@ public class FirstWindowController {
         }
     }
 
-
-    private void resetTransactionHistoryPane() {
-        transactionTable.getItems().clear();
-        accountNumberForTransaction.clear();
-    }
 
     private void showLoanPane() {
         headerLabel.setText("Enter Details To Apply For Loan!");
