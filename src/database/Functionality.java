@@ -213,7 +213,8 @@ public final class Functionality {
     }
 
     public static void resetTransactionHistoryPane(TableView<Transaction> transactionTable, TextField accountNumberForTransaction){
-
+        transactionTable.getItems().clear();
+        accountNumberForTransaction.clear();
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
