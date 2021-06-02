@@ -98,8 +98,9 @@ public final class Functionality {
         }
     }
 
-    private String getSelectedToggleButton(){
-
+    private String getSelectedToggleButton(ToggleGroup transactionToggleGroup){
+        ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
+        return selectedButton.getText();
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
