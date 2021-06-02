@@ -98,6 +98,10 @@ public final class Functionality {
         }
     }
 
+    private String getSelectedToggleButton(){
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
