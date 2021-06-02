@@ -1,6 +1,7 @@
 package database;
 
 import data.Customer;
+import data.Transaction;
 import gui.FirstWindow;
 import gui.FirstWindowController;
 import javafx.fxml.FXMLLoader;
@@ -165,8 +166,9 @@ public final class Functionality {
     }
 
     private static void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation) {
-
+        DataSource.addTransaction(DataBaseConnection.getConnection(), new Transaction(accountNumber, amount, transactionTime, transactionDate, operation));
     }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
