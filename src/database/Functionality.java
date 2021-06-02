@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import operations.OTP;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -105,7 +106,7 @@ public final class Functionality {
     }
 
     public static void doTransaction(TextField accountNumber, TextField amount,
-                                     ToggleGroup transactionToggleGroup) throws SQLException{
+                                     TextField otp, ToggleGroup transactionToggleGroup, Button doTransaction) throws SQLException{
         String selectedToggle = getSelectedToggleButton(transactionToggleGroup);
         String account = accountNumber.getText();
         String amount1 = amount.getText();
@@ -124,7 +125,7 @@ public final class Functionality {
                     LocalDate date = LocalDate.now();
                     LocalTime time = LocalTime.now();
                     addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
-                    resetTransactionSection();
+                    resetTransactionSection(accountNumber, amount, otp, doTransaction);
                 } else {
                     double newAmount = customer.deductAmount(Double.parseDouble(amount1));
                     if (newAmount == customer.getAmount()) {
@@ -138,7 +139,7 @@ public final class Functionality {
                     }
                     System.out.println(newAmount);
                 }
-                resetTransactionSection();
+                resetTransactionSection(accountNumber, amount, otp, doTransaction);
             }
         }
     }

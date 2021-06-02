@@ -135,7 +135,7 @@ public class FirstWindowController {
             Functionality.verifyOTP(otp, doTransaction);
 
         } else if (event.getSource() == doTransaction) {
-            doTransaction(getSelectedToggleButton());
+            Functionality.doTransaction(accountNumberForTransaction, amount, otp, transactionToggleGroup, doTransaction);
 
         } else if (event.getSource() == showTransactionPane) {
             resetLoanRecordPane();
