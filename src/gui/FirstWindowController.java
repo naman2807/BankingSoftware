@@ -200,17 +200,6 @@ public class FirstWindowController {
         }
     }
 
-    private void verifyOTP() {
-        String enteredOTP = otp.getText();
-        if (OTP.verifyOTP(enteredOTP)) {
-            doTransaction.setDisable(false);
-            createAlert(Alert.AlertType.INFORMATION, "VERIFICATION SUCCESS", "Congratulations", "" +
-                    "Your OTP has been verified successfully.");
-        } else {
-            createAlert(Alert.AlertType.WARNING, "ERROR", "Incorrect OTP", "Please enter correct OTP");
-        }
-    }
-
     private Customer getCustomer(String account) throws SQLException {
         ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
         if (resultSet != null) {
