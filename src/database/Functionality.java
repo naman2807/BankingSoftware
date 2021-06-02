@@ -146,6 +146,10 @@ public final class Functionality {
         return selectedButton.getText();
     }
 
+    private static Customer getCustomer(String account) throws SQLException {
+
+    }
+
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
