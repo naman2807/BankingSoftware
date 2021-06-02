@@ -18,6 +18,9 @@ import operations.OTP;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -99,11 +102,46 @@ public final class Functionality {
         }
     }
 
-    public static void doTransaction(String selectedToggle, ToggleGroup transactionToggleGroup) throws SQLException{
-
+    public static void doTransaction(TextField accountNumber, TextField amount,
+                                     ToggleGroup transactionToggleGroup) throws SQLException{
+        String selectedToggle = getSelectedToggleButton(transactionToggleGroup);
+        String account = accountNumber.getText();
+        String amount1 = amount.getText();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd, MMMM yyyy");
+        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm:ss");
+        if (account.isEmpty() || account.trim().isEmpty() || amount1.isEmpty() || amount1.trim().isEmpty()) {
+            createAlert(Alert.AlertType.ERROR, "ERROR", "Empty Fields", "Kindly enter all the required fields.");
+        } else {
+            Customer customer = getCustomer(account);
+            if (customer == null) {
+                createAlert(Alert.AlertType.WARNING, "WARNING", "Cannot do transaction", "Kindly check your account number.");
+            } else {
+                if (selectedToggle.equals("Deposit")) {
+                    double newAmount = customer.addAmount(Double.parseDouble(amount1));
+                    DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+                    LocalDate date = LocalDate.now();
+                    LocalTime time = LocalTime.now();
+                    addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                    resetTransactionSection();
+                } else {
+                    double newAmount = customer.deductAmount(Double.parseDouble(amount1));
+                    if (newAmount == customer.getAmount()) {
+                        createAlert(Alert.AlertType.WARNING, "FAILURE", "Cannot do transaction!", "" +
+                                "There is insufficient balance in your account.");
+                    } else {
+                        DataSource.updateBalance(DataBaseConnection.getConnection(), newAmount, account);
+                        LocalDate date = LocalDate.now();
+                        LocalTime time = LocalTime.now();
+                        addTransaction(account, Double.parseDouble(amount1), dateFormat.format(date), timeFormat.format(time), selectedToggle);
+                    }
+                    System.out.println(newAmount);
+                }
+                resetTransactionSection();
+            }
+        }
     }
 
-    private String getSelectedToggleButton(ToggleGroup transactionToggleGroup){
+    private static String getSelectedToggleButton(ToggleGroup transactionToggleGroup){
         ToggleButton selectedButton = (ToggleButton) transactionToggleGroup.getSelectedToggle();
         return selectedButton.getText();
     }
