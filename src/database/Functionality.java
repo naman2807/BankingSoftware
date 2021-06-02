@@ -177,8 +177,10 @@ public final class Functionality {
         doTransaction.setDisable(true);
     }
 
-    public static void showTransactionTable(){
-
+    public static void showTransactionTable(Label headerLabel, Pane headerPane, Pane transactionHistoryPane){
+        headerLabel.setText("Transaction History Section!");
+        headerPane.setBackground(new Background(new BackgroundFill(Color.rgb(69, 116, 226), CornerRadii.EMPTY, Insets.EMPTY)));
+        transactionHistoryPane.toFront();
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
