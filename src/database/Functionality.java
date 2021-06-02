@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import operations.OTP;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -147,7 +148,20 @@ public final class Functionality {
     }
 
     private static Customer getCustomer(String account) throws SQLException {
-
+        ResultSet resultSet = DataSource.getCustomerByAccountNumber(DataBaseConnection.getConnection(), account);
+        if (resultSet != null) {
+            while (resultSet.next()) {
+                String name = resultSet.getString(1);
+                int age = resultSet.getInt(2);
+                String address = resultSet.getString(3);
+                String parent = resultSet.getString(4);
+                String phone = resultSet.getString(5);
+                double amount = resultSet.getDouble(6);
+                String accountNumber = resultSet.getString(7);
+                return new Customer(name, age, address, parent, phone, accountNumber, amount);
+            }
+        }
+        return null;
     }
 
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
