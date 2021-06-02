@@ -164,6 +164,9 @@ public final class Functionality {
         return null;
     }
 
+    private static void addTransaction(String accountNumber, double amount, String transactionDate, String transactionTime, String operation) {
+
+    }
     private static void createAlert(Alert.AlertType type, String title, String headerText, String context) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
