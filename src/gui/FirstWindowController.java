@@ -153,7 +153,7 @@ public class FirstWindowController {
             issueLoanToCustomer();
 
         } else if (event.getSource() == loanRecordPane) {
-            resetTransactionHistoryPane();
+            Functionality.resetTransactionHistoryPane(transactionTable, accountNumberForTransaction);
             showLoanRecordPane();
         }
     }
