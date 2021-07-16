@@ -41,7 +41,7 @@ User can apply for loans through this module. Various loans offered by the bank 
 
 ### 6.Loan Record
 
-This module can show all loan records assigned from bank.
+This module can show all loan records assigned from bank to an existing account.
 
 ## Software Requirements
 Operating System        : Windows XP
